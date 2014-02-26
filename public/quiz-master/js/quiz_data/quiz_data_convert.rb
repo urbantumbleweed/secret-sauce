@@ -3,7 +3,8 @@ require 'open-uri'
 require 'json'
 
 
-  xls = Roo::Spreadsheet.open("./quiz1.xlsx")
+1.times { |i| 
+  xls = Roo::Spreadsheet.open("./quiz" + i+1 + ".xlsx")
 
   quiz_data = {}
   quiz_data['title'] =  xls.cell(1,'B')
@@ -49,10 +50,10 @@ require 'json'
   end
 
 
-  File.open("quiz_data_1.js", 'w') { |file| file.write(
+  File.open("quiz_data_" + i+1 +".js", 'w') { |file| file.write(
     "var quizApp = quizApp || {} \nvar fullQuizMulti = " + quiz_data.to_json + 
     "\nvar quiz = new quizApp.Quiz(fullQuizMulti);\nvar quizView = new quizApp.QuizView({model: quiz, el:$('#quiz')}); \nquizView.render();" 
 
   )}
 
-
+}

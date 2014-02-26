@@ -111,8 +111,24 @@
 		<script src="js/quiz/views/multiQuestionView.js"></script>
 		<script src="js/quiz/views/answerView.js"></script>
 		<script src="js/quiz/collections/questionCollection.js"></script>
+		<script id="quiz_num"></script>
 
+    <script>
+	    	if (window.location.pathname.split("/")[9] === "quiz.html") {
+	    		$('#quiz_num').attr("src",
+					  function() {
+							var quiz_name = window.location.pathname.split("/")[9]
+							switch (quiz_name) {
+						  	case "quiz.html":
+						  		return "js/quiz_data/quiz_data_1.js";
+						  		break;
+						  	default:
+						  		console.log('broken');
+							}
+						}
+				  );
+	    	} 
+		</script>
 		<!-- init script with quiz data --> 
-		<script src="js/quiz_data/quiz_data_1.js"></script>
 	</body>
 </html>
