@@ -13,7 +13,6 @@
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/responsive.min.css">
-		<!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
 		<link rel="stylesheet" href="css/sorting.min.css">
 
 		<script type="text/template" id="quizTemplate">
@@ -57,7 +56,7 @@
 					</div>
 					<div class="answerCtn" style="display:none;">
 						<h3 class="status"></h3>
-			
+				   	<p>The answer is: <br /><%= answer %></p>
 					</div>
 					<div class="buttons">
 						<button class="checkResults btn btn-primary">Check Answer</button>
@@ -111,23 +110,23 @@
 		<script src="js/quiz/views/answerView.js"></script>
 		<script src="js/quiz/collections/questionCollection.js"></script>
 		<script id="quiz_num"></script>
-
+		
+		<!-- check url path and render appropriate quiz -->
     <script>
-	    	if (window.location.pathname.split("/")[9] === "quiz.html") {
-	    		$('#quiz_num').attr("src",
-					  function() {
-							var quiz_name = window.location.pathname.split("/")[9]
-							switch (quiz_name) {
-						  	case "quiz.html":
-						  		return "js/quiz_data/quiz_data_1.js";
-						  		break;
-						  	default:
-						  		console.log('broken');
-							}
-						}
-				  );
-	    	} 
+  		$('#quiz_num').attr("src",
+			  function() {
+					var quiz_name = window.location.pathname.split("/")[9]
+					switch (quiz_name) {
+				  	case "quiz.html":
+				  		return "js/quiz_data/quiz_data_2.js";
+				  		break;
+				  	default:
+				  		console.log('broken');
+					}
+				}
+		  );
 		</script>
+
 		<!-- init script with quiz data --> 
 	</body>
 </html>
