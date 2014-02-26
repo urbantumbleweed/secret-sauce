@@ -13,7 +13,6 @@
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/responsive.min.css">
-		<!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
 		<link rel="stylesheet" href="css/sorting.min.css">
 
 		<script type="text/template" id="quizTemplate">
@@ -57,7 +56,7 @@
 					</div>
 					<div class="answerCtn" style="display:none;">
 						<h3 class="status"></h3>
-			
+				   	<p>The answer is: <br /><%= answer %></p>
 					</div>
 					<div class="buttons">
 						<button class="checkResults btn btn-primary">Check Answer</button>
@@ -127,7 +126,7 @@
 				}
 		  );
 		</script>
-		
+
 		<!-- init script with quiz data --> 
 	</body>
 </html>

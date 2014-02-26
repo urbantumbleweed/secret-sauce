@@ -69,7 +69,7 @@ quizApp.QuizView = Backbone.View.extend({
 	},
 
 	startQuiz: function(){
-		this.$el.find('.intro').fadeOut();
+		this.$el.find('.intro').remove();
 		this.renderQuestion();
 	},
 	
