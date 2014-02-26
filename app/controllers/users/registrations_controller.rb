@@ -2,8 +2,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 	def new
 			@positions = Position.all 
-			@schools = School.all
+			@schools = School.all	
 			super
+	end
+
+	def create
+		@positions = Position.all 
+		@schools = School.all	
+		super
+		Status.create(user: @user, position_id: params['position_id'])
 	end
 
   private
