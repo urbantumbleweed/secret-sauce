@@ -47,10 +47,12 @@
 				<div class="span4">
 					<div class="questionCtn">
 						<% _.each( options, function( option ){ %>
-							<label class="radio">
-								<input type="radio" name="options" value="<%= option %>">
-								<%= option %>
-							</label>
+							<% if (option !== null) { %>
+								<label class="radio">
+									<input type="radio" name="options" value="<%= option %>">
+										<%= option %>
+								</label>
+							<% } %>
 						<% }); %>
 					</div>
 					<div class="answerCtn" style="display:none;">
