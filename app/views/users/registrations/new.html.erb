@@ -18,10 +18,10 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
+<% if @schools %>
   <div><%= f.collection_select(:school_id, @schools, :id, :name) %></div>
-    !!!
   <div><%= select_tag(:position_id, options_from_collection_for_select(@positions, "id", "name") ) %></div>
-
+<% end %>
 
 
 
