@@ -14,5 +14,9 @@ class User < ActiveRecord::Base
 	 return self.first_name + self.last_name
 	end
 
+	def position
+		return self.positions.last.name
+	end
+
 
 end

@@ -1,4 +1,22 @@
-<!-- Top Navigation Bar -->
+<!-- 		'description', 
+		'leadership', 
+		'tone', 
+		'style',
+		'process',
+		'spreadsheet',
+		'login',
+		'add-user',
+		'update-staff',
+		'profile',
+		'post',
+		'final-checks',
+		'add-photos',
+		'add-video',
+		'slideshow',
+		'sections'
+ -->
+
+<!-- Track Navigation Bar -->
 
 <ul class="editorial-nav nav-<% @position.pages.count %>">
 <% @position.pages.each do |page| %>
@@ -9,3 +27,4 @@
 
 <!-- Body -->
 
+<%= render "editorial/_#{@page}" %>
