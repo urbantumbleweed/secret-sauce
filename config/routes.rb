@@ -1,6 +1,6 @@
 SecretSauce::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations" }
 
   root :to => "home#index"
 
@@ -9,8 +9,9 @@ SecretSauce::Application.routes.draw do
   resources :positions, :only => [:index, :show]
 
 
-  get '/editor-in-chief' => 'positions#editor-in-chief'
-  get '/managing-editor' => 'positions#managing-editor'
+  get '/editorial/:position/:page' => 'positions#editorial', as: :editorial
+  get '/marketing/:position/:page' => 'positions#marketing', as: :marketing
+  get '/photo/:position/:page' => 'positions#photo', as: :photo
 
 
   # Example of regular route:

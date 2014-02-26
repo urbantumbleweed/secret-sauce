@@ -1,0 +1,11 @@
+<!-- Top Navigation Bar -->
+
+<ul class="editorial-nav nav-<% @position.pages.count %>">
+<% @position.pages.each do |page| %>
+	<a href='/editorial/<%= @position.name %>/<%= page %>'>
+		<li><%= page.gsub('-',' ') %></li>
+	</a>
+<% end %>
+
+<!-- Body -->
+

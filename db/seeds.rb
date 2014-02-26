@@ -5,3 +5,43 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Position.create({
+	name: 'editor-in-chief',
+	pages: [
+		'description', 
+		'leadership', 
+		'tone', 
+		'style',
+		'process',
+		'spreadsheet',
+		'login',
+		'add-user',
+		'update-staff',
+		'profile',
+		'post',
+		'final-checks',
+		'add-photos',
+		'add-video',
+		'slideshow',
+		'sections'
+	]
+})
+
+Position.create({
+	name: 'managing-editor',
+	pages: [
+		'description', 
+		'tone', 
+		'style',
+		'process',
+		'spreadsheet',
+		'login',
+		'profile',
+		'post',
+		'add-photos',
+		'add-video',
+		'slideshow',
+		'sections'
+	]
+})
