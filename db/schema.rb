@@ -25,6 +25,10 @@ ActiveRecord::Schema.define(version: 20140226162937) do
 
   create_table "schools", force: true do |t|
     t.string   "name"
+    t.string   "fbUrl"
+    t.string   "twitterUrl"
+    t.string   "spoonUrl"
+    t.string   "instagramUrl"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
