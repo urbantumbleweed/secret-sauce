@@ -1,4 +1,11 @@
 SecretSauce::Application.configure do
+
+
+  ## change local host to real host in production
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -34,6 +41,8 @@ SecretSauce::Application.configure do
 
   # Version of your assets, change this if you want to expire all your assets.
   config.assets.version = '1.0'
+
+
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
