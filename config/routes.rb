@@ -2,9 +2,8 @@ SecretSauce::Application.routes.draw do
 
   devise_for :users, controllers: { registrations: "users/registrations" }
 
-  root :to => "users#home"
+  root :to => "positions#home"
 
-  resources :users, :only => [:index, :show, :edit]
   resources :schools, :only => [:index, :edit]
   resources :positions, :only => [:index, :show]
 
