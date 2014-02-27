@@ -17,42 +17,72 @@
     <li><a href="<%= school.spoon_url %>">Spoon</a></li>
   <% end %>
 </ul>
-
-
-<div id="active-users">
-<h3>Active Users:</h3>
+<div class="row active-users">
   <% if school.users_active != [] %>
     <% school.users_active.each do |user| %>
-     <div><h1><%= user.name %></h1>
-      <ul>
-        <li><%= user.position.name %></li>
-        <% if user.phone_number.empty? == false %>
-          <li><%= user.phone_number %></li>
-        <% end %>
-        <% if user.email %>
-          <li><%= user.email %></li>
-        <% end %>
-      </ul>
+      <div class="col-md-3 active-user">
+        <h3><%= user.name %><button data-userid="<%= user.id %>" class="deactivate-user">x</button></h3>
+        <ul>
+          <li><%= user.position.name %></li>
+          <% if user.phone_number.empty? == false %>
+            <li><%= user.phone_number %></li>
+          <% end %>
+          <% if user.email %>
+            <li><%= user.email %></li>
+          <% end %>
+        </ul>
       </div>
     <% end %>
   <% else %>
     Go get your team, yo
   <% end %>
 </div>
-
-<div id="alum-hidden">
-<h3>Alum:</h3>
+<button id='see-alum'>See Alum</button>
+<div class="row alum">
   <% if school.users_inactive != [] %>
     <% school.users_inactive.each do |user| %>
-     <div><h1><%= user.name %></h1>
-      <ul>
-        <li><%= user.position.name %></li>
-      </ul>
+      <div class="col-md-3 alum-inactive">
+        <h3><%= user.name %><button class="activate-user">+</button></h3>
+        <ul>
+          <li><%= user.position.name %></li>
+        </ul>
       </div>
     <% end %>
   <% end %>
 </div>
 
 
+<script>
+  function deactivate_user(user){
+    $.ajax({
+        url: '/users/' + this.id,
+        dataType: 'json',
+        method: 'put',
+        data: {active: false}
+    })
+    .success(function(data){
+        console.log('user made inactive');
+    });
+  };
+
+  function setHandlers() {
+    $('button.deactivate-user').click(function(e){
+      var user_id  = $(e.target).data("userid");
+      console.log(user_id);
+    });
+    $('#see-alum').click(function() {
+      console.log('See Alumni')
+      $('.alum-inactive').removeClass().addClass('alum-active');
+    });
+  }
+
+  $(function() {
+      setHandlers();
+  });
+
+
+
+
+</script>
 
 

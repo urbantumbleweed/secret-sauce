@@ -36,13 +36,13 @@ a.completed {
 	text-transform: capitalize;
 }
 
-#alum-hidden{
+.alum-inactivew{
 	color:red;
 	/*visibility: hidden;*/
 }
 
-#alum-visible{
-	visibility: visible;
+.alum-active{
+	color:grey;
 }
 
 

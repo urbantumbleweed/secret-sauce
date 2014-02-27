@@ -8,6 +8,7 @@ SecretSauce::Application.routes.draw do
 
   resources :schools, :only => [:index, :edit]
   resources :positions, :only => [:index, :show]
+  resources :users, :only => [:update]
 
   get '/schools/:shortname' => 'schools#show', as: :school
   get '/editorial/:position/:page' => 'positions#editorial', as: :editorial
@@ -15,9 +16,7 @@ SecretSauce::Application.routes.draw do
   get '/photo/:position/:page' => 'positions#photo', as: :photo
   post '/positions/next' => 'positions#next', as: :next_page
 
-
   get '/schools/admin/all' => 'schools#admin'
-
 
 
   # Example of regular route:
