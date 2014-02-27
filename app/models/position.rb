@@ -23,7 +23,7 @@ class Position < ActiveRecord::Base
 			return 'photo'
 		elsif self.name.include?('marketing') || self.name.include?('business') || self.name.include?('treasurer')
 			return 'marketing'
-		end
+		end 
 	end
 	
 end
