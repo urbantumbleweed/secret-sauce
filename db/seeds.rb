@@ -14,6 +14,7 @@ me = Position.create({
 	name: 'managing-editor',
 })
 
+
 page_names = [
 		'leadership', 
 		'tone', 
@@ -38,276 +39,24 @@ page_names.each do |name|
 	me.pages << page
 end
 
+
 School.create({
-	name:          'Northwestern',
-	shortname:     'nu',  
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	name: "Northwestern",
+	instagramUrl: 'Instagram URL',
+	spoonUrl: 'Spoon URL',
+	fbUrl: 'Facebook URL'
 })
 
 School.create({
-	name:          'UIUC',
-  shortname:     'uiuc', 
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	name: "NYU",
+	twitterUrl: "Twitter URL",
+	instagramUrl: 'Instagram URL',
+	spoonUrl: 'Spoon URL',
+	fbUrl: 'Facebook URL',
 })
 
 School.create({
-	name:          'University of Chicago',
-	shortname:     'uchi', 
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	name: "Michigan",
+	spoonUrl: 'Spoon URL',
+	fbUrl: 'Facebook URL'
 })
-
-School.create({
-	name:          'U Penn',
-	shortname:     'upenn', 
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'Wisconsin',
-	shortname:     'uw', 
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'NYU',
-	shortname:     'nyu', 
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'Michigan',
-	shortname:     'michigan', 
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'Princeton',
-	shortname:     'princeton', 
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'Wash U in St. Louis',
-	shortname:     'washu', 
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'Rochester',
-	shortname:     'rochester',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'Tulane',
-	shortname:     'tulane',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'Texas',
-	shortname:     'texas',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'Dartmouth',
-	shortname:     'dartmouth',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'Maryland',
-	shortname:     'umd',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'Cornell',
-	shortname:     'cornell',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'University of Southern California',
-	shortname:     'usc',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'University of South Carolina',
-	shortname:     'uofsc',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'UC: Berkeley',
-	shortname:     'cal',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'Georgetown',
-	shortname:     'georgetown',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'Emory',
-	shortname:     'emory',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'PSU',
-	shortname:     'psu',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'Colgate',
-	shortname:     'colgate',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'University of Oregon',
-	shortname:     'uoregon',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'Southern Methodist University',
-	shortname:     'smu',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'Boston University',
-	shortname:     'bu',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'Syracuse',
-	shortname:     'syracuse',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'Vanderbilt',
-	shortname:     'vandy',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'University of Florida',
-	shortname:     'uf',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'American',
-	shortname:     'american',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-School.create({
-	name:          'Swarthmore',
-	shortname:     'swat',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
-})
-
-
-
-
