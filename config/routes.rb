@@ -14,6 +14,10 @@ SecretSauce::Application.routes.draw do
   get '/photo/:position/:page' => 'positions#photo', as: :photo
 
 
+  get '/schools/admin/all' => 'schools#admin'
+
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
