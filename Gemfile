@@ -26,6 +26,8 @@ gem 'turbolinks'
 
 gem 'devise'
 
+gem 'seed_dump'
+
 gem 'pry'
 
 gem "font-awesome-rails"
