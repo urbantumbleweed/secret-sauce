@@ -5,10 +5,10 @@ SecretSauce::Application.routes.draw do
   root :to => "users#home"
 
   resources :users, :only => [:index, :show, :edit]
-  resources :schools, :only => [:index, :show, :edit]
+  resources :schools, :only => [:index, :edit]
   resources :positions, :only => [:index, :show]
 
-
+  get '/schools/:name' => 'schools#show', as: :school
   get '/editorial/:position/:page' => 'positions#editorial', as: :editorial
   get '/marketing/:position/:page' => 'positions#marketing', as: :marketing
   get '/photo/:position/:page' => 'positions#photo', as: :photo
