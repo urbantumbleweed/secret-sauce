@@ -4,7 +4,7 @@
 <h4>Your responsibilities include</h4>
 
 
-<% case current_user.position %>
+<% case current_user.position.name %>
 	<% when 'editor-in-chief' %>
 	<p>being awesome</p>
 
@@ -28,6 +28,6 @@
 <% if current_user.position == 'national contributor' %>
 
 <% else %>
-	<a href="<%= current_user.position.track %>/<%= current_user.position.name %>/<%= current_user.position.next_page(current_user.status.pages.last)%>">Next</a>
+	<a class="btn btn-primary" href="<%= current_user.position.track %>/<%= current_user.position.name %>/<%= current_user.position.next_page(current_user.status.pages.last)%>">My Track</a>
 
 <% end %>

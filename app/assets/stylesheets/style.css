@@ -2,18 +2,30 @@
 	background:black;
 }
 
-.editorial-nav {
+.track-nav {
 	border: 1px solid black;
 	padding:1px 0px;
 }
 
 
-.editorial-nav a {
+.track-nav a {
 	float:left;
 	margin:1px;
-	background: blue;
 	color:white;
+	height: 40px;
 }
+
+.editorial a {
+	background: #00a2ca;
+	text-decoration: none;
+}
+
+
+.editorial a:hover {
+	background: #99daea;
+}
+
+
 
 .nav-16 a {
 	width: 6%;
