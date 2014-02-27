@@ -26,6 +26,7 @@
     <% school.users.each do |user| %>
      <div><h1><%= user.name %></h1>
       <ul>
+        <li><%= user.position.name %></li>
         <% if user.phone_number.empty? == false %>
           <li><%= user.phone_number %></li>
         <% end %>
