@@ -19,11 +19,10 @@
 </ul>
 
 
-<div>
-  
+<div id="active-users">
 <h3>Active Users:</h3>
-  <% if school.users != [] %>
-    <% school.users.each do |user| %>
+  <% if school.users_active != [] %>
+    <% school.users_active.each do |user| %>
      <div><h1><%= user.name %></h1>
       <ul>
         <li><%= user.position.name %></li>
@@ -36,10 +35,23 @@
       </ul>
       </div>
     <% end %>
+  <% else %>
+    Go get your team, yo
   <% end %>
 </div>
 
-
+<div id="alum-hidden">
+<h3>Alum:</h3>
+  <% if school.users_inactive != [] %>
+    <% school.users_inactive.each do |user| %>
+     <div><h1><%= user.name %></h1>
+      <ul>
+        <li><%= user.position.name %></li>
+      </ul>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
 
 

@@ -35,3 +35,15 @@ a.completed {
 .track-body h1 {
 	text-transform: capitalize;
 }
+
+#alum-hidden{
+	color:red;
+	/*visibility: hidden;*/
+}
+
+#alum-visible{
+	visibility: visible;
+}
+
+
+
