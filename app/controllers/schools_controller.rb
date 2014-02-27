@@ -7,7 +7,7 @@ class SchoolsController < ApplicationController
 	end
 
   def show
-    @school = School.find_by_name(params[:name])
+    @school = School.find_by_name(params[:shortname])
   end
 
   def admin
@@ -16,7 +16,7 @@ class SchoolsController < ApplicationController
 
 
   def school_params
-    params.require(:school).permit(:name, :fbUrl, :twitterUrl, :spoonUrl, :instagramUrl, :students)
+    params.require(:school).permit(:name, :shortname, :fbUrl, :twitterUrl, :spoonUrl, :instagramUrl, :students)
   end
 
 end
