@@ -28,7 +28,6 @@ class PositionsController < ApplicationController
 			unless current_user.status.pages.include?(page)
 				current_user.status.pages += [page]
 				current_user.status.pages_will_change!
-				binding.pry
 			end
 		end
 		page = position.next_page(page)

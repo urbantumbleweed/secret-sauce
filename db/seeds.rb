@@ -7,8 +7,15 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Position.create({
-	name: 'editor-in-chief',
-	pages: [
+	name: 'editor-in-chief'
+})
+
+Position.create({
+	name: 'managing-editor',
+})
+
+
+page_names = [
 		'leadership', 
 		'tone', 
 		'style',
@@ -25,24 +32,12 @@ Position.create({
 		'slideshow',
 		'sections'
 	]
-})
 
-Position.create({
-	name: 'managing-editor',
-	pages: [
-		'tone', 
-		'style',
-		'process',
-		'spreadsheet',
-		'login',
-		'profile',
-		'post',
-		'add-photos',
-		'add-video',
-		'slideshow',
-		'sections'
-	]
-})
+page_names.each do |name|
+	Page.create(name: name)
+	
+end
+
 
 School.create({
 	name: "Northwestern",

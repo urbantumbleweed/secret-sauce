@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140226162937) do
+ActiveRecord::Schema.define(version: 20140227145430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "pages", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pages_positions", force: true do |t|
+    t.integer "page_id"
+    t.integer "position_id"
+  end
+
+  create_table "pages_statuses", force: true do |t|
+    t.integer "status_id"
+    t.integer "page_id"
+  end
 
   create_table "positions", force: true do |t|
     t.string   "name"
@@ -25,10 +41,6 @@ ActiveRecord::Schema.define(version: 20140226162937) do
 
   create_table "schools", force: true do |t|
     t.string   "name"
-    t.string   "fbUrl"
-    t.string   "twitterUrl"
-    t.string   "spoonUrl"
-    t.string   "instagramUrl"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

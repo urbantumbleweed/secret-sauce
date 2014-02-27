@@ -1,5 +1,6 @@
 class Position < ActiveRecord::Base
 	has_many :statuses
+	has_and_belongs_to_many :pages
 
 	def next_page(page)
 		if page == nil

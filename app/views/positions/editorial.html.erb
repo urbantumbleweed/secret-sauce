@@ -21,7 +21,7 @@
 <ul class="track-nav editorial nav-<%= @position.pages.count %> list-inline clearfix">
 <% @position.pages.each do |page| %>
 	<a class="test <% if current_user.status.pages.include?(page) %> completed <% end %>" href="/editorial/<%= @position.name %>/<%= page %>">
-		<li><%= page.gsub('-',' ') %></li>
+		<li><%= page.name.gsub('-',' ') %></li>
 	</a>
 <% end %>
 </ul>
