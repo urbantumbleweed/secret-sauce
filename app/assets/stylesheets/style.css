@@ -1,17 +1,21 @@
-
-
-.track-nav {
-	border: 1px solid black;
-	padding:1px 0px;
-	text-align:center;
+body {
+	font-family: 'museo-sans-rounded';
 }
 
+.track-nav {
+	border: 1px solid #cccccc;
+	padding:1px 0px;
+	text-align:center;
+	border-radius: 2px;
+}
 
 .track-nav a {
 	float:left;
 	margin:1px;
 	color:white;
 	height: 40px;
+	padding:10px 0;
+	border-radius: 1px;
 }
 
 .editorial a {
@@ -25,4 +29,9 @@
 
 a.completed {
 	background: #99daea;
+}
+
+
+.track-body h1 {
+	text-transform: capitalize;
 }
