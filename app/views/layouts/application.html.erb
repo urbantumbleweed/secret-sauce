@@ -11,8 +11,8 @@
 <body>
 <nav class="navbar navbar-default" role="navigation">
  <div class="container">
-	<div id="logo"></div>
-	<%= link_to "Log out", destroy_session_path(:user), :method => :delete %>
+	<span id="logo"></span>
+	<span><%= link_to "Log out", destroy_session_path(:user), :method => :delete %></span>
 <p><span class="notice"><%= notice %></span><span class="alert"><%= alert %></span></p>
 </div>
 </nav>

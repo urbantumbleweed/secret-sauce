@@ -325,7 +325,16 @@ User.create!([
   {email: "shaina@example.come", encrypted_password: "$2a$10$KqAq8cI7ewGR47aZRhuk0.fEpbdajidTtsTJO3vrbhpULqb1OtJK2", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2014-02-27 21:08:24", last_sign_in_at: "2014-02-27 21:08:24", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", first_name: "Shaina", last_name: "Conners", school_id: 16, phone_number: "123-456-7890", active: true, password: 'password'}
 ])
 
-
-
-
-
+Status.create!([
+  {position_id: 1, user_id: 1, quiz_1: nil, quiz_2: nil, quiz_3: nil},
+  {position_id: 2, user_id: 2, quiz_1: nil, quiz_2: nil, quiz_3: nil},
+  {position_id: 1, user_id: 3, quiz_1: nil, quiz_2: nil, quiz_3: nil},
+  {position_id: 1, user_id: 4, quiz_1: nil, quiz_2: nil, quiz_3: nil},
+  {position_id: 1, user_id: 5, quiz_1: nil, quiz_2: nil, quiz_3: nil},
+  {position_id: 1, user_id: 6, quiz_1: nil, quiz_2: nil, quiz_3: nil},
+  {position_id: 1, user_id: 7, quiz_1: nil, quiz_2: nil, quiz_3: nil},
+  {position_id: 1, user_id: 8, quiz_1: nil, quiz_2: nil, quiz_3: nil},
+  {position_id: 1, user_id: 9, quiz_1: nil, quiz_2: nil, quiz_3: nil},
+  {position_id: 1, user_id: 10, quiz_1: nil, quiz_2: nil, quiz_3: nil},
+  {position_id: 1, user_id: 11, quiz_1: nil, quiz_2: nil, quiz_3: nil}
+])
