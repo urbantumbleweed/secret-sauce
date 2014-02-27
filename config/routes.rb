@@ -15,6 +15,10 @@ SecretSauce::Application.routes.draw do
   post '/positions/next' => 'positions#next', as: :next_page
 
 
+  get '/schools/admin/all' => 'schools#admin'
+
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

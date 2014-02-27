@@ -1,0 +1,28 @@
+<div class="row school-social">
+  <% @schools.each do |school|%>
+    <div class="col-md-4">
+      <h1><a href="/schools/<%= school.name %>"><%= school.name %></a></h1>
+
+      <ul>
+        <% if school.fbUrl %>
+          <li><a href="<%= school.fbUrl %>">Facebook</a></li>
+        <% end %>
+
+        <% if school.twitterUrl %>
+          <li><a href="<%= school.twitterUrl %>">Twitter</a></li>
+        <% end %>
+
+        <% if school.instagramUrl %>
+          <li><a href="<%= school.instagramUrl %>">Instagram</a></li>
+        <% end %>
+
+        <% if school.spoonUrl %>
+          <li><a href="<%= school.spoonUrl %>">Spoon</a></li>
+        <% end %>
+        <% if school.users != [] %>
+          <li><%= school.users.first.first_name %></a></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
