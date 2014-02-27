@@ -16,7 +16,7 @@ class SchoolsController < ApplicationController
 
 
   def school_params
-    params.require(:school).permit(:name, :shortname, :fb_url, :twitter_url, :spoon_url, :instagram_url)
+    params.require(:school).permit(:name, :shortname, :facebook_url, :twitter_url, :spoon_url, :instagram_url)
   end
 
 end

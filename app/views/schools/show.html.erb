@@ -19,4 +19,27 @@
 </ul>
 
 
+<div>
+  
+<h3>Active Users:</h3>
+  <% if school.users != [] %>
+    <% school.users.each do |user| %>
+     <div><h1><%= user.name %></h1>
+      <ul>
+        <% if user.phone_number.empty? == false %>
+          <li><%= user.phone_number %></li>
+        <% end %>
+        <% if user.email %>
+          <li><%= user.email %></li>
+        <% end %>
+      </ul>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+
+
+
+
 

@@ -19,8 +19,17 @@
         <% if school.spoon_url %>
           <li><a href="<%= school.spoon_url %>">Spoon</a></li>
         <% end %>
+        <li>Active Users:
         <% if school.users != [] %>
-          <li><%= school.users.count %></a></li>
+          <%= school.count_active %>
+        <% else %>
+          0
+        <% end %>
+        <li>Total Users:
+        <% if school.users != [] %>
+          <%= school.users.count %>
+        <% else %>
+          0
         <% end %>
       </ul>
     </div>
