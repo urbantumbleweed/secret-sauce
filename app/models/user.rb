@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 	end
 
 	def position
-		return self.positions.last.name
+		return self.positions.last
 	end
 
 

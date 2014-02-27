@@ -12,6 +12,7 @@ SecretSauce::Application.routes.draw do
   get '/editorial/:position/:page' => 'positions#editorial', as: :editorial
   get '/marketing/:position/:page' => 'positions#marketing', as: :marketing
   get '/photo/:position/:page' => 'positions#photo', as: :photo
+  post '/positions/next' => 'positions#next', as: :next_page
 
 
   # Example of regular route:

@@ -20,4 +20,18 @@ class PositionsController < ApplicationController
 		@page = params[:page]
 	end
 
+	def next
+		track = params[:track]		
+		page = params[:page]
+		position = params[:position]
+		if current_user.position == position
+			unless current_user.pages.include?(page)
+				current_user.pages << page
+			end
+		end
+		page = position.next_page(page)
+
+		redirect_to "/#{track}/#{position}/#{page}" 
+	end
+
 end

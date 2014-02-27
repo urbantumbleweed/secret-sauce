@@ -1,2 +1,8 @@
-<h1>So... you're a <%= current_user.position %></h1>
 
+
+<form action="<%= next_page_path %>" method="post" >
+	<input type="hidden" name="track" value="editorial">
+	<input type="hidden" name="position" value="<%= @position %>">
+	<input type="hidden" name="page" value="<%= @page %>">
+	<button class="btn btn-primary">Next</button>
+</form>

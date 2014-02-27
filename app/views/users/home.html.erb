@@ -1,1 +1,34 @@
-<h1>Hi <%= @user.first_name%>!</h1>
+<h1>So, <%= current_user.first_name %>... you're the <%= current_user.position.name %>.</h1>
+
+
+<h4>Your responsibilities include</h4>
+
+
+<% case current_user.position %>
+	<% when 'editor-in-chief' %>
+	<p>being awesome</p>
+
+	<% when 'managing editor' %>
+	<p>being cool</p>
+
+	<% when 'copy editor' %>
+	<p>being wonderful</p>
+	
+	<% when 'writer' %>
+	<p>being rad</p>
+	
+	<% when 'national contributor' %>
+	<p>being around</p>
+
+	<% else %>
+	<p>... who do you think you are?</p>
+
+<% end %>
+
+<% if current_user.position == 'national contributor' %>
+
+<% else %>
+	
+	<a href="<%= current_user.position.name %>/<%= %>"></a>
+
+<% end %>

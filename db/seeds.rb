@@ -9,7 +9,6 @@
 Position.create({
 	name: 'editor-in-chief',
 	pages: [
-		'description', 
 		'leadership', 
 		'tone', 
 		'style',
@@ -31,7 +30,6 @@ Position.create({
 Position.create({
 	name: 'managing-editor',
 	pages: [
-		'description', 
 		'tone', 
 		'style',
 		'process',
