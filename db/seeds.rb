@@ -6,10 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Position.create({
-	name: 'editor-in-chief',
-	pages: [
-		'description', 
+eic = Position.create({
+	name: 'editor-in-chief'
+})
+
+me = Position.create({
+	name: 'managing-editor',
+})
+
+
+page_names = [
 		'leadership', 
 		'tone', 
 		'style',
@@ -26,25 +32,13 @@ Position.create({
 		'slideshow',
 		'sections'
 	]
-})
 
-Position.create({
-	name: 'managing-editor',
-	pages: [
-		'description', 
-		'tone', 
-		'style',
-		'process',
-		'spreadsheet',
-		'login',
-		'profile',
-		'post',
-		'add-photos',
-		'add-video',
-		'slideshow',
-		'sections'
-	]
-})
+page_names.each do |name|
+	page = Page.create(name: name)
+	eic.pages << page
+	me.pages << page
+end
+
 
 School.create({
 	name: "Northwestern",

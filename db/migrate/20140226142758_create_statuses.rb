@@ -6,7 +6,6 @@ class CreateStatuses < ActiveRecord::Migration
       t.integer :quiz_1
       t.integer :quiz_2
       t.integer :quiz_3
-      t.string  :pages, array: true, default: '{}'
       t.timestamps
     end
   end

@@ -11,12 +11,25 @@ class User < ActiveRecord::Base
 
 
 	def name 
-	 return self.first_name + self.last_name
+	 return self.first_name + " " + self.last_name
 	end
 
 	def position
-		return self.positions.last.name
+		return self.positions.last
 	end
+
+	def status
+		return self.statuses.last
+	end
+
+	def update_completion(position, page)
+		if self.position == position
+			unless self.status.pages.include?(page)
+				self.status.pages << page
+			end
+		end
+	end
+
 
 
 end

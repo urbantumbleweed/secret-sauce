@@ -1,0 +1,28 @@
+
+
+.track-nav {
+	border: 1px solid black;
+	padding:1px 0px;
+	text-align:center;
+}
+
+
+.track-nav a {
+	float:left;
+	margin:1px;
+	color:white;
+	height: 40px;
+}
+
+.editorial a {
+	background: #00a2ca;
+	text-decoration: none;
+}
+
+.editorial a:hover {
+	background: #99daea;
+}
+
+a.completed {
+	background: #99daea;
+}

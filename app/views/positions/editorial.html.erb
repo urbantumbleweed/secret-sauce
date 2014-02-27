@@ -1,30 +1,27 @@
-<!-- 		'description', 
-		'leadership', 
-		'tone', 
-		'style',
-		'process',
-		'spreadsheet',
-		'login',
-		'add-user',
-		'update-staff',
-		'profile',
-		'post',
-		'final-checks',
-		'add-photos',
-		'add-video',
-		'slideshow',
-		'sections'
- -->
+<style>
+
+ul.nav-<%= @position.pages.count %> a {
+	width: <%= (99 / @position.pages.count.to_f) - 0.2 %>%;
+}
+	
+</style>
 
 <!-- Track Navigation Bar -->
 
-<ul class="editorial-nav nav-<% @position.pages.count %>">
+
+<ul class="track-nav editorial nav-<%= @position.pages.count %> list-inline clearfix">
 <% @position.pages.each do |page| %>
-	<a href='/editorial/<%= @position.name %>/<%= page %>'>
-		<li><%= page.gsub('-',' ') %></li>
+	<a class="test <% if current_user.status.pages.include?(page) %> completed <% end %>" href="/editorial/<%= @position.name %>/<%= page.name %>">
+		<li><%= page.name.gsub('-',' ') %></li>
 	</a>
 <% end %>
-
+</ul>
 <!-- Body -->
+<%= render "positions/editorial/#{@page}" %>
 
-<%= render "editorial/_#{@page}" %>
+<form action="<%= next_page_path %>" method="post" >
+	<input type="hidden" name="track" value="editorial">
+	<input type="hidden" name="position" value="<%= @position.id %>">
+	<input type="hidden" name="page" value="<%= @page %>">
+	<button class="btn btn-primary">Next</button>
+</form>

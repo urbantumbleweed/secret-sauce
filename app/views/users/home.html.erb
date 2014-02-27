@@ -1,1 +1,44 @@
-<h1>Hi <%= @user.first_name%>!</h1>
+<h1>So, <%= current_user.first_name %>... you're the <%= current_user.position.name %>.</h1>
+
+<!--  SEE YOUR RESPONSIBILITIES *******************************************************      -->
+
+
+<h4>Your responsibilities include</h4>
+
+
+<% case current_user.position.name %>
+	<% when 'editor-in-chief' %>
+	<p>being awesome</p>
+
+	<% when 'managing editor' %>
+	<p>being cool</p>
+
+	<% when 'copy editor' %>
+	<p>being wonderful</p>
+	
+	<% when 'writer' %>
+	<p>being rad</p>
+	
+	<% when 'national contributor' %>
+	<p>being around</p>
+
+	<% else %>
+	<p>... who do you think you are?</p>
+
+<% end %>
+
+<!--  SEE YOUR PROGRESS *******************************************************      -->
+
+
+
+<!--  BEGINYOUR TRACK *******************************************************      -->
+
+<% if current_user.position == 'national contributor' %>
+
+<% else %>
+	<a class="btn btn-primary" href="<%= current_user.position.track %>/<%= current_user.position.name %>/<%= current_user.position.next_page(current_user.status.pages.last).name %>">My Track</a>
+
+<% end %>
+
+
+<!-- QUICKLINKS AND STUFF ON YOUR SCHOOL *******************************************************      -->
