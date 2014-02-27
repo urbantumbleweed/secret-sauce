@@ -8,7 +8,7 @@ SecretSauce::Application.routes.draw do
   resources :schools, :only => [:index, :edit]
   resources :positions, :only => [:index, :show]
 
-  get '/schools/:name' => 'schools#show', as: :school
+  get '/schools/:shortname' => 'schools#show', as: :school
   get '/editorial/:position/:page' => 'positions#editorial', as: :editorial
   get '/marketing/:position/:page' => 'positions#marketing', as: :marketing
   get '/photo/:position/:page' => 'positions#photo', as: :photo
