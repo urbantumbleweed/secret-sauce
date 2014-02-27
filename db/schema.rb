@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20140227145430) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "pages",      default: [], array: true
   end
 
   create_table "schools", force: true do |t|
