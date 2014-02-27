@@ -1,6 +1,10 @@
 class PositionsController < ApplicationController
 	before_filter :authenticate_user!
 	
+	def home
+		
+	end
+
 	def index
 		@positions = Position.all
 	end
