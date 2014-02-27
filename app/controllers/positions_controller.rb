@@ -23,15 +23,16 @@ class PositionsController < ApplicationController
 	def next
 		track = params[:track]		
 		page = params[:page]
-		position = params[:position]
+		position = Position.find(params[:position])
 		if current_user.position == position
-			unless current_user.pages.include?(page)
-				current_user.pages << page
+			unless current_user.status.pages.include?(page)
+				current_user.status.pages =  current_user.status.pages + [page]
+					# THIS ISNT WORKING
 			end
 		end
 		page = position.next_page(page)
 
-		redirect_to "/#{track}/#{position}/#{page}" 
+		redirect_to "/#{track}/#{position.name}/#{page}" 
 	end
 
 end

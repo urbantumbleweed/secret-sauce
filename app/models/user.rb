@@ -11,11 +11,15 @@ class User < ActiveRecord::Base
 
 
 	def name 
-	 return self.first_name + self.last_name
+	 return self.first_name + " " + self.last_name
 	end
 
 	def position
 		return self.positions.last
+	end
+
+	def status
+		return self.statuses.last
 	end
 
 

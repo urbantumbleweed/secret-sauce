@@ -2,22 +2,26 @@ class Position < ActiveRecord::Base
 	has_many :statuses
 
 	def next_page(page)
-		num = self.pages.index(page)
-		next_page = num + 1
-		if next_page
-			return next_page
+		if page == nil
+			return self.pages[0]
 		else
-			return 'complete'
+			num = self.pages.index(page)
+			next_page = ( num + 1 )
+			if next_page <= self.pages.count
+				return self.pages[next_page]
+			else
+				return 'complete'
+			end
 		end
 	end
 
 	def track
-		if self.name =~ 'editor' || self.name == 'writer'
+		if self.name.include?('editor') || self.name.include?('writer')
 			return 'editorial'
-		elsif self.name =~ 'photo' || self.name == 'video'
+		elsif self.name.include?('photo') || self.name.include?('video')
 			return 'photo'
-		elsif self.name =~ 'photo' || self.name == 'video'
-			return 'photo'
+		elsif self.name.include?('marketing') || self.name.include?('business') || self.name.include?('treasurer')
+			return 'marketing'
 		end
 	end
 	

@@ -28,7 +28,6 @@
 <% if current_user.position == 'national contributor' %>
 
 <% else %>
-	
-	<a href="<%= current_user.position.name %>/<%= %>"></a>
+	<a href="<%= current_user.position.track %>/<%= current_user.position.name %>/<%= current_user.position.next_page(current_user.status.pages.last)%>">Next</a>
 
 <% end %>
