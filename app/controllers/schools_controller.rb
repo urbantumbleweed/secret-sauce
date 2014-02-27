@@ -7,7 +7,7 @@ class SchoolsController < ApplicationController
 	end
 
   def show
-    @school = School.find_by_name(params[:shortname])
+    @school = School.find_by_shortname(params[:shortname])
   end
 
   def admin
