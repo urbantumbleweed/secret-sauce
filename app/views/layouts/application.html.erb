@@ -5,13 +5,14 @@
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <title>Spoon University Secret Sauce</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <nav class="navbar navbar-default" role="navigation">
  <div class="container">
 	<div id="logo"></div>
-	<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+	<%= link_to "Log out", destroy_session_path(:user), :method => :delete %>
 <p><span class="notice"><%= notice %></span><span class="alert"><%= alert %></span></p>
 </div>
 </nav>
