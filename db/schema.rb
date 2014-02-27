@@ -36,15 +36,17 @@ ActiveRecord::Schema.define(version: 20140227145430) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "pages",      default: [], array: true
   end
 
   create_table "schools", force: true do |t|
     t.string   "name"
-    t.string   "fbUrl"
-    t.string   "twitterUrl"
-    t.string   "spoonUrl"
-    t.string   "instagramUrl"
+    t.string   "shortname"
+    t.string   "facebook_url"
+    t.string   "twitter_url"
+    t.string   "spoon_url"
+    t.string   "instagram_url"
+    t.string   "color_1",       default: "#000"
+    t.string   "color_2",       default: "#fff"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
