@@ -45,3 +45,25 @@ Position.create({
 		'sections'
 	]
 })
+
+School.create({
+	name: "Northwestern",
+	instagramUrl: 'Instagram URL',
+	spoonUrl: 'Spoon URL',
+	fbUrl: 'Facebook URL'
+})
+
+School.create({
+	name: "NYU",
+	twitterUrl: "Twitter URL",
+	instagramUrl: 'Instagram URL',
+	spoonUrl: 'Spoon URL',
+	fbUrl: 'Facebook URL',
+})
+
+School.create({
+	name: "Michigan",
+	spoonUrl: 'Spoon URL',
+	fbUrl: 'Facebook URL'
+})
+
