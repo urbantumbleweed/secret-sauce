@@ -36,11 +36,14 @@ ActiveRecord::Schema.define(version: 20140227145430) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "pages",      default: [], array: true
   end
 
   create_table "schools", force: true do |t|
     t.string   "name"
+    t.string   "fbUrl"
+    t.string   "twitterUrl"
+    t.string   "spoonUrl"
+    t.string   "instagramUrl"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -51,7 +54,6 @@ ActiveRecord::Schema.define(version: 20140227145430) do
     t.integer  "quiz_1"
     t.integer  "quiz_2"
     t.integer  "quiz_3"
-    t.string   "pages",       default: [], array: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

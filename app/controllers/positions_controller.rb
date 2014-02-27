@@ -22,17 +22,13 @@ class PositionsController < ApplicationController
 
 	def next
 		track = params[:track]		
-		page = params[:page]
+		page = Page.find_by_name(params[:page]) 
+		# ^^^ THIS ONLY WORKS IF THERES ONLY ONE PAGE WITH A NUME
 		position = Position.find(params[:position])
-		if current_user.position == position
-			unless current_user.status.pages.include?(page)
-				current_user.status.pages += [page]
-				current_user.status.pages_will_change!
-			end
-		end
+		current_user.update_completion(position,page)
 		page = position.next_page(page)
 
-		redirect_to "/#{track}/#{position.name}/#{page}" 
+		redirect_to "/#{track}/#{position.name}/#{page.name}" 
 	end
 
 end

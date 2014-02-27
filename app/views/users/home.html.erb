@@ -1,5 +1,7 @@
 <h1>So, <%= current_user.first_name %>... you're the <%= current_user.position.name %>.</h1>
 
+<!--  SEE YOUR RESPONSIBILITIES *******************************************************      -->
+
 
 <h4>Your responsibilities include</h4>
 
@@ -25,9 +27,18 @@
 
 <% end %>
 
+<!--  SEE YOUR PROGRESS *******************************************************      -->
+
+
+
+<!--  BEGINYOUR TRACK *******************************************************      -->
+
 <% if current_user.position == 'national contributor' %>
 
 <% else %>
-	<a class="btn btn-primary" href="<%= current_user.position.track %>/<%= current_user.position.name %>/<%= current_user.position.next_page(current_user.status.pages.last)%>">My Track</a>
+	<a class="btn btn-primary" href="<%= current_user.position.track %>/<%= current_user.position.name %>/<%= current_user.position.next_page(current_user.status.pages.last).name %>">My Track</a>
 
 <% end %>
+
+
+<!-- QUICKLINKS AND STUFF ON YOUR SCHOOL *******************************************************      -->

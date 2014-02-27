@@ -22,5 +22,14 @@ class User < ActiveRecord::Base
 		return self.statuses.last
 	end
 
+	def update_completion(position, page)
+		if self.position == position
+			unless self.status.pages.include?(page)
+				self.status.pages << page
+			end
+		end
+	end
+
+
 
 end

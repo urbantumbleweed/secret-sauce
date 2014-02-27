@@ -6,11 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Position.create({
+eic = Position.create({
 	name: 'editor-in-chief'
 })
 
-Position.create({
+me = Position.create({
 	name: 'managing-editor',
 })
 
@@ -34,8 +34,9 @@ page_names = [
 	]
 
 page_names.each do |name|
-	Page.create(name: name)
-	
+	page = Page.create(name: name)
+	eic.pages << page
+	me.pages << page
 end
 
 

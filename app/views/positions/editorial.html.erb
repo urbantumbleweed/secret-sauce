@@ -1,26 +1,17 @@
-<!-- 		'description', 
-		'leadership', 
-		'tone', 
-		'style',
-		'process',
-		'spreadsheet',
-		'login',
-		'add-user',
-		'update-staff',
-		'profile',
-		'post',
-		'final-checks',
-		'add-photos',
-		'add-video',
-		'slideshow',
-		'sections'
- -->
+<style>
+
+ul.nav-<%= @position.pages.count %> a {
+	width: <%= (99 / @position.pages.count.to_f) - 0.2 %>%;
+}
+	
+</style>
 
 <!-- Track Navigation Bar -->
 
+
 <ul class="track-nav editorial nav-<%= @position.pages.count %> list-inline clearfix">
 <% @position.pages.each do |page| %>
-	<a class="test <% if current_user.status.pages.include?(page) %> completed <% end %>" href="/editorial/<%= @position.name %>/<%= page %>">
+	<a class="test <% if current_user.status.pages.include?(page) %> completed <% end %>" href="/editorial/<%= @position.name %>/<%= page.name %>">
 		<li><%= page.name.gsub('-',' ') %></li>
 	</a>
 <% end %>
