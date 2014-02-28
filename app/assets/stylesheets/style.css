@@ -97,11 +97,34 @@ a.completed {
 	margin:0px;
 }
 
+.col-md-3:nth-child(3n+1){
+		clear:left;
+	}
 
-.col-md-3:nth-child(4n+2), .col-sm-4:nth-child(3n+2) {
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+
+
+ }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	.col-sm-4:nth-child(3n+1) {
+	clear:none;
+	}
+
+	.col-sm-4:nth-child(4n+1) {
 	clear:left;
-}
+	}
 
+ }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+	
+ }
 
 
 
