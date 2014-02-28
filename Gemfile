@@ -32,6 +32,7 @@ gem 'pry'
 
 gem "font-awesome-rails"
 
+gem "handlebars", "~> 0.6.0"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'

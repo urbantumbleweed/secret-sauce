@@ -3,11 +3,10 @@ var quizApp = quizApp || {}
 quizApp.AnswerView = Backbone.View.extend({ 
 	
 	tagName: 'ul',
-	template: $("#answerTemplate").html(),
+	template: Handlebars.compile($("#answerTemplate").html()),
 	
 	render: function(){
-		var tmpl = _.template(this.template);
-		this.$el.append(tmpl(this.model.toJSON()));
+		this.$el.append(this.template(this.model.toJSON()));
 		return this;
 	}
 

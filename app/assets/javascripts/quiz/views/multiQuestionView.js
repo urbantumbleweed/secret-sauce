@@ -2,7 +2,7 @@ var quizApp = quizApp || {}
 
 quizApp.MultiQuestionView = Backbone.View.extend({
 	tagName: 'div',
-	template: $("#multiQuestionTemplate").html(),
+	template: Handlebars.compile($("#multiQuestionTemplate").html()),
 	
 	initialize: function(){
 		
@@ -14,8 +14,8 @@ quizApp.MultiQuestionView = Backbone.View.extend({
 	},
 	
 	render: function(){
-		var tmpl = _.template(this.template);
-		this.$el.append(tmpl(this.model.toJSON()));
+		console.log(this.model.toJSON())
+		this.$el.append(this.template(this.model.toJSON()));
 		return this;
 	},
 	

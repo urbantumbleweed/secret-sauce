@@ -4,7 +4,7 @@ var quizApp = quizApp || {}
 quizApp.QuizView = Backbone.View.extend({
 	
 	tagName: 'div',
-	template: $("#quizTemplate").html(),
+	template: Handlebars.compile($("#quizTemplate").html()),
 	questionIndex: 0,
 	questionCount: 0,
 	
@@ -22,41 +22,31 @@ quizApp.QuizView = Backbone.View.extend({
 		// get the questions array, and loop through it
 		// assign the question's array index as its id
 		// and add it to the collection
-		this.questions = new quizApp.QuestionCollection();
-		_.each(this.model.get('questions'), function(question, index){
-			question.id = index;
-			parent.questions.add(question);
-			parent.questionCount += 1;
-		});
+		// this.questions = new quizApp.QuestionCollection();
+		// _.each(this.model.get('questions'), function(question, index){
+		// 	question.id = index;
+		// 	parent.questions.add(question);
+		// 	parent.questionCount += 1;
+		// });
 		
 		
 	},
 	
 	render: function(){
-		var tmpl = _.template(this.template);
-		this.$el.append(tmpl(this.model.toJSON()));	
+		this.$el.append(this.template(this.model.toJSON()));	
 		return this;
 	},
 	
 	renderQuestion: function(){
-		var question = this.questions.get(this.questionIndex);
-		// switch (question.get('type')) {
-			// case 'match': 
-			// 	this.currentQuestion = new quizApp.QuestionView({
-			// 		model: question,
-			// 		el: this.$el.find('.question'),
-			// 	});
-			// 	break;
-			// case 'multi':
-				this.currentQuestion = new quizApp.MultiQuestionView({
-					model: question,
-					el: this.$el.find('.question'),
-				});
-		// 		break;
-		// }
-		
-		this.currentQuestion.model.set('parentView', this);
-		this.currentQuestion.model.set('parentModel', this.model);
+		var questionData = this.model.get('questions')[this.questionIndex];
+		var question = new quizApp.Question(questionData);
+		console.log(question)
+		this.currentQuestion = new quizApp.MultiQuestionView({
+			model: question,
+			el: this.$el.find('.question'),
+		});	
+		// this.currentQuestion.model.set('parentView', this);
+		// this.currentQuestion.model.set('parentModel', this.model);
 		this.currentQuestion.render();
 		this.listenTo(this.currentQuestion.model, 'change', this.updateScore);
 		this.listenTo(this.currentQuestion, 'nextQuestion', this.nextQuestion);
@@ -64,7 +54,7 @@ quizApp.QuizView = Backbone.View.extend({
 	
 	renderFinalScore: function(){
 		this.$el.find('.scores').remove();
-		var tmpl = _.template($('#finalScoreTemplate').html());
+		var tmpl = Handlebars.compile($('#finalScoreTemplate').html());
 		this.$el.find('.question').html(tmpl(this.model.toJSON()));
 	},
 
@@ -85,7 +75,7 @@ quizApp.QuizView = Backbone.View.extend({
 	nextQuestion: function(){
 		this.questionIndex += 1;
 		this.currentQuestion.close();
-		if (this.questionIndex >= this.questionCount) {
+		if (this.questionIndex >= this.model.get('questions').length) {
 			this.renderFinalScore();
 		} else {
 			this.renderQuestion();
@@ -94,3 +84,17 @@ quizApp.QuizView = Backbone.View.extend({
 	}
 	
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+

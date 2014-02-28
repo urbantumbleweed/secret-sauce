@@ -12,4 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require lodash.min
+//= require backbone.min
+//= require handlebars
 //= require_tree .
+
+
+
