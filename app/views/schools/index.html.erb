@@ -1,6 +1,6 @@
 <div class="row school-social">
   <% @schools.each do |school|%>
-  <div class="col-sm-4">
+  <div class="col-sm-4 col-md-3">
     <div class="panel panel-default">
       <div class="panel-heading" style="background: <%= school.color_1 %>"><a style="color: <%= school.color_2 %>" href="/schools/<%= school.shortname %>"><%= school.name %></a></div>
       <div class="panel-body">
@@ -13,7 +13,7 @@
           <% end %>
 
           <% if school.twitter_url %>
-          <li><a href="<%= school.twitter_url %>" class="twitter-follow-button" data-show-count="false" data-lang="en" data-size="large">Follow @<%= school.name %></a></li>
+          <li><a href="<%= school.twitter_url %>" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow</a></li>
           <% end %>
 
           <% if school.instagram_url %>

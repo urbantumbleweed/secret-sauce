@@ -11,7 +11,13 @@ class SchoolsController < ApplicationController
   end
 
   def edit
-    @school = School.find_by_shortname(params[:shortname])
+    @school = School.find(params[:id])
+  end
+
+  def update
+    school = School.find(params[:id])
+    school.update_attributes(school_params)
+    redirect_to "/schools/#{school.shortname}"
   end
 
   def create
@@ -22,9 +28,10 @@ class SchoolsController < ApplicationController
     @schools = School.all
   end
 
+  private 
 
   def school_params
-    params.require(:school).permit(:name, :shortname, :facebook_url, :twitter_url, :spoon_url, :instagram_url)
+    params.require(:school).permit(:name, :shortname, :facebook_url, :twitter_url, :spoon_url, :instagram_url, :color_1, :color_2)
   end
 
 end

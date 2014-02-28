@@ -34,8 +34,4 @@ class PositionsController < ApplicationController
 		redirect_to thanks_path
 	end
 
-	def thanks
-
-	end
-
 end

@@ -9,7 +9,13 @@ class HomeController < ApplicationController
 
 	def welcome
 		user_session['welcomed'] = true
-		
+	end
+
+	def thanks
+	end
+
+	def staff
+		@students = User.active
 	end
 
 end
