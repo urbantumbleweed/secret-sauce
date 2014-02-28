@@ -55,14 +55,14 @@
         <div class="span4">
           <div class="questionCtn">
             {{#each options }}
-              {{#each this}}
-                 {{#if (this) }}
+             
+             
                   <label class="radio">
                      <input type="radio" name="options" value="{{ this }}">
                       {{ this }}
                   </label>
-                {{/if}} 
-              {{/each}}
+            
+          
             {{/each}}
           </div>
           <div class="answerCtn" style="display:none;">
