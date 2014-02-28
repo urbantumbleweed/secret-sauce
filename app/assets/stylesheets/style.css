@@ -23,16 +23,23 @@ body {
 	padding:1px 0px;
 	text-align:center;
 	border-radius: 2px;
+	overflow: hidden;
 }
 
 .track-nav a {
 	float:left;
+	font-size:10px;
+	text-transform:uppercase;
 	margin:1px;
 	color:white;
 	height: 40px;
-	padding:10px 0;
+	padding:6px 0 10px;
 	border-radius: 1px;
 	text-decoration: none;
+}
+
+.track-nav li {
+	line-height: 27px;
 }
 
 .editorial a {

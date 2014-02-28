@@ -45,5 +45,11 @@ class User < ActiveRecord::Base
 	end
 
 
+	def percent_complete
+		completed = self.status.pages.count.to_f
+		total = self.position.pages.count.to_f
+		percent_complete = (completed/total)*100
+	end
+
 
 end
