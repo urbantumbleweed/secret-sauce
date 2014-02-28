@@ -1,0 +1,8 @@
+<% @positions.each do |position| %>
+<h3><%= position.name %></h3>
+<ul class="list-unstyled">
+	<% position.pages.each do |page| %>
+	<li><a href="/<%= position.track(page) %>/<%= position.shortname %>/<%= page.shortname %>"><%= page.name %></a></li>
+	<% end %>
+</ul>
+<% end %>
