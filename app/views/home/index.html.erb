@@ -1,2 +1,57 @@
-<h1>It's a secret</h1>
-<i class="fa fa-home fa-3x"></i>
+
+<!--  SEE YOUR RESPONSIBILITIES *******************************************************      -->
+<div class="row">
+<div class="col-md-8 profile">
+	<h1>So, <%= current_user.first_name %>... you're the <%= current_user.position.name %>.</h1>
+
+<p>You're responsible for: </p>
+
+
+<% case current_user.position.name %>
+	<% when 'editor-in-chief' %>
+	<h4>being awesome</h4>
+
+	<% when 'managing editor' %>
+	<h4>being cool</h4>
+
+	<% when 'copy editor' %>
+	<h4>being wonderful</h4>
+	
+	<% when 'writer' %>
+	<h4>being rad</h4>
+	
+	<% when 'national contributor' %>
+	<h4>being around</h4>
+
+	<% else %>
+	<h4>... who do you think you are?</h4>
+
+<% end %>
+
+<!--  SEE YOUR PROGRESS *******************************************************      -->
+
+
+
+<!--  BEGINYOUR TRACK *******************************************************      -->
+
+<% if current_user.position == 'national contributor' %>
+
+<% else %>
+	<a class="btn btn-primary btn-lg" href="<%= current_user.position.track %>/<%= current_user.position.name %>/<%= current_user.position.next_page(current_user.status.pages.last).shortname %>">My Track</a>
+
+<% end %>
+
+</div>
+<!-- QUICKLINKS AND STUFF ON YOUR SCHOOL *******************************************************      -->
+<div class="col-md-4 quicklinks">
+	<a class="btn btn-primary" href="/schools/<%= current_user.school.shortname %>"><%= current_user.school.name %></a>
+	<a class="btn btn-primary" href="/all-staff">All Staffers Everywhere</a>
+	<a class="btn btn-primary" href="#">Publishing Spreadsheet</a>
+	<a class="btn btn-primary" href="#">FAQ</a>
+	<a class="btn btn-primary" href="#">Brand Assets</a>
+</div>
+</div>
+
+
+
+

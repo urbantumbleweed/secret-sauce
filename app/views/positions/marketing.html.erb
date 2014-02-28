@@ -1,1 +1,32 @@
-marketing.html.erb
+<style>
+
+ul.nav-<%= @position.pages.count %> a {
+	width: <%= (99 / @position.pages.count.to_f) - 0.2 %>%;
+}
+	
+</style>
+
+<!-- Track Navigation Bar -->
+
+
+<ul class="track-nav marketing nav-<%= @position.pages.count %> list-inline clearfix">
+	<div>
+<% @position.pages.each do |page| %>
+	<a class="test <% if current_user.status.pages.include?(page) %> completed <% end %>" href="/marketing/<%= @position.name %>/<%= page.name %>">
+		<li><%= page.name.gsub('-',' ') %></li>
+	</a>
+<% end %>
+</div>
+</ul>
+<!-- Body -->
+<div class="track-body">
+<%= render "positions/marketing/#{@page}" %>
+</div>
+
+<form action="<%= next_page_path %>" method="post" >
+	<input type="hidden" name="track" value="marketing">
+	<input type="hidden" name="position" value="<%= @position.id %>">
+	<input type="hidden" name="page" value="<%= @page %>">
+	<button class="btn btn-primary">Next</button>
+</form>
+ 

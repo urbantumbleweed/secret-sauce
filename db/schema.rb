@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20140227145430) do
 
   create_table "pages", force: true do |t|
     t.string   "name"
+    t.string   "shortname"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

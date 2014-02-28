@@ -9,13 +9,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
  <div class="container">
-	<span id="logo"></span>
-	<span><%= link_to "Log out", destroy_session_path(:user), :method => :delete %></span>
-<p><span class="notice"><%= notice %></span><span class="alert"><%= alert %></span></p>
+	<a href="/" id="logo"><%= image_tag "logo.png" %></a>
+	<span class="navbar-right"><%= link_to "Log out", destroy_session_path(:user), :method => :delete %></span>
 </div>
 </nav>
+<% if notice %>
+  <p class="alert alert-notice"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-error"><%= alert %></p>
+<% end %>
 <div class="container">
 <%= yield %>
 </div>

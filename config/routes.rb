@@ -3,8 +3,8 @@ SecretSauce::Application.routes.draw do
 
 
   devise_for :users, controllers: { registrations: "users/registrations" } 
-
-  root :to => "positions#home"
+  
+  root :to => "home#index"
 
   resources :schools, :only => [:index, :edit]
   resources :positions, :only => [:index, :show]
@@ -15,7 +15,7 @@ SecretSauce::Application.routes.draw do
   get '/photo/:position/:page' => 'positions#photo', as: :photo
   post '/positions/next' => 'positions#next', as: :next_page
 
-
+  get '/welcome' => 'home#welcome', as: :welcome
   get '/schools/admin/all' => 'schools#admin'
 
 

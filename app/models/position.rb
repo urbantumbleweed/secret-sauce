@@ -17,13 +17,19 @@ class Position < ActiveRecord::Base
 	end
 
 	def track
-		if self.name.include?('editor') || self.name.include?('writer')
-			return 'editorial'
-		elsif self.name.include?('photo') || self.name.include?('video')
-			return 'photo'
-		elsif self.name.include?('marketing') || self.name.include?('business') || self.name.include?('treasurer')
-			return 'marketing'
-		end 
+		if self.name.include?('contributor')
+			if self.pages.last.index > self.pages.index() 
+			else
+			end
+		else
+			if self.name.include?('editor') || self.name.include?('writer')
+				return 'editorial'
+			elsif self.name.include?('photo') || self.name.include?('video')
+				return 'photo'
+			elsif self.name.include?('marketing') || self.name.include?('business') || self.name.include?('treasurer')
+				return 'marketing'
+			end
+		end
 	end
 	
 end
