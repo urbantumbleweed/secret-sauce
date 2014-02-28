@@ -61,5 +61,10 @@ a.completed {
 	color:grey;
 }
 
+.styles-images div img{
+	width: 90%;
+	padding-bottom: 15%;
+}
+
 
 
