@@ -51,3 +51,15 @@ a.completed {
 .track-body h1 {
 	text-transform: capitalize;
 }
+
+.alum-inactive{
+	/*color:red;*/
+	visibility: hidden;
+}
+
+.alum-active{
+	color:grey;
+}
+
+
+

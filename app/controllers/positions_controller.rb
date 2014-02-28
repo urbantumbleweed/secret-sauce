@@ -8,7 +8,7 @@ class PositionsController < ApplicationController
 
 	def editorial
 		@position = Position.find_by_name(params[:position])
-		@page = params[:page]
+		@page = Page.find_by_shortname(params[:page])
 	end
 
 	def marketing
@@ -23,13 +23,12 @@ class PositionsController < ApplicationController
 
 	def next
 		track = params[:track]		
-		page = Page.find_by_name(params[:page]) 
-		# ^^^ THIS ONLY WORKS IF THERES ONLY ONE PAGE WITH A NUME
+		page = Page.find_by_shortname(params[:page])
 		position = Position.find(params[:position])
-		current_user.update_completion(position,page)
+		current_user.update_completion(position, page)
 		page = position.next_page(page)
 
-		redirect_to "/#{track}/#{position.name}/#{page.name}" 
+		redirect_to "/#{track}/#{position.name}/#{page.shortname}" 
 	end
 
 end

@@ -12,7 +12,7 @@ ul.nav-<%= @position.pages.count %> a {
 <ul class="track-nav marketing nav-<%= @position.pages.count %> list-inline clearfix">
 	<div>
 <% @position.pages.each do |page| %>
-	<a class="test <% if current_user.status.pages.include?(page) %> completed <% end %>" href="/marketing/<%= @position.name %>/<%= page.name %>">
+	<a class="test <% if current_user.status.pages.include?(page) %> completed <% end %>" href="/marketing/<%= @position.name %>/<%= page.shortname %>">
 		<li><%= page.name.gsub('-',' ') %></li>
 	</a>
 <% end %>
@@ -20,13 +20,13 @@ ul.nav-<%= @position.pages.count %> a {
 </ul>
 <!-- Body -->
 <div class="track-body">
-<%= render "positions/marketing/#{@page}" %>
+<%= render "positions/marketing/#{@page.shortname}" %>
 </div>
 
 <form action="<%= next_page_path %>" method="post" >
 	<input type="hidden" name="track" value="marketing">
 	<input type="hidden" name="position" value="<%= @position.id %>">
-	<input type="hidden" name="page" value="<%= @page %>">
+	<input type="hidden" name="page" value="<%= @page.shortname %>">
 	<button class="btn btn-primary">Next</button>
 </form>
  

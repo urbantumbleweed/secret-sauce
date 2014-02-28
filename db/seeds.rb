@@ -9,41 +9,41 @@
 
 
 page_names = {
-		'editorial-leadership' => 'Leadership',
-		'photo-leadership' => 'Leadership',
-		'marketing-leadership' => 'Leadership',
+		'editorial_leadership' => 'Leadership',
+		'photo_leadership' => 'Leadership',
+		'marketing_leadership' => 'Leadership',
 		'tone' => 'Tone',
 		'style' => 'Style',
-		'editorial-process' => 'Process',
-		'photo-process' => 'Process',
-		'chapter-spreadsheet' => 'Spreadsheet',
-		'contributor-spreadsheet' => 'Spreadsheet',
+		'editorial_process' => 'Process',
+		'photo_process' => 'Process',
+		'chapter_spreadsheet' => 'Spreadsheet',
+		'contributor_spreadsheet' => 'Spreadsheet',
 		'login' => 'Login',
-		'add-user' => 'Add User',
-		'update-staff' => 'Update Staff',
+		'add_user' => 'Add User',
+		'update_staff' => 'Update Staff',
 		'login' => 'Login',
 		'profile' => 'Profile',
 		'post' => 'Post',
-		'final-checks' => 'Final Checks',
-		'add-photos' => 'Add Photos',
-		'add-video' => 'Add Video',
+		'final_checks' => 'Final Checks',
+		'add_photos' => 'Add Photos',
+		'add_video' => 'Add Video',
 		'slideshow' => 'Add Slideshow',
-		'editorial-sections' => 'Sections',
-		'photo-sections' => 'Sections',
-		'editorial-sections' => 'Sections',
+		'editorial_sections' => 'Sections',
+		'photo_sections' => 'Sections',
+		'editorial_sections' => 'Sections',
 		'flickr' => 'Flickr',
 		'expectations' => 'Expectations',
-		'fave-photos' => 'Photos We Love',
-		'photo-editing' => 'Photo Editing',
-		'photo-sections' => 'Sections',
-		'marketing-structure' => 'Structure',
-		'plan-an-event' => 'Plan an Event',
-		'social-media' => 'Social Media',
-		'plan-an-event' => 'Plan an Event',
-		'free-ideas' => 'Free Ideas',
-		'marketing-materials' => 'Marketing Materials',
+		'fave_photos' => 'Photos We Love',
+		'photo_editing' => 'Photo Editing',
+		'photo_sections' => 'Sections',
+		'marketing_structure' => 'Structure',
+		'plan_an_event' => 'Plan an Event',
+		'social_media' => 'Social Media',
+		'plan_an_event' => 'Plan an Event',
+		'free_ideas' => 'Free Ideas',
+		'marketing_materials' => 'Marketing Materials',
 		'analytics' => 'Analytics',
-		'marketing-materials' => 'Marketing Materials',
+		'marketing_materials' => 'Marketing Materials',
 		'calendar' => 'Events Calendar',
 	}
 
@@ -90,22 +90,21 @@ mtm = Position.create({
 # THESE SHORTNAMES ARE IN THE EDITORIAL FOLDER::
 
 eic.pages = eic.pages + [
-	Page.find_by_shortname('editorial-leadership'),
+	Page.find_by_shortname('editorial_leadership'),
 	Page.find_by_shortname('tone'),
 	Page.find_by_shortname('style'),
-	Page.find_by_shortname('editorial-process'),
-	Page.find_by_shortname('chapter-spreadsheet'),
+	Page.find_by_shortname('editorial_process'),
+	Page.find_by_shortname('chapter_spreadsheet'),
 	Page.find_by_shortname('login'),
-	Page.find_by_shortname('add-user'),
-	Page.find_by_shortname('update-staff'),
-	Page.find_by_shortname('login'),
+	Page.find_by_shortname('add_user'),
+	Page.find_by_shortname('update_staff'),
 	Page.find_by_shortname('profile'),
 	Page.find_by_shortname('post'),
-	Page.find_by_shortname('final-checks'),
-	Page.find_by_shortname('add-photos'),
-	Page.find_by_shortname('add-video'),
+	Page.find_by_shortname('final_checks'),
+	Page.find_by_shortname('add_photos'),
+	Page.find_by_shortname('add_video'),
 	Page.find_by_shortname('slideshow'),
-	Page.find_by_shortname('editorial-sections')
+	Page.find_by_shortname('editorial_sections')
 	]
 
 	# STOP
@@ -114,15 +113,15 @@ eic.pages = eic.pages + [
 me.pages = me.pages + [
 	Page.find_by_shortname('tone'),
 	Page.find_by_shortname('style'),
-	Page.find_by_shortname('editorial-process'),
-	Page.find_by_shortname('chapter-spreadsheet'),
+	Page.find_by_shortname('editorial_process'),
+	Page.find_by_shortname('chapter_spreadsheet'),
 	Page.find_by_shortname('login'),
 	Page.find_by_shortname('profile'),
 	Page.find_by_shortname('post'),
-	Page.find_by_shortname('add-photos'),
-	Page.find_by_shortname('add-video'),
+	Page.find_by_shortname('add_photos'),
+	Page.find_by_shortname('add_video'),
 	Page.find_by_shortname('slideshow'),
-	Page.find_by_shortname('editorial-sections')
+	Page.find_by_shortname('editorial_sections')
 	]
 
 ce.pages = me.pages
@@ -130,24 +129,24 @@ w.pages = me.pages
 nc.pages = me.pages + [
 	Page.find_by_shortname('flickr'),
 	Page.find_by_shortname('expectations'),
-	Page.find_by_shortname('fave-photos'),
-	Page.find_by_shortname('photo-editing'),
-	Page.find_by_shortname('photo-sections'),
+	Page.find_by_shortname('fave_photos'),
+	Page.find_by_shortname('photo_editing'),
+	Page.find_by_shortname('photo_sections'),
 	]
 
 
 # THESE SHORTNAMES ARE IN THE PHOTO FOLDER::
 
 p.pages = p.pages + [
-	Page.find_by_shortname('photo-process'),
+	Page.find_by_shortname('photo_process'),
 	Page.find_by_shortname('flickr'),
 	Page.find_by_shortname('expectations'),
-	Page.find_by_shortname('fave-photos'),
-	Page.find_by_shortname('photo-editing'),
-	Page.find_by_shortname('photo-sections'),
+	Page.find_by_shortname('fave_photos'),
+	Page.find_by_shortname('photo_editing'),
+	Page.find_by_shortname('photo_sections'),
 	]
 
-pd.pages = [Page.find_by_shortname('photo-leadership')] + p.pages
+pd.pages = [Page.find_by_shortname('photo_leadership')] + p.pages
 
 
 # STOP
@@ -155,18 +154,17 @@ pd.pages = [Page.find_by_shortname('photo-leadership')] + p.pages
 # THESE SHORTNAMES ARE IN THE MARKETING FOLDER::
 
 mtm.pages = mtm.pages + [
-	Page.find_by_shortname('marketing-structure'),
-	Page.find_by_shortname('plan-an-event'),
-	Page.find_by_shortname('social-media'),
-	Page.find_by_shortname('plan-an-event'),
-	Page.find_by_shortname('free-ideas'),
-	Page.find_by_shortname('marketing-materials'),
+	Page.find_by_shortname('marketing_structure'),
+	Page.find_by_shortname('plan_an_event'),
+	Page.find_by_shortname('social_media'),
+	Page.find_by_shortname('free_ideas'),
+	Page.find_by_shortname('marketing_materials'),
 	Page.find_by_shortname('analytics'),
-	Page.find_by_shortname('marketing-materials'),
+	Page.find_by_shortname('marketing_materials'),
 	Page.find_by_shortname('calendar')
 	]
 
-bd.pages = [Page.find_by_shortname('marketing-leadership')] + mtm.pages
+bd.pages = [Page.find_by_shortname('marketing_leadership')] + mtm.pages
 
 # STOP
 

@@ -17,30 +17,98 @@
     <li><a href="<%= school.spoon_url %>">Spoon</a></li>
   <% end %>
 </ul>
-
-
-<div>
-  
-<h3>Active Users:</h3>
-  <% if school.users != [] %>
-    <% school.users.each do |user| %>
-     <div><h1><%= user.name %></h1>
-      <ul>
-        <li><%= user.position.name %></li>
-        <% if user.phone_number.empty? == false %>
-          <li><%= user.phone_number %></li>
-        <% end %>
-        <% if user.email %>
-          <li><%= user.email %></li>
-        <% end %>
-      </ul>
+<div class="row active-users">
+  <% if school.users_active != [] %>
+    <% school.users_active.each do |user| %>
+      <div class="col-md-3 active-user">
+        <h3><%= user.name %><button data-userid="<%= user.id %>" class="deactivate-user">x</button></h3>
+        <ul>
+          <li><%= user.position.name %></li>
+          <% if user.phone_number.empty? == false %>
+            <li><%= user.phone_number %></li>
+          <% end %>
+          <% if user.email %>
+            <li><%= user.email %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <% else %>
+    Go get your team, yo
+  <% end %>
+</div>
+<button id='see-alum'>See Alum</button>
+<div class="row alum">
+  <% if school.users_inactive != [] %>
+    <% school.users_inactive.each do |user| %>
+      <div class="col-md-3 alum-inactive">
+        <h3><%= user.name %><button data-userid="<%= user.id %>" class="activate-user">+</button></h3>
+        <ul>
+          <li><%= user.position.name %></li>
+        </ul>
       </div>
     <% end %>
   <% end %>
 </div>
 
 
+<script>
+  function changeStatus(user_id, is_active){
+    $.ajax({
+        url: '/users/' + user_id,
+        dataType: 'json',
+        method: 'put',
+        data: {active: is_active}
+    })
+    .success(function(data){
+        console.log('user status has been changed');
+        $('.alum-inactive').removeClass().addClass('alum-active');
+    });
+  }
+
+// $("button").click(function(){
+//   $("p").toggleClass("main");
+// });
 
 
+
+
+
+
+
+  function displayAlum() {
+    $('.alum-inactive').toggleClass("alum-inactive alum-active");
+  }
+
+  function setHandlers() {
+    $('button.deactivate-user').click(function(e){
+      var user_id  = $(e.target).data("userid");
+      console.log(e.target.parentNode.parentNode);
+
+      changeStatus(user_id, false);
+      $(e.target.parentNode.parentNode).toggleClass("alum-active");
+
+    });
+
+    $('button.activate-user').click(function(e){
+      var user_id  = $(e.target).data("userid");
+      console.log(user_id);
+      changeStatus(user_id, true);
+    });
+
+    $('#see-alum').click(function() {
+      console.log('See Alumni')
+      displayAlum();
+    });
+  }
+
+  $(function() {
+      setHandlers();
+  });
+
+
+
+
+</script>
 
 
