@@ -56,7 +56,7 @@ quizApp.QuizView = Backbone.View.extend({
 	
 	renderFinalScore: function(){
 		this.$el.find('.scores').remove();
-		var tmpl = _.template($('#finalScoreTemplate').html());
+		var tmpl = Handlebars.compile($('#finalScoreTemplate').html());
 		this.$el.find('.question').html(tmpl(this.model.toJSON()));
 	},
 
