@@ -9,20 +9,12 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-
-<!-- 
-    <link rel="stylesheet" href="../../quiz-master/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../quiz-master/css/responsive.min.css">
-    <link rel="stylesheet" href="../../quiz-master/css/sorting.min.css"> -->
     
     <!-- check url path and render appropriate quiz -->
     <script>
       window.onload = function() {
-          var quiz_name = window.location.pathname.split("/")[3]
-          var quizData = quizApp.quizzes[quiz_name]
-          var quiz = new quizApp.Quiz(quizData);
-          var quizView = new quizApp.QuizView({model: quiz, el:$('#quiz')}); 
-          quizView.render();
+        window.router = new quizApp.Router();
+        Backbone.history.start({pushState: true});
       };
     </script>
 
