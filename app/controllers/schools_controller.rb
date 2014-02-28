@@ -3,10 +3,18 @@ class SchoolsController < ApplicationController
 	before_filter :authenticate_user!
 
 	def index
-    @schools = School.all
+    @schools = School.order("lower(name)").all
 	end
 
   def show
+    @school = School.find_by_shortname(params[:shortname])
+  end
+
+  def edit
+    @school = School.find_by_shortname(params[:shortname])
+  end
+
+  def create
     @school = School.find_by_shortname(params[:shortname])
   end
 

@@ -6,7 +6,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
 			super
 	end
 
+	def edit
+			@positions = Position.all 
+			@schools = School.all	
+			super
+	end
+
 	def create
+		@positions = Position.all 
+		@schools = School.all	
+		super
+		Status.create(user: @user, position_id: params['position_id'])
+	end
+
+	def update
 		@positions = Position.all 
 		@schools = School.all	
 		super

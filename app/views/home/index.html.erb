@@ -1,55 +1,64 @@
 
 <!--  SEE YOUR RESPONSIBILITIES *******************************************************      -->
 <div class="row">
-<div class="col-md-8 profile">
-	<h1>So, <%= current_user.first_name %>... you're the <%= current_user.position.name %>.</h1>
+	<div class="col-md-8 profile">
+		<h1>So, <%= current_user.first_name %>... you're the <%= current_user.position.name %>.</h1>
 
-<p>You're responsible for: </p>
+	<p>You're responsible for: </p>
 
 
-<% case current_user.position.name %>
-	<% when 'editor-in-chief' %>
-	<h4>being awesome</h4>
+	<% case current_user.position.shortname %>
+		<% when 'editor-in-chief' %>
+		<h4>being awesome</h4>
 
-	<% when 'managing editor' %>
-	<h4>being cool</h4>
+		<% when 'managing editor' %>
+		<h4>being cool</h4>
 
-	<% when 'copy editor' %>
-	<h4>being wonderful</h4>
+		<% when 'copy-editor' %>
+		<h4>being wonderful</h4>
+		
+		<% when 'writer' %>
+		<h4>being rad</h4>
+		
+		<% when 'national-contributor' %>
+		<h4>being around</h4>
 	
-	<% when 'writer' %>
-	<h4>being rad</h4>
-	
-	<% when 'national contributor' %>
-	<h4>being around</h4>
+		<% when 'photo-director' %>
+		<h4>makin' shit pretty</h4>
+
+		<% else %>
+		<h4>... who do you think you are?</h4>
+
+	<% end %>
+
+	<!--  SEE YOUR PROGRESS *******************************************************      -->
+
+
+
+	<!--  BEGINYOUR TRACK *******************************************************      -->
+
+	<% if current_user.position == 'national contributor' %>
 
 	<% else %>
-	<h4>... who do you think you are?</h4>
+		<a class="btn btn-primary btn-lg" href="<%= current_user.position.track(@page) %>/<%= current_user.position.name %>/<%= current_user.position.next_page(current_user.status.pages.last).shortname %>">My Track</a>
 
-<% end %>
+	<% end %>
 
-<!--  SEE YOUR PROGRESS *******************************************************      -->
-
-
-
-<!--  BEGINYOUR TRACK *******************************************************      -->
-
-<% if current_user.position == 'national contributor' %>
-
-<% else %>
-	<a class="btn btn-primary btn-lg" href="<%= current_user.position.track(@page) %>/<%= current_user.position.name %>/<%= current_user.position.next_page(current_user.status.pages.last).shortname %>">My Track</a>
-
-<% end %>
-
-</div>
+	</div>
 <!-- QUICKLINKS AND STUFF ON YOUR SCHOOL *******************************************************      -->
-<div class="col-md-4 quicklinks">
-	<a class="btn btn-primary" href="/schools/<%= current_user.school.shortname %>"><%= current_user.school.name %></a>
-	<a class="btn btn-primary" href="/all-staff">All Staffers Everywhere</a>
-	<a class="btn btn-primary" href="#">Publishing Spreadsheet</a>
-	<a class="btn btn-primary" href="#">FAQ</a>
-	<a class="btn btn-primary" href="#">Brand Assets</a>
-</div>
+	<div class="col-md-4 quicklinks">
+		<a href="/schools/<%= current_user.school.shortname %>" class="btn btn-primary school" style="background-color: <%= current_user.school.color_1 %> "><%= current_user.school.name %></a>
+		<div class="list-group">
+			<a class="list-group-item" href="<%= edit_user_registration_path %>">Edit Profile</a>
+		  <a class="list-group-item" href="/all-staff">All Staffers</a>
+		  <a class="list-group-item" href="<%= schools_path %>">All Schools</a>
+		  <a class="list-group-item" href="#">Publishing Spreadsheet</a>
+		  <a class="list-group-item" href="<%= faq_path %>">FAQ</a>
+		  <a class="list-group-item" href="#">Brand Assets</a>
+		  <a class="list-group-item" href="<%= positions_path %>">All Positions</a>
+		</div>
+	</div>
+
 </div>
 
 
