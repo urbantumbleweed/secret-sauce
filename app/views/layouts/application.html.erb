@@ -21,94 +21,83 @@
   <p class="alert alert-error"><%= alert %></p>
 <% end %>
 <div class="container">
-<%= yield %>
+  <%= yield %>
 
+<!--   QUIZ TEMPLATES -->
 
-    <script type="text/x-handlebars-template" id="quizTemplate">
-      <h1 class="title">
-        {{ title }}
-      </h1>
-      <h2 class="subtitle">
-        {{ subtitle }}
-      </h2>
-      
-      <div class="well" id="questionBox">
-        <div class="pull-right scores">
-          <h4>Score: <span id="score">{{ score }}</span> / <span id="possibleScore">{{ possibleScore }}</span></h4>
-        </div>
-        <div class="intro">
-          <p>{{ introText }}</p>
-          <button class="startQuiz btn btn-primary">Start the quiz!</button>
-        </div>
-        <div class="question">
-        
-        </div>
-      </div>      
-    </script>
-
+  <script type="text/x-handlebars-template" id="quizTemplate">
+    <h1 class="title">
+      {{ title }}
+    </h1>
+    <h2 class="subtitle">
+      {{ subtitle }}
+    </h2>
     
-    <script type="text/x-handlebars-template" id="multiQuestionTemplate">
-      <div class="row-fluid">
-        <div class="span4">
-          {{ question }}
-        </div>
-        <div class="span4">
-          <div class="questionCtn">
-            {{#each options }}
-              <label class="radio">
-                 <input type="radio" name="options" value="{{ this }}">
-                  {{ this }}
-              </label>
-            {{/each}}
-          </div>
-          <div class="answerCtn" style="display:none;">
-            <h3 class="status"></h3>
-            <p>The answer is: <br />{{ answer }}</p>
-          </div>
-          <div class="buttons">
-            <button class="checkResults btn btn-primary">Check Answer</button>
-            <button class="nextQuestion btn btn-primary" style="display:none;">Next Question</button>
-          </div>
-        </div>
+    <div class="well" id="questionBox">
+      <div class="pull-right scores">
+        <h4>Score: <span id="score">{{ score }}</span> / <span id="possibleScore">{{ possibleScore }}</span></h4>
       </div>
-    </script>
-    
+      <div class="intro">
+        <p>{{ introText }}</p>
+        <button class="startQuiz btn btn-primary">Start the quiz!</button>
+      </div>
+      <div class="question"></div>
+    </div>      
+  </script>
 
-    <script type="text/x-handlebars-template" id="answerTemplate">
-        //  _.each( shuffledItems, function( item ){ 
-           {{#each this}}
-                <li>{{ shuffledItems }}</li>
-         //});
-           {{/each}}
   
-    </script>
-
-    
-    <script type="text/x-handlebars-template" id="finalScoreTemplate">
-      <h3>Your final score is:</h3>
-      <h1><span id="score">{{ score }}</span> / <span id="possibleScore">{{ possibleScore }}</span></h1> 
-        <h2>Nicely Done!</h2>
-    </script>
-
-    </head>
-  <body class="container">
-    
-    <div class="row">
-      <div id="quiz" class="span12">
-        
+  <script type="text/x-handlebars-template" id="multiQuestionTemplate">
+    <div class="row-fluid">
+      <div class="span4">
+        {{ question }}
       </div>
-      <div id="question" class="span12">
-        
+      <div class="span4">
+        <div class="questionCtn">
+          {{#each options }}
+            <label class="radio">
+               <input type="radio" name="options" value="{{ this }}">
+                {{ this }}
+            </label>
+          {{/each}}
+        </div>
+        <div class="answerCtn" style="display:none;">
+          <h3 class="status"></h3>
+          <p>The answer is: <br />{{ answer }}</p>
+        </div>
+        <div class="buttons">
+          <button class="checkResults btn btn-primary">Check Answer</button>
+          <button class="nextQuestion btn btn-primary" style="display:none;">Next Question</button>
+        </div>
       </div>
     </div>
-    
+  </script>
+  
+  <script type="text/x-handlebars-template" id="answerTemplate">
+    _.each( shuffledItems, function( item ){ 
+      <li>{{ shuffledItems }}</li>
+    });
+  </script>
 
+  
+  <script type="text/x-handlebars-template" id="finalScoreTemplate">
+    <h3>Your final score is:</h3>
+    <h1><span id="score">{{ score }}</span> / <span id="possibleScore">{{ possibleScore }}</span></h1> 
+      <h2>Nicely Done!</h2>
+  </script>
+
+  <div class="row">
+    <div id="quiz" class="span12">
+      
+    </div>
+    <div id="question" class="span12">
+      
+    </div>
+  </div>
+  
+<!--   END OF QUIZ TEMPLATES -->
 
   <%= javascript_include_tag "application" %>
 
-
-
-</div>
   
 
 <!--   FACEBOOK JAVASCRIPT SDK -->
@@ -124,5 +113,6 @@
 <!--   TWITTER JAVASCRIPT -->
    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
+</div>
 </body>
 </html>
