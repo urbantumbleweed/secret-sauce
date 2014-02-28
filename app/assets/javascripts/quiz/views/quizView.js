@@ -33,13 +33,11 @@ quizApp.QuizView = Backbone.View.extend({
 	},
 	
 	render: function(){
-		// var tmpl = _.template(this.template);
 		this.$el.append(this.template(this.model.toJSON()));	
 		return this;
 	},
 	
 	renderQuestion: function(){
-
 		var questionData = this.model.get('questions')[this.questionIndex];
 		var question = new quizApp.Question(questionData);
 		console.log(question)
@@ -77,7 +75,7 @@ quizApp.QuizView = Backbone.View.extend({
 	nextQuestion: function(){
 		this.questionIndex += 1;
 		this.currentQuestion.close();
-		if (this.questionIndex >= this.questionCount) {
+		if (this.questionIndex >= this.model.get('questions').length) {
 			this.renderFinalScore();
 		} else {
 			this.renderQuestion();
