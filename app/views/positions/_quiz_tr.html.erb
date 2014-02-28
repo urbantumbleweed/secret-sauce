@@ -10,163 +10,21 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-
+<!-- 
     <link rel="stylesheet" href="../../quiz-master/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../quiz-master/css/responsive.min.css">
-    <link rel="stylesheet" href="../../quiz-master/css/sorting.min.css">
-
-    <script type="text/x-handlebars-template" id="quizTemplate">
-      <h1 class="title">
-        {{ title }}
-      </h1>
-      <h2 class="subtitle">
-        {{ subtitle }}
-      </h2>
-      
-      <div class="well" id="questionBox">
-        <div class="pull-right scores">
-          <h4>Score: <span id="score">{{ score }}</span> / <span id="possibleScore">{{ possibleScore }}</span></h4>
-        </div>
-        <div class="intro">
-          <p>{{ introText }}</p>
-          <button class="startQuiz btn btn-primary">Start the quiz!</button>
-        </div>
-        <div class="question">
-        
-        </div>
-      </div>      
-    </script>
-
-    
-    <script type="text/x-handlebars-template" id="multiQuestionTemplate">
-      <div class="row-fluid">
-        <div class="span4">
-          {{ question }}
-        </div>
-        <div class="span4">
-          <div class="questionCtn">
-            {{#each this }}
-              {{#if (option !== null) }}
-                <label class="radio">
-                   <input type="radio" name="options" value="{{ option }}">
-                    {{ option }}
-                </label>
-              {{/if}} 
-            {{/each}}
-          </div>
-          <div class="answerCtn" style="display:none;">
-            <h3 class="status"></h3>
-            <p>The answer is: <br />{{ answer }}</p>
-          </div>
-          <div class="buttons">
-            <button class="checkResults btn btn-primary">Check Answer</button>
-            <button class="nextQuestion btn btn-primary" style="display:none;">Next Question</button>
-          </div>
-        </div>
-      </div>
-    </script>
-    
-
-    <script type="text/x-handlebars-template" id="answerTemplate">
-        //  _.each( shuffledItems, function( item ){ 
-           {{#each this}}
-                <li>{{ shuffledItems }}</li>
-         //});
-           {{/each}}
-  
-    </script>
-
-    
-    <script type="text/x-handlebars-template" id="finalScoreTemplate">
-      <h3>Your final score is:</h3>
-      <h1><span id="score">{{ score }}</span> / <span id="possibleScore">{{ possibleScore }}</span></h1> 
-        <h2>Nicely Done!</h2>
-    </script>
-
-    </head>
-  <body class="container">
-    
-    <div class="row">
-      <div id="quiz" class="span12">
-        
-      </div>
-      <div id="question" class="span12">
-        
-      </div>
-    </div>
-    
-    
-    <script src="../../quiz-master/js/vendor/jquery-1.8.3.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
-    <script src="../../quiz-master/js/vendor/jquery-ui-1.10.2.custom.min.js"></script>
-    <!-- make jqueryUI sortable work on mobile devices --> 
-    <script src="../../quiz-master/js/vendor/jquery.ui.touch-punch.min.js"></script> 
-    <script src="../../quiz-master/js/vendor/lodash.min.js"></script>
-    <script src="../../quiz-master/js/vendor/backbone.min.js"></script>
-    <script src="../../quiz-master/js/vendor/handlebars.js"></script>
-
-
-    <!-- quiz app starts here -->
-    <script src="../../quiz-master/js/quiz/models/quizModel.js"></script>
-    <script src="../../quiz-master/js/quiz/models/questionModel.js"></script>
-    <script src="../../quiz-master/js/quiz/models/multiQuestionModel.js"></script>
-    <script src="../../quiz-master/js/quiz/models/answerModel.js"></script>
-    <script src="../../quiz-master/js/quiz/views/quizView.js"></script>
-    <script src="../../quiz-master/js/quiz/views/questionView.js"></script>
-    <script src="../../quiz-master/js/quiz/views/multiQuestionView.js"></script>
-    <script src="../../quiz-master/js/quiz/views/answerView.js"></script>
-    <script src="../../quiz-master/js/quiz/collections/questionCollection.js"></script>
-    <script id="quiz_num"></script>
+    <link rel="stylesheet" href="../../quiz-master/css/sorting.min.css"> -->
     
     <!-- check url path and render appropriate quiz -->
     <script>
-      $('#quiz_num').attr("src",
-        function() {
+      window.onload = function() {
           var quiz_name = window.location.pathname.split("/")[3]
-          switch (quiz_name) {
-            case "style":
-              return "../../quiz-master/js/quiz_data/quiz_data_2.js";
-              break;
-            case "style":
-              return "../../quiz-master/js/quiz_data/quiz_data_2.js";
-              break;
-            default:
-              console.log('broken');
-          }
-        }
-      );
-
-
-
-
-
-
-  // // var source = $('#quizTemplate').html();
-
-  // var quiz_template = Handlebars.compile(source);
-  // console.log(quiz_template);
-
-  // var templateData = quiz_template( data ); // <--- pass data dynamically when this is called in quizView.js
-  // console.log(templateData);
-
-
-  // $('#quizTemplateHtml').append(templateData);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          var quizData = quizApp.quizzes[quiz_name]
+          var quiz = new quizApp.Quiz(quizData);
+          var quizView = new quizApp.QuizView({model: quiz, el:$('#quiz')}); 
+          quizView.render();
+      };
     </script>
 
-    <!-- init script with quiz data --> 
   </body>
 </html>
