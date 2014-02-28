@@ -60,9 +60,7 @@ for i in 1..total_quizzes do
   end
 
   File.open( file_name_js(i), 'w') { |file| file.write(
-    "var quizApp = quizApp || {} \nvar fullQuizMulti = " + quiz_data.to_json + 
-    "\nvar quiz = new quizApp.Quiz(fullQuizMulti);\nvar quizView = new quizApp.QuizView({model: quiz, el:$('#quiz')}); \nquizView.render();" 
-
+    "var quizApp = quizApp || {} \nquizApp.quizzes = quizApp.quizzes || {}\nquizApp.quizzes.expectations = " + quiz_data.to_json 
   )}
 
 end
