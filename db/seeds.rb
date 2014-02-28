@@ -90,21 +90,21 @@ mtm = Position.create({
 # THESE SHORTNAMES ARE IN THE EDITORIAL FOLDER::
 
 eic.pages = eic.pages + [
-	Page.find_by_shortname('editorial_leadership'),
-	Page.find_by_shortname('tone'),
-	Page.find_by_shortname('style'),
-	Page.find_by_shortname('editorial_process'),
-	Page.find_by_shortname('chapter_spreadsheet'),
-	Page.find_by_shortname('login'),
-	Page.find_by_shortname('add_user'),
-	Page.find_by_shortname('update_staff'),
-	Page.find_by_shortname('profile'),
-	Page.find_by_shortname('post'),
-	Page.find_by_shortname('final_checks'),
-	Page.find_by_shortname('add_photos'),
-	Page.find_by_shortname('add_video'),
-	Page.find_by_shortname('slideshow'),
-	Page.find_by_shortname('editorial_sections')
+	Page.find_by_shortname('editorial_leadership'), 
+	Page.find_by_shortname('tone'), 
+	Page.find_by_shortname('style'), # need to add and link quiz
+	Page.find_by_shortname('editorial_process'), 
+	Page.find_by_shortname('chapter_spreadsheet'), 
+	Page.find_by_shortname('login'), 
+	Page.find_by_shortname('add_user'), 
+	Page.find_by_shortname('update_staff'), 
+	Page.find_by_shortname('profile'), 
+	Page.find_by_shortname('post'), 
+	Page.find_by_shortname('final_checks'), 
+	Page.find_by_shortname('add_photos'), 
+	Page.find_by_shortname('add_video'), # missing?
+	Page.find_by_shortname('slideshow'), 
+	Page.find_by_shortname('editorial_sections') # need to add
 	]
 
 	# STOP
