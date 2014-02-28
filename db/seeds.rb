@@ -16,19 +16,21 @@ page_names = {
 		'style' => 'Style',
 		'editorial_process' => 'Process',
 		'photo_process' => 'Process',
+		'contributor_process' => 'Process',
 		'chapter_spreadsheet' => 'Spreadsheet',
 		'contributor_spreadsheet' => 'Spreadsheet',
 		'login' => 'Login',
 		'add_user' => 'Add User',
 		'update_staff' => 'Update Staff',
-		'login' => 'Login',
+		'login' => 'Login to Wordpress',
 		'profile' => 'Profile',
 		'post' => 'Post',
 		'final_checks' => 'Final Checks',
 		'add_photos' => 'Add Photos',
 		'add_video' => 'Add Video',
 		'slideshow' => 'Add Slideshow',
-		'editorial_sections' => 'Sections',
+		'national_sections' => 'Sections',
+		'local_sections' => 'Local Sections',
 		'photo_sections' => 'Sections',
 		'editorial_sections' => 'Sections',
 		'flickr' => 'Flickr',
@@ -43,7 +45,6 @@ page_names = {
 		'free_ideas' => 'Free Ideas',
 		'marketing_materials' => 'Marketing Materials',
 		'analytics' => 'Analytics',
-		'marketing_materials' => 'Marketing Materials',
 		'calendar' => 'Events Calendar',
 	}
 
@@ -52,39 +53,48 @@ page_names.each do |k, v|
 end
 
 eic = Position.create({
-	name: 'editor-in-chief'
+	name: 'Editor-in-Chief',
+	shortname: 'editor-in-chief'
 })
 
 me = Position.create({
-	name: 'managing-editor',
+	name: 'Managing Editor',
+	shortname: 'managing-editor'
 })
 
 ce = Position.create({
-	name: 'copy-editor',
+	name: 'Copy Editor',
+	shortname: 'copy-editor'
 })
 
 w = Position.create({
-	name: 'writer',
+	name: 'Writer',
+	shortname: 'writer'
 })
 
 nc = Position.create({
-	name: 'national-contributor',
+	name: 'National Contributor',
+	shortname: 'national-contributor'
 })
 
 pd = Position.create({
-	name: 'photo-director',
+	name: 'Photo Director',
+	shortname: 'photo-director'
 })
 
 p = Position.create({
-	name: 'photographer',
+	name: 'Photographer',
+	shortname: 'photographer'
 })
 
 bd = Position.create({
-	name: 'business-director',
+	name: 'Business Director',
+	shortname: 'business-director'
 })
 
 mtm = Position.create({
-	name: 'marketing-team-member',
+	name: 'Marketing & PR Member',
+	shortname: 'marketing-team-member'
 })
 
 # THESE SHORTNAMES ARE IN THE EDITORIAL FOLDER::
@@ -121,17 +131,28 @@ me.pages = me.pages + [
 	Page.find_by_shortname('add_photos'),
 	Page.find_by_shortname('add_video'),
 	Page.find_by_shortname('slideshow'),
-	Page.find_by_shortname('editorial_sections')
+	Page.find_by_shortname('national_sections'),
+	Page.find_by_shortname('local_sections')
 	]
 
 ce.pages = me.pages
 w.pages = me.pages
-nc.pages = me.pages + [
+nc.pages = [
+	Page.find_by_shortname('tone'),
+	Page.find_by_shortname('style'),
+	Page.find_by_shortname('contributor_process'),
+	Page.find_by_shortname('contributor_spreadsheet'),
+	Page.find_by_shortname('login'),
+	Page.find_by_shortname('profile'),
+	Page.find_by_shortname('post'),
+	Page.find_by_shortname('add_photos'),
+	Page.find_by_shortname('add_video'),
+	Page.find_by_shortname('slideshow'),
+	Page.find_by_shortname('national_sections'),
 	Page.find_by_shortname('flickr'),
 	Page.find_by_shortname('expectations'),
 	Page.find_by_shortname('fave_photos'),
-	Page.find_by_shortname('photo_editing'),
-	Page.find_by_shortname('photo_sections'),
+	Page.find_by_shortname('photo_editing')
 	]
 
 
@@ -160,7 +181,6 @@ mtm.pages = mtm.pages + [
 	Page.find_by_shortname('free_ideas'),
 	Page.find_by_shortname('marketing_materials'),
 	Page.find_by_shortname('analytics'),
-	Page.find_by_shortname('marketing_materials'),
 	Page.find_by_shortname('calendar')
 	]
 
@@ -171,271 +191,331 @@ bd.pages = [Page.find_by_shortname('marketing_leadership')] + mtm.pages
 School.create({
 	name:          'Northwestern',
 	shortname:     'nu',  
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:        '#520063',
+	color_2:        '#FFFFFF'
 })
 
 School.create({
 	name:          'UIUC',
   shortname:     'uiuc', 
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:        '#003C7D',
+	color_2:        '#F47F24'
 })
 
 School.create({
 	name:          'University of Chicago',
 	shortname:     'uchi', 
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#800000',
+	color_2:       '#767676'
 })
 
 School.create({
-	name:          'U Penn',
+	name:          'University of Pennsylvania',
 	shortname:     'upenn', 
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#01256e',
+	color_2:       '#95001a'
 })
 
 School.create({
 	name:          'Wisconsin',
 	shortname:     'uw', 
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#b70101',
+	color_2:       '#E7D9C1'
 })
 
 School.create({
-	name:          'NYU',
+	name:          'New York University',
 	shortname:     'nyu', 
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:        '#57068c',
+	color_2:        '#818790'
 })
 
 School.create({
 	name:          'Michigan',
 	shortname:     'michigan', 
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#ffcb05',
+	color_2:       '#00274c'
 })
 
 School.create({
 	name:          'Princeton',
 	shortname:     'princeton', 
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#EE7F2D',
+	color_2:       '#000000'
 })
 
 School.create({
-	name:          'Wash U in St. Louis',
+	name:          'Washington University in St. Louis',
 	shortname:     'washu', 
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:        '#007360',
+	color_2:        '#9d0917'
 })
 
 School.create({
 	name:          'Rochester',
 	shortname:     'rochester',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#000d9e',
+	color_2:       '#ffe500'
 })
 
 School.create({
 	name:          'Tulane',
 	shortname:     'tulane',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#00331A',
+	color_2:       '#224568'
 })
 
 School.create({
 	name:          'Texas',
 	shortname:     'texas',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#CC5500',
+	color_2:       '#FFFFFF'
 })
 
 School.create({
 	name:          'Dartmouth',
 	shortname:     'dartmouth',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#00693E',
+	color_2:       '#ffffff'
 })
 
 School.create({
 	name:          'Maryland',
 	shortname:     'umd',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:        '#cc0000',
+	color_2:        '#ffcc00'
 })
 
 School.create({
 	name:          'Cornell',
 	shortname:     'cornell',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#b31b1b',
+	color_2:       '#4d4e53'
 })
 
 School.create({
 	name:          'University of Southern California',
 	shortname:     'usc',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#990000',
+	color_2:       '#FFCC00'
 })
 
 School.create({
 	name:          'University of South Carolina',
 	shortname:     'uofsc',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#73000A',
+	color_2:       '#000000'
 })
 
 School.create({
 	name:          'UC: Berkeley',
 	shortname:     'cal',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#003478',
+	color_2:       '#EDAC00'
 })
 
 School.create({
 	name:          'Georgetown',
 	shortname:     'georgetown',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#002147',
+	color_2:       '##8d817b'
 })
 
 School.create({
 	name:          'Emory',
 	shortname:     'emory',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:        '#002878',
+	color_2:        '#bdbfc1'
 })
 
 School.create({
-	name:          'PSU',
+	name:          'Penn State University',
 	shortname:     'psu',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#000066',
+	color_2:       '#ffffff'
 })
 
 School.create({
 	name:          'Colgate',
 	shortname:     'colgate',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#862633',
+	color_2:       '#867d6f'
 })
 
 School.create({
 	name:          'University of Oregon',
 	shortname:     'uoregon',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#004F27',
+	color_2:       '#FFCC00'
 })
 
 School.create({
 	name:          'Southern Methodist University',
 	shortname:     'smu',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#0038A8',
+	color_2:       '#CE1126'
 })
 
 School.create({
 	name:          'Boston University',
 	shortname:     'bu',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '##CC0000',
+	color_2:       '#000000'
 })
 
 School.create({
 	name:          'Syracuse',
 	shortname:     'syracuse',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#ff5a00',
+	color_2:       '#333333'
 })
 
 School.create({
 	name:          'Vanderbilt',
 	shortname:     'vandy',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#000000',
+	color_2:       '#997F3D'
 })
 
 School.create({
 	name:          'University of Florida',
 	shortname:     'uf',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#FF4A00',
+	color_2:       '#0021A5'
 })
 
 School.create({
 	name:          'American',
 	shortname:     'american',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#0d1675',
+	color_2:       '#c80016'
 })
 
 School.create({
 	name:          'Swarthmore',
 	shortname:     'swat',
-	twitter_url:   'Twitter URL',
-	instagram_url: 'Instagram URL',
-	spoon_url:     'Spoon URL',
-	facebook_url:  'Facebook URL',
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:       '#c12441',
+	color_2:       '#9f1d35'
 })
 
 password = 'password'

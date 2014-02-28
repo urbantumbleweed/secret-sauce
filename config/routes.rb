@@ -6,18 +6,21 @@ SecretSauce::Application.routes.draw do
   
   root :to => "home#index"
 
-  resources :schools, :only => [:index, :edit]
+  resources :schools, :only => [:index, :edit, :update]
   resources :positions, :only => [:index, :show]
   resources :users, :only => [:update]
 
-  get '/schools/:shortname' => 'schools#show', as: :school
-  get '/editorial/:position/:page' => 'positions#editorial', as: :editorial
-  get '/marketing/:position/:page' => 'positions#marketing', as: :marketing
-  get '/photo/:position/:page' => 'positions#photo', as: :photo
+  get '/schools/:shortname' => 'schools#show'
+  get '/*track/:position/:page' => 'positions#position', as: :track
   post '/positions/next' => 'positions#next', as: :next_page
+  get '/agreement' => 'positions#agreement', as: :agreement
+  get '/faq' => 'home#faq', as: :faq
+  post '/agree' => 'positions#agree', as: :agree
 
   get '/welcome' => 'home#welcome', as: :welcome
-  get '/schools/admin/all' => 'schools#admin'
+  get '/admin/schools' => 'schools#admin', as: :school_admin
+  get '/staff' => 'home#staff', as: :staff
+  get '/thanks' => 'home#thanks', as: :thanks
 
 
   # Example of regular route:

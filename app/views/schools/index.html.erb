@@ -1,25 +1,28 @@
 <div class="row school-social">
   <% @schools.each do |school|%>
-    <div class="col-md-4">
-      <h1><a href="/schools/<%= school.shortname %>"><%= school.name %></a></h1>
+  <div class="col-sm-4 col-md-3">
+    <div class="panel panel-default">
+      <div class="panel-heading" style="background: <%= school.color_1 %>"><a style="color: <%= school.color_2 %>" href="/schools/<%= school.shortname %>"><%= school.name %></a></div>
+      <div class="panel-body">
+        <ul class="list-unstyled">
+          <% if school.spoon_url %>
+            <li><a href="<%= school.spoon_url %>">Spoon Logo</a></li>
+          <% end %>
+          <% if school.facebook_url %>
+            <li><div class="fb-like" data-href="<%= school.facebook_url %>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></li>
+          <% end %>
 
-      <ul>
-        <% if school.facebook_url %>
-          <li><a href="<%= school.facebook_url %>">Facebook</a></li>
-        <% end %>
+          <% if school.twitter_url %>
+          <li><a href="<%= school.twitter_url %>" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow</a></li>
+          <% end %>
 
-        <% if school.twitter_url %>
-          <li><a href="<%= school.twitter_url %>">Twitter</a></li>
-        <% end %>
-
-        <% if school.instagram_url %>
-          <li><a href="<%= school.instagram_url %>">Instagram</a></li>
-        <% end %>
-
-        <% if school.spoon_url %>
-          <li><a href="<%= school.spoon_url %>">Spoon</a></li>
-        <% end %>
-      </ul>
+          <% if school.instagram_url %>
+          <li>
+<a href="http://instagram.com/saraheadler?ref=badge" class="ig-b- ig-b-v-24"><img src="//badges.instagram.com/static/images/ig-badge-view-24.png" alt="Instagram" /></a></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
+  </div>
   <% end %>
 </div>

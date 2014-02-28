@@ -6,19 +6,9 @@ class PositionsController < ApplicationController
 		@positions = Position.all
 	end
 
-	def editorial
-		@position = Position.find_by_name(params[:position])
+	def position
+		@position = Position.find_by_shortname(params[:position])
 		@page = Page.find_by_shortname(params[:page])
-	end
-
-	def marketing
-		@position = Position.find_by_name(params[:position])
-		@page = params[:page]
-	end
-
-	def photo
-		@position = Position.find_by_name(params[:position])
-		@page = params[:page]
 	end
 
 	def next
@@ -27,8 +17,21 @@ class PositionsController < ApplicationController
 		position = Position.find(params[:position])
 		current_user.update_completion(position, page)
 		page = position.next_page(page)
+		if page == nil
+			redirect_to agreement_path
+		else
+			redirect_to "/#{track}/#{position.shortname}/#{page.shortname}" 
+		end
+	end
 
-		redirect_to "/#{track}/#{position.name}/#{page.shortname}" 
+	def agreement
+
+	end
+
+	def agree
+		current_user.agreed = true
+		current_user.save!
+		redirect_to thanks_path
 	end
 
 end

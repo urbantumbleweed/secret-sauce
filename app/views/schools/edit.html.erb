@@ -1,0 +1,30 @@
+<%= form_for @school do |f| %>
+
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :shortname %>:
+  <%= f.text_field :shortname %><br />
+
+  <%= f.label :instagram_url %>: Instagram URL
+  <%= f.text_field :instagram_url %><br />
+
+  <%= f.label :facebook_url %>: Facebook URL
+  <%= f.text_field :facebook_url %><br />
+
+  <%= f.label :twitter_url %>: Twitter URL
+  <%= f.text_field :twitter_url %><br />
+
+  <%= f.label :spoon_url %>: Spoon URL
+  <%= f.text_field :spoon_url %><br />
+
+  <%= f.label :color_1 %>: First Color
+  <%= f.text_field :color_1 %><br />
+
+  <%= f.label :color_2 %>: Second Color
+  <%= f.text_field :color_2 %><br />
+
+
+  <%= f.submit %>
+
+<% end %>

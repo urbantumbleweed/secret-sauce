@@ -16,17 +16,21 @@ class Position < ActiveRecord::Base
 		end
 	end
 
-	def track
-		if self.name.include?('contributor')
-			if self.pages.last.index > self.pages.index() 
+
+## THIS DOESN'T WORK
+	def track(page)
+		if self.name =~ /contributor/i
+			if self.pages.index(page) <= self.pages.index(Page.find_by_shortname('national_sections')) 
+				return 'editorial'
 			else
+				return 'photo'
 			end
 		else
-			if self.name.include?('editor') || self.name.include?('writer')
+			if self.name =~ /editor/i || self.name =~ /writer/i
 				return 'editorial'
-			elsif self.name.include?('photo') || self.name.include?('video')
+			elsif self.name =~ /photo/i || self.name =~ /video/i
 				return 'photo'
-			elsif self.name.include?('marketing') || self.name.include?('business') || self.name.include?('treasurer')
+			elsif self.name =~ /marketing/i || self.name =~ /business/i || self.name =~ /treasurer/i
 				return 'marketing'
 			end
 		end

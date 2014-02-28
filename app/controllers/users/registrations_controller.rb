@@ -2,13 +2,26 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 	def new
 			@positions = Position.all 
-			@schools = School.all	
+			@schools = School.order("lower(name)").all
+			super
+	end
+
+	def edit
+			@positions = Position.all 
+			@schools = School.order("lower(name)").all
 			super
 	end
 
 	def create
 		@positions = Position.all 
-		@schools = School.all	
+		@schools = School.order("lower(name)").all
+		super
+		Status.create(user: @user, position_id: params['position_id'])
+	end
+
+	def update
+		@positions = Position.all 
+		@schools = School.order("lower(name)").all
 		super
 		Status.create(user: @user, position_id: params['position_id'])
 	end

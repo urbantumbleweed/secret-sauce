@@ -14,6 +14,16 @@ class User < ActiveRecord::Base
 	 return self.first_name + " " + self.last_name
 	end
 
+	def self.active
+		active = []
+		User.order("lower(last_name)").all.each do |user|
+			if user.active == true
+				active << user
+			end
+		end
+		active 
+	end
+
 	def position
 		return self.positions.last
 	end

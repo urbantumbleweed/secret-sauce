@@ -1,6 +1,6 @@
 <style>
 
-ul.nav-<%= @position.pages.count %> a {
+ul.track-nav a {
 	width: <%= (99 / @position.pages.count.to_f) - 0.2 %>%;
 }
 	
@@ -9,10 +9,10 @@ ul.nav-<%= @position.pages.count %> a {
 <!-- Track Navigation Bar -->
 
 
-<ul class="track-nav editorial nav-<%= @position.pages.count %> list-inline clearfix">
+<ul class="track-nav <%= @position.track(@page) %> list-inline clearfix">
 	<div>
 <% @position.pages.each do |page| %>
-	<a class="test <% if current_user.status.pages.include?(page) %> completed <% end %>" href="/editorial/<%= @position.name %>/<%= page.shortname %>">
+	<a class="test <% if current_user.status.pages.include?(page) %> completed <% end %>" href="/<%= @position.track(@page) %>/<%= @position.shortname %>/<%= page.shortname %>">
 		<li><%= page.name.gsub('-',' ') %></li>
 	</a>
 <% end %>
@@ -20,11 +20,12 @@ ul.nav-<%= @position.pages.count %> a {
 </ul>
 <!-- Body -->
 <div class="track-body">
-<%= render "positions/editorial/#{@page.shortname}" %>
+	<h1><%= @page.name %></h1>
+<%= render "positions/#{@position.track(@page)}/#{@page.shortname}" %>
 </div>
 
 <form action="<%= next_page_path %>" method="post" >
-	<input type="hidden" name="track" value="editorial">
+	<input type="hidden" name="track" value="<%= @position.track(@page) %>">
 	<input type="hidden" name="position" value="<%= @position.id %>">
 	<input type="hidden" name="page" value="<%= @page.shortname %>">
 	<button class="btn btn-primary">Next</button>

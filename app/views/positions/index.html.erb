@@ -1,0 +1,18 @@
+<div class="row positions">
+	<% @positions.each do |position| %>
+	<div class="col-sm-4 col-md-3">
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title"><%= position.name %></h3>
+		  </div>
+		  <div class="panel-body">
+		    <ul class="list-unstyled">
+					<% position.pages.each do |page| %>
+					<li><a href="/<%= position.track(page) %>/<%= position.shortname %>/<%= page.shortname %>"><%= page.name %></a></li>
+					<% end %>
+				</ul>
+		  </div>
+		</div>
+	</div>
+	<% end %>
+</div>

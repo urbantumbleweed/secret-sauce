@@ -1,5 +1,6 @@
 <% school = @school %>
 <h1><%= school.name %></h1>
+<a href="<%= edit_school_path(@school)%>"><i class="fa fa-pencil"></i></a>
 <ul>
   <% if school.facebook_url %>
     <li><a href="<%= school.facebook_url %>">Facebook</a></li>
