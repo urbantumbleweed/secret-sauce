@@ -36,9 +36,9 @@ a.completed {
 	text-transform: capitalize;
 }
 
-.alum-inactivew{
-	color:red;
-	/*visibility: hidden;*/
+.alum-inactive{
+	/*color:red;*/
+	visibility: hidden;
 }
 
 .alum-active{

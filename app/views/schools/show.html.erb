@@ -42,7 +42,7 @@
   <% if school.users_inactive != [] %>
     <% school.users_inactive.each do |user| %>
       <div class="col-md-3 alum-inactive">
-        <h3><%= user.name %><button class="activate-user">+</button></h3>
+        <h3><%= user.name %><button data-userid="<%= user.id %>" class="activate-user">+</button></h3>
         <ul>
           <li><%= user.position.name %></li>
         </ul>
@@ -53,26 +53,52 @@
 
 
 <script>
-  function deactivate_user(user){
+  function changeStatus(user_id, is_active){
     $.ajax({
-        url: '/users/' + this.id,
+        url: '/users/' + user_id,
         dataType: 'json',
         method: 'put',
-        data: {active: false}
+        data: {active: is_active}
     })
     .success(function(data){
-        console.log('user made inactive');
+        console.log('user status has been changed');
+        $('.alum-inactive').removeClass().addClass('alum-active');
     });
-  };
+  }
+
+// $("button").click(function(){
+//   $("p").toggleClass("main");
+// });
+
+
+
+
+
+
+
+  function displayAlum() {
+    $('.alum-inactive').toggleClass("alum-inactive alum-active");
+  }
 
   function setHandlers() {
     $('button.deactivate-user').click(function(e){
       var user_id  = $(e.target).data("userid");
-      console.log(user_id);
+      console.log(e.target.parentNode.parentNode);
+
+      changeStatus(user_id, false);
+      $(e.target.parentNode.parentNode).toggleClass("alum-active");
+
     });
+
+    $('button.activate-user').click(function(e){
+      var user_id  = $(e.target).data("userid");
+      console.log(user_id);
+      changeStatus(user_id, true);
+    });
+
     $('#see-alum').click(function() {
       console.log('See Alumni')
-      $('.alum-inactive').removeClass().addClass('alum-active');
+      displayAlum();
     });
   }
 
