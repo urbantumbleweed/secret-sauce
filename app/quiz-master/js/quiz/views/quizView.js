@@ -4,8 +4,7 @@ var quizApp = quizApp || {}
 quizApp.QuizView = Backbone.View.extend({
 	
 	tagName: 'div',
-	// template: $("#quizTemplate").html(),
-	template: Handlebars.compile($("#quizTemplate").html()),
+	template: $("#quizTemplate").html(),
 	questionIndex: 0,
 	questionCount: 0,
 	
@@ -24,12 +23,9 @@ quizApp.QuizView = Backbone.View.extend({
 		// assign the question's array index as its id
 		// and add it to the collection
 		this.questions = new quizApp.QuestionCollection();
-			console.log(this.model.get('questions'))
-		this.model.get('questions').forEach( function(question, index){
+		_.each(this.model.get('questions'), function(question, index){
 			question.id = index;
-			console.log(index)
 			parent.questions.add(question);
-				console.log(question)
 			parent.questionCount += 1;
 		});
 		
@@ -37,16 +33,27 @@ quizApp.QuizView = Backbone.View.extend({
 	},
 	
 	render: function(){
-		this.$el.append(this.template(this.model.toJSON()));	
+		var tmpl = _.template(this.template);
+		this.$el.append(tmpl(this.model.toJSON()));	
 		return this;
 	},
 	
 	renderQuestion: function(){
 		var question = this.questions.get(this.questionIndex);
-		this.currentQuestion = new quizApp.MultiQuestionView({
-			model: question,
-			el: this.$el.find('.question'),
-		});
+		// switch (question.get('type')) {
+			// case 'match': 
+			// 	this.currentQuestion = new quizApp.QuestionView({
+			// 		model: question,
+			// 		el: this.$el.find('.question'),
+			// 	});
+			// 	break;
+			// case 'multi':
+				this.currentQuestion = new quizApp.MultiQuestionView({
+					model: question,
+					el: this.$el.find('.question'),
+				});
+		// 		break;
+		// }
 		
 		this.currentQuestion.model.set('parentView', this);
 		this.currentQuestion.model.set('parentModel', this.model);
@@ -57,7 +64,7 @@ quizApp.QuizView = Backbone.View.extend({
 	
 	renderFinalScore: function(){
 		this.$el.find('.scores').remove();
-		var tmpl = Handlebars.compile($('#finalScoreTemplate').html());
+		var tmpl = _.template($('#finalScoreTemplate').html());
 		this.$el.find('.question').html(tmpl(this.model.toJSON()));
 	},
 
