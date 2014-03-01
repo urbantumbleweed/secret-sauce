@@ -40,7 +40,6 @@ quizApp.QuizView = Backbone.View.extend({
 	renderQuestion: function(){
 		var questionData = this.model.get('questions')[this.questionIndex];
 		var question = new quizApp.Question(questionData);
-		console.log(question)
 		this.currentQuestion = new quizApp.MultiQuestionView({
 			model: question,
 			el: this.$el.find('.question'),

@@ -9,12 +9,11 @@ quizApp.MultiQuestionView = Backbone.View.extend({
 	},
 	
 	events: {
-		'click .checkResults': 'checkResults',
-		'click .nextQuestion': 'nextQuestion'
+		'click .checkResults' : 'checkResults',
+		'click .nextQuestion' : 'nextQuestion'
 	},
 	
 	render: function(){
-		console.log(this.model.toJSON())
 		this.$el.append(this.template(this.model.toJSON()));
 		return this;
 	},
