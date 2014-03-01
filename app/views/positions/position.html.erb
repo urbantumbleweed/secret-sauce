@@ -22,7 +22,6 @@ ul.track-nav a {
 <div class="track-body">
 	<h1><%= @page.name %></h1>
 	<%= render "positions/#{@position.track(@page)}/#{@page.shortname}" %>
-	does this work the way i think
 
 	<form action="<%= next_page_path %>" method="post" >
 		<input type="hidden" name="track" value="<%= @position.track(@page) %>">
