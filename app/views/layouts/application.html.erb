@@ -54,10 +54,12 @@
       <div class="span4">
         <div class="questionCtn">
           {{#each options }}
+            {{#if this }}
             <label class="radio">
                <input type="radio" name="options" value="{{ this }}">
                 {{ this }}
             </label>
+            {{/if}}
           {{/each}}
         </div>
         <div class="answerCtn" style="display:none;">
@@ -82,7 +84,8 @@
   <script type="text/x-handlebars-template" id="finalScoreTemplate">
     <h3>Your final score is:</h3>
     <h1><span id="score">{{ score }}</span> / <span id="possibleScore">{{ possibleScore }}</span></h1> 
-      <h2>Nicely Done!</h2>
+    <h2>{{message}}</h2>
+      
   </script>
 
   <div class="row">

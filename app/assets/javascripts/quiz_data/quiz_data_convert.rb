@@ -16,11 +16,13 @@ total_quizzes = 2
 for i in 1..total_quizzes do
   xls = Roo::Spreadsheet.open( file_name_xls(i) )
 
+  # Quiz Info
   quiz_data = {}
-  quiz_data['title'] =  xls.cell(1,'B')
-  quiz_data['subtitle'] =  xls.cell(2,'B')
-  quiz_data['introText'] =  xls.cell(3,'B')
 
+  quiz_data['title']     =  xls.cell(1,'B')
+  quiz_data['subtitle']  =  xls.cell(2,'B')
+  quiz_data['introText'] =  xls.cell(3,'B')
+  quiz_data['extention'] =  xls.cell(4,'B')
 
   # Questions Hash
   quiz_data['questions'] = []
@@ -60,7 +62,7 @@ for i in 1..total_quizzes do
   end
 
   File.open( file_name_js(i), 'w') { |file| file.write(
-    "var quizApp = quizApp || {} \nquizApp.quizzes = quizApp.quizzes || {}\nquizApp.quizzes.expectations = " + quiz_data.to_json 
+    "var quizApp = quizApp || {} \nquizApp.quizzes = quizApp.quizzes || {}\nquizApp.quizzes." + quiz_data['extention'] + " = " + quiz_data.to_json 
   )}
 
 end

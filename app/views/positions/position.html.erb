@@ -21,13 +21,13 @@ ul.track-nav a {
 <!-- Body -->
 <div class="track-body">
 	<h1><%= @page.name %></h1>
-<%= render "positions/#{@position.track(@page)}/#{@page.shortname}" %>
-</div>
+	<%= render "positions/#{@position.track(@page)}/#{@page.shortname}" %>
 
-<form action="<%= next_page_path %>" method="post" >
-	<input type="hidden" name="track" value="<%= @position.track(@page) %>">
-	<input type="hidden" name="position" value="<%= @position.id %>">
-	<input type="hidden" name="page" value="<%= @page.shortname %>">
-	<button class="btn btn-primary">Next</button>
-</form>
- 
+	<form action="<%= next_page_path %>" method="post" >
+		<input type="hidden" name="track" value="<%= @position.track(@page) %>">
+		<input type="hidden" name="position" value="<%= @position.id %>">
+		<input type="hidden" name="page" value="<%= @page.shortname %>">
+		<button class="btn btn-primary">Next</button>
+	</form>
+
+</div>
