@@ -2,6 +2,8 @@ var quizApp = quizApp || {}
 quizApp.Router = Backbone.Router.extend({
 
   routes: {
+    "photo/photo-director/:quiz_name" : "quiz",
+
     "editorial/editor-in-chief/:quiz_name" :    "quiz",
     "" : "test"
   },
