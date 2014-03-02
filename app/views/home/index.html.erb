@@ -11,7 +11,7 @@
 		<% when 'editor-in-chief' %>
 		<h4>being awesome</h4>
 
-		<% when 'managing editor' %>
+		<% when 'managing-editor' %>
 		<h4>being cool</h4>
 
 		<% when 'copy-editor' %>
@@ -50,7 +50,7 @@
 	</div>
 <!-- QUICKLINKS AND STUFF ON YOUR SCHOOL *******************************************************      -->
 	<div class="col-md-4 quicklinks">
-		<a href="/schools/<%= current_user.school.shortname %>" class="btn btn-primary school" style="background-color: <%= current_user.school.color_1 %> "><%= current_user.school.name %></a>
+		<a href="/schools/<%= current_user.school.shortname %>" class="btn btn-primary school" style="background-color: <%= current_user.school.color_1 %>; color: <%= current_user.school.color_2 %>  "><%= current_user.school.name %></a>
 		<div class="list-group">
 			<a class="list-group-item" href="<%= edit_user_registration_path %>">Edit Profile</a>
 		  <a class="list-group-item" href="/staff">All Staffers</a>
