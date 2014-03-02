@@ -1,15 +1,34 @@
 <style>
 
-ul.track-nav a {
-	width: <%= (99 / @position.pages.count.to_f) - 0.2 %>%;
-}
+
+@media (min-width: 768px) { 
+	ul.track-nav a {
+		width: <%= (98 / @position.pages.count.to_f) - 0.2 %>%;
+	}
+
+ }
+
+ @media (min-width: 992px) { 
+	ul.track-nav a {
+		width: <%= (99 / @position.pages.count.to_f) - 0.2 %>%;
+	}
+
+ }
+
+ @media (min-width: 1200px) { 
+	ul.track-nav a {
+		width: <%= (99 / @position.pages.count.to_f) - 0.15 %>%;
+	}
+
+ }
+
 	
 </style>
 
 <!-- Track Navigation Bar -->
 
 
-<ul class="track-nav <%= @position.track(@page) %> list-inline clearfix">
+<ul class="track-nav <%= @position.track(@page) %> list-inline clearfix hidden-xs">
 	<div>
 <% @position.pages.each do |page| %>
 	<a class="test <% if current_user.status.pages.include?(page) %> completed <% end %>" href="/<%= @position.track(@page) %>/<%= @position.shortname %>/<%= page.shortname %>">
@@ -27,7 +46,7 @@ ul.track-nav a {
 		<input type="hidden" name="track" value="<%= @position.track(@page) %>">
 		<input type="hidden" name="position" value="<%= @position.id %>">
 		<input type="hidden" name="page" value="<%= @page.shortname %>">
-		<button class="btn btn-primary">Next</button>
+		<button class="btn btn-primary pull-right">Next</button>
 	</form>
 
 </div>

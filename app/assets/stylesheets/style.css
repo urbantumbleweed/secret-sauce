@@ -1,5 +1,16 @@
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus, button:focus {   
+	border-color: transparent;
+	box-shadow: transparent;
+	outline: 0 none;
+}
+
 body {
 	font-family: 'museo-sans-rounded';
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'museo-slab';
+	font-weight: 100;
 }
 
 .navbar {
@@ -19,7 +30,7 @@ body {
 
 .track-nav {
 	border: 1px solid #cccccc;
-	padding:1px 0px;
+	padding: 1px;
 	text-align:center;
 	border-radius: 2px;
 	overflow: hidden;
@@ -27,47 +38,45 @@ body {
 
 .track-nav a {
 	float:left;
-	font-size:10px;
+	font-size:8px;
 	text-transform:uppercase;
 	margin:1px;
 	color:white;
 	height: 40px;
-	padding:6px 0 10px;
+	padding:6px 5px 10px 5px;
 	border-radius: 1px;
 	text-decoration: none;
+	font-weight: 700;
 }
 
 .track-nav li {
 	line-height: 27px;
 }
 
-.editorial a {
-	background: #00a2ca;
-}
-
-.editorial a:hover {
-	background: #99daea;
-}
-
-.photo a {
+.editorial a{
 	background: #f1a003;
 }
 
-.photo a:hover {
+.editorial a:hover, .editorial a.completed  {
 	background: #f9d99a;
+}
+
+.photo a {
+	background: #00a2ca;
+}
+
+.photo a:hover, .photo a.completed {
+	background: #99daea;
 }
 
 .marketing a {
 	background: #829300;
 }
 
-.marketing a:hover {
+.marketing a:hover, .marketing a.completed {
 	background: #cdd499;
 }
 
-a.completed {
-	background: #99daea;
-}
 
 .track-body h1 {
 	text-transform: capitalize;
@@ -109,8 +118,43 @@ a.completed {
 
 .btn.btn-primary {
 	background-image: none;
+	background-color: #000000;
+	font-family: 'museo-sans-rounded';
+	border: 0px;
+	text-transform: uppercase;
+	font-size: 9px;
+	font-weight: 700;
 }
 
+.btn.btn-primary:hover {
+	background-color: #cc0066;
+}
+
+.make-alum {
+	background-color: transparent;
+	border: 0px;
+}
+.make-alum i:hover {
+	color: #cc0066;
+}
+
+.agreement-container {
+	width: 80%;
+	max-width: 800px;
+	height: 200px;
+	overflow-y: scroll;
+	margin: 0 auto;
+	border: 1px solid #cccccc;
+	padding: 15px;
+}
+
+footer {
+	margin-top:100px;
+	padding: 5px;
+	text-align:center;
+	position: absolute;
+	bottom: 10px;
+}
 
 
 /* Small devices (tablets, 768px and up) */

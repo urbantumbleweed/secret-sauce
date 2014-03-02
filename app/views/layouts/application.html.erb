@@ -14,14 +14,21 @@
 	<span class="navbar-right"><%= link_to "Log out", destroy_session_path(:user), :method => :delete %></span>
 </div>
 </nav>
-<% if notice %>
+<div class="container">
+  <% if notice %>
   <p class="alert alert-notice"><%= notice %></p>
 <% end %>
 <% if alert %>
   <p class="alert alert-error"><%= alert %></p>
 <% end %>
-<div class="container">
   <%= yield %>
+
+  <footer>
+    <div class="container">
+      &copy; 2014 Spoon University
+    </div>
+
+  </footer>
 
 <!--   QUIZ TEMPLATES -->
 
