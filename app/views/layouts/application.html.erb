@@ -87,15 +87,6 @@
     <h2>{{message}}</h2>
       
   </script>
-
-  <div class="row">
-    <div id="quiz" class="span12">
-      
-    </div>
-    <div id="question" class="span12">
-      
-    </div>
-  </div>
   
 <!--   END OF QUIZ TEMPLATES -->
 
@@ -105,16 +96,27 @@
 
 <!--   FACEBOOK JAVASCRIPT SDK -->
   <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=569407923142222";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+  <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=569407923142222";
+      fjs.parentNode.insertBefore(js, fjs);
+    }
+    (document, 'script', 'facebook-jssdk'));
+  </script>
 
 <!--   TWITTER JAVASCRIPT -->
-   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+      if(!d.getElementById(id)){js=d.createElement(s);
+        js.id=id;js.src="//platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js,fjs);
+      }
+    }
+    (document,"script","twitter-wjs");
+  </script>
 
 </div>
 </body>

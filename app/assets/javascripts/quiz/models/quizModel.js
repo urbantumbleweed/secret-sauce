@@ -12,7 +12,7 @@ quizApp.Quiz = Backbone.Model.extend({
 		message: function(){
 			percent = this.score/this.possibleScore*100;
 			if (percent > 70){
-				return 'Nicely done!'
+				return 'Nicely done.'
 			} else if (percent > 50){
 				return 'Alright. Study up, though.'
 			} else {
