@@ -29,15 +29,12 @@ page_names = {
 		'add_photos' => 'Add Photos',
 		'add_video' => 'Add Video',
 		'slideshow' => 'Add Slideshow',
-		'national_sections' => 'Sections',
-		'local_sections' => 'Local Sections',
-		'photo_sections' => 'Sections',
 		'editorial_sections' => 'Sections',
+		'photo_sections' => 'Sections',
 		'flickr' => 'Flickr',
 		'expectations' => 'Expectations',
 		'fave_photos' => 'Photos We Love',
 		'photo_editing' => 'Photo Editing',
-		'photo_sections' => 'Sections',
 		'marketing_structure' => 'Structure',
 		'plan_an_event' => 'Plan an Event',
 		'social_media' => 'Social Media',
@@ -131,8 +128,7 @@ me.pages = me.pages + [
 	Page.find_by_shortname('add_photos'),
 	Page.find_by_shortname('add_video'),
 	Page.find_by_shortname('slideshow'),
-	Page.find_by_shortname('national_sections'),
-	Page.find_by_shortname('local_sections')
+	Page.find_by_shortname('editorial_sections')
 	]
 
 ce.pages = me.pages
@@ -148,7 +144,7 @@ nc.pages = [
 	Page.find_by_shortname('add_photos'),
 	Page.find_by_shortname('add_video'),
 	Page.find_by_shortname('slideshow'),
-	Page.find_by_shortname('national_sections'),
+	Page.find_by_shortname('editorial_sections')
 	Page.find_by_shortname('flickr'),
 	Page.find_by_shortname('expectations'),
 	Page.find_by_shortname('fave_photos'),

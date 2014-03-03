@@ -27,7 +27,6 @@
 
 <!-- Track Navigation Bar -->
 
-
 <ul class="track-nav <%= @position.track(@page) %> list-inline clearfix hidden-xs">
 	<div>
 <% @position.pages.each do |page| %>
@@ -46,7 +45,7 @@
 		<input type="hidden" name="track" value="<%= @position.track(@page) %>">
 		<input type="hidden" name="position" value="<%= @position.id %>">
 		<input type="hidden" name="page" value="<%= @page.shortname %>">
-		<button class="btn btn-primary pull-right">Next</button>
+		<button class="btn btn-primary pull-right btn-lg">Next</button>
 	</form>
 
 </div>
