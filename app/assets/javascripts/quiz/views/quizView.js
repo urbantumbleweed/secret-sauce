@@ -56,6 +56,7 @@ quizApp.QuizView = Backbone.View.extend({
 		var tmpl = Handlebars.compile($('#finalScoreTemplate').html());
 		this.$el.find('.question').html(tmpl(this.model.toJSON()));
 		console.log(this.model.toJSON());
+
 	},
 
 	startQuiz: function(){
@@ -76,12 +77,31 @@ quizApp.QuizView = Backbone.View.extend({
 		this.questionIndex += 1;
 		this.currentQuestion.close();
 		if (this.questionIndex >= this.model.get('questions').length) {
+			this.sync();
 			this.renderFinalScore();
 		} else {
 			this.renderQuestion();
 		}
 		
-	}
+	},
+
+	sync: function(){
+		var data = {}
+		data['correct'] = this.model.get('score');
+		data['total'] =	this.model.get('possibleScore');
+		data['user_id'] = current_user.id;
+		data['page_shortname'] = window.location.pathname.split('/')[3];
+
+    $.ajax({
+        url: '/scores',
+        dataType: 'json',
+        method: 'post',
+        data: data
+    })
+    .success(function(data){
+        console.log('quiz score has been synced');
+    });
+  }
 	
 });
 

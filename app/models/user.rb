@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :statuses
 	has_many :positions, through: :statuses
+	has_many :scores
 	belongs_to :school
 
 	accepts_nested_attributes_for :positions
@@ -47,8 +48,7 @@ class User < ActiveRecord::Base
 	def is_admin?
 		self.position.name == 'editor-in-chief' || self.position.name == 'business-director' || self.position.name == 'photo-director' 
 	end
-
-
+	
 	def percent_complete
 		completed = self.status.pages.count.to_f
 		total = self.position.pages.count.to_f

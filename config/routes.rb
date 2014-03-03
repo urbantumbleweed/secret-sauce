@@ -9,6 +9,8 @@ SecretSauce::Application.routes.draw do
   resources :schools, :only => [:index, :edit, :update]
   resources :positions, :only => [:index, :show]
   resources :users, :only => [:update]
+  resources :scores, :only => [:create]
+
 
   get '/schools/:shortname' => 'schools#show'
   get '/*track/:position/:page' => 'positions#position', as: :track

@@ -42,7 +42,16 @@
               <% end %>
               <% if student.email %>
               <li><%= student.email %></li>
-              <% end %>              
+              <% end %>
+
+
+              <% if student.scores %>
+                <% student.scores.each do |score| %>
+                  <li>Score <%= score.correct %></li>
+                <% end %>       
+              <% end %>       
+            
+
             </ul>
           </div>
         </div>
