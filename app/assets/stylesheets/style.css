@@ -440,11 +440,11 @@ div.quiz-score{
 	border-width: 3px;
 	border-radius: 10px;
 	display: inline-block;
-	font-size: 3em;
+	font-size: 5em;
 }
 
 .quiz-score {
-	padding: .5em;
+	padding: .7em .2em;
 }
 
 .editorial {
@@ -455,7 +455,6 @@ div.quiz-score{
 .photo {
 	border-color: #00a2ca;
 	color: #00a2ca;
-
 }
 
 .marketing{
@@ -472,7 +471,9 @@ a.retake{
 	margin: 10px;
 }
 
-
+.quiz-title{
+	color:#000;
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
 .ig-b-24 {

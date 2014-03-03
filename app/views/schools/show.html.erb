@@ -44,7 +44,7 @@
               <% if student.email %>
               <li><%= student.email %></li>
               <% end %>
-              <% if current_user.is_admin? %>
+              <% if current_user.is_admin? && current_user.school === school.name %>
                 <% if student.scores %>
                   <% student.scores.each do |score| %>
                     <li><%= score.page.name %> Quiz: <%= score.correct %> / <%= score.total %></li>
@@ -131,12 +131,14 @@
 
   $(function() {
     setHandlers();
- 
-    <% if school.users_active != [] %>
-      <% school.users_active.each do |student| %>
-        donutOfCompleteness(<%= student.id %>, <%= student.percent_complete %>, "<%= student.position.track(student.position.pages.first) %>", false)
-      <% end %>  
+    <% if current_user.is_admin? && current_user.school === school.name %>
+      <% if school.users_active != [] %>
+        <% school.users_active.each do |student| %>
+          donutOfCompleteness(<%= student.id %>, <%= student.percent_complete %>, "<%= student.position.track(student.position.pages.first) %>", false)
+        <% end %>  
+      <% end %>
     <% end %>
+
   
   });
 
