@@ -604,7 +604,7 @@ Score.create!([
   {user_id: 10, page_id: 5, correct: 7, total: 8},
   {user_id: 11, page_id: 5, correct: 0, total: 8},
   {user_id: 12, page_id: 25, correct: 1, total: 6},
-  {user_id: 13, page_id: 25, correct: 7, total: 6},
+  {user_id: 13, page_id: 25, correct: 5, total: 6},
   {user_id: 14, page_id: 5, correct: 8, total: 8},
-  {user_id: 15, page_id: 5, correct: 10, total: 8}
+  {user_id: 15, page_id: 5, correct: 3, total: 8}
 ])

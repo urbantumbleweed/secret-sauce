@@ -55,10 +55,6 @@ html body {
 	font-size:12px;
 }
 
-svg#completion {
-	height:50px;
-}
-
 .little-spoon {
 	width:14px;
 	margin-top:-4px;
@@ -466,9 +462,50 @@ div#menu {
 	background-color:#a33873;
 }
 
+path {
+    stroke: #ffffff;
+    stroke-width: 4px;
+}
 
+div.quiz-score{
+	border-style: solid;
+	border-width: 3px;
+	border-radius: 10px;
+	display: inline-block;
+	font-size: 5em;
+}
 
+.quiz-score {
+	padding: .7em .2em;
+}
 
+.editorial {
+	border-color: #f1a003;
+	color: #f1a003;
+}
+
+.photo {
+	border-color: #00a2ca;
+	color: #00a2ca;
+}
+
+.marketing{
+	border-color: #829300;
+	color: #829300;
+}
+
+a.retake{
+	display: inline-block;
+	text-decoration:none;
+	color:white;
+	border-radius: 5px;
+	padding: 4px 20px;
+	margin: 10px;
+}
+
+.quiz-title{
+	color:#000;
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
 .ig-b-24 {
@@ -507,8 +544,14 @@ div#menu {
 	
  }
 
-path {
-    stroke: #ffffff;
-    stroke-width: 4px;
-}
+
+
+
+
+
+
+
+
+
+
 
