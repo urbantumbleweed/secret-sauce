@@ -104,8 +104,8 @@
     $('button.make-alum').click(function(e){
       var user_id  = $(e.target).data("userid");
       changeStatus(user_id, false);
-
-      $(e.target.parentNode.parentNode).toggleClass("alum-active");
+      console.log()
+      $(e.target.parentNode.parentNode.parentNode.parentNode).toggleClass("alum-active");
 
     });
 
