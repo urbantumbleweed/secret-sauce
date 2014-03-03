@@ -1,13 +1,18 @@
  
-<p>We use a program called WordPress to publish all articles to the site. Once you get the hang of it, it’s super easy to use, but you gotta learn first. The following steps will only work if you’ve received an email from WordPress with your user login. If you haven’t received that email, stop right now and email Mackenzie (if you’re an EIC), or your EIC (if you’re a writer or editor) to tell them to make you an account.</p>
+<p>We use a program called WordPress to publish all articles to the site. Once you get the hang of it, it’s super easy to use, but you gotta learn first. The following steps will only work if you’ve received an email from WordPress with your user login. If you haven’t received that email, stop right now and email <% if @position.shortname == 'editor-in-chief' || @position.shortname == 'national-contributor'  %> Mackenzie to ask her to <% else %> your EIC to ask them to <% end %> make you an account.</p>
 
 <div class="row">
   <div class="col-sm-6">
     <p class="small-caps">PUT IT INTO PRACTICE:</p>
     <ol>
-      <li>In a web browser, type in your school’s URL, followed by /wp-login.php</br>
-      <strong>(e.g. myschool.spoonuniversity.com/wp-login.php)</strong></li>
+      <% if current_user.school.shortname == 'national' %>
+      <li>In a web browser, go to <strong><a target="_blank" href="http://spoonuniversity.com/wp-login.php">spoonuniversity.com/wp-login.php</a></strong></li>
+      <% else %>
+
+      <li>In a web browser, go to <strong><a target="_blank" href="http://<%= current_user.school.shortname %>.spoonuniversity.com/wp-login.php"><%= current_user.school.shortname %>.spoonuniversity.com/wp-login.php</a></strong></li>
+      <% end %>
       <li>Enter your username and password and click log in.</li>
+      <p><span class="small-caps">NOTE:</span> If this is your first time logging in and your account was created for you, you'll need to press 'forgot my password' to set a new password for your account.</p>
     </ol>
   </div>
   <div class="col-sm-6">

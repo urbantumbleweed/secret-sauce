@@ -20,6 +20,12 @@ html body {
 	padding:5px 10px 5px 0px;
 }
 
+.box {
+	border: 1px solid #000000;
+	padding:10px;
+	border-radius: 5px;
+}
+
 svg#completion {
 	height:50px;
 }
@@ -91,7 +97,6 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 	width: 60%;
 	margin: 0 auto;
 	text-align:center;
-	text-transform: uppercase;
 	font-family: 'museo-sans-rounded';
 
 }
@@ -372,6 +377,56 @@ div#menu {
 	height: 24px; 
 	background: url(//badges.instagram.com/static/images/ig-badge-sprite-24.png) no-repeat 0 0;
 	}
+
+.timeline-window {
+	width: 100%;
+	padding: 10px;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	height: 320px;
+	border: 1px solid #dddddd;
+}
+
+.timeline-wrapper {
+	width: 1475px;
+}
+
+.timeline-step {
+	width: 200px;
+	height:300px;
+	background:black;
+	margin: 0 5px;
+	padding:10px;
+	color:white;
+	float:left;
+}
+
+.label {
+	background:#000000;
+	color:white;
+	text-transform:uppercase;
+	font-size:11px;
+}
+
+.timeline-step:nth-child(5n){
+	background-color:#f96d14;
+}
+.timeline-step:nth-child(5n+1){
+	background-color:#f1a003;
+}
+.timeline-step:nth-child(5n+2){
+	background-color:#00a2ca;
+}
+.timeline-step:nth-child(5n+3){
+	background-color:#829300;
+}
+.timeline-step:nth-child(5n+4){
+	background-color:#a33873;
+}
+
+
+
+
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
 .ig-b-24 {
