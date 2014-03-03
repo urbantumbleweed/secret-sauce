@@ -4,26 +4,39 @@
     <div class="panel panel-default">
       <div class="panel-heading" style="background: <%= school.color_1 %>"><a style="color: <%= school.color_2 %>" href="/schools/<%= school.shortname %>"><%= school.name %></a></div>
       <div class="panel-body">
-        <ul class="list-unstyled">
-          <li> <%= school.users_active.count %> member<% if school.users_active.count != 1 %>s<% end %></li>
+        <ul class="list-inline">
+          <li> <%= school.users_active.count %> member<% if school.users_active.count != 1 %>s<% end %></li><br>
           <% if school.spoon_url %>
-            <li><a href="<%= school.spoon_url %>"><img src="/assets/images/spoon-black.png"></a></li>
+            <li><a href="<%= school.spoon_url %>"><img src='/assets/logo-black.png'></a></li>
           <% end %>
           <% if school.facebook_url %>
-            <li><div class="fb-like" data-href="<%= school.facebook_url %>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></li>
+            <li><div class="fb-like" data-href="<%= school.facebook_url %>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div></li>
           <% end %>
-
-          <% if school.twitter_url %>
-          <li><a href="<%= school.twitter_url %>" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow</a></li>
-          <% end %>
-
           <% if school.instagram_url %>
-          <li>
-<a href="http://instagram.com/saraheadler?ref=badge" class="ig-b- ig-b-v-24"><img src="//badges.instagram.com/static/images/ig-badge-view-24.png" alt="Instagram" /></a></li>
+          <li><a href="<%= school.instagram_url %>?ref=badge" class="ig-b- ig-b-24"><img src="//badges.instagram.com/static/images/ig-badge-24.png" alt="Instagram" /></a></li>
           <% end %>
+          <% if school.twitter_url %>
+          <li><a href="<%= school.twitter_url %>" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @twitterapi</a></li>
+          <% end %>
+
+          
         </ul>
       </div>
     </div>
   </div>
   <% end %>
 </div>
+
+
+<!--   FACEBOOK JAVASCRIPT SDK -->
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=569407923142222";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!--   TWITTER JAVASCRIPT -->
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

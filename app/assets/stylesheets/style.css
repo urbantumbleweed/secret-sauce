@@ -120,6 +120,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .navbar {
+	z-index: 1000;
 	padding:5px;
 	background: #474747;
 	border-bottom:0px;
@@ -182,19 +183,8 @@ h1, h2, h3, h4, h5 {
 	margin:30px;
 }
 
-.begin-track.editorial:hover {
-	background-color: #f1a003;
-}
 
-.begin-track.photo:hover {
-	background-color: #00a2ca;
-}
-
-.begin-track.marketing:hover {
-	background-color: #829300;
-}
-
-.editorial a, .editorial .circle  {
+.editorial a {
 	background-color: #f1a003;
 }
 
@@ -202,7 +192,7 @@ h1, h2, h3, h4, h5 {
 	background-color: #f9d99a;
 }
 
-.photo a, .photo .circle  {
+.photo a {
 	background-color: #00a2ca;
 }
 
@@ -210,7 +200,7 @@ h1, h2, h3, h4, h5 {
 	background-color: #99daea;
 }
 
-.marketing a, .marketing .circle  {
+.marketing a {
 	background-color: #829300;
 }
 
@@ -265,7 +255,10 @@ h1, h2, h3, h4, h5 {
 	font-weight: 700;
 }
 
-
+.img-frame {
+	width:100%;
+	overflow:hidden;
+}
 
 .make-alum, .activate-user {
 	background-color: transparent;
@@ -312,8 +305,8 @@ footer {
 }
 
 div#menu {
-		position:absolute;
-		top: 35px;
+		z-index: 0;
+		top: 38px;
 		right: -300px;
     text-align:left;
     display:none;
@@ -348,6 +341,43 @@ div#menu {
 	color:#000000;
 	text-decoration: none;
 	border-bottom: 1px solid #a33873;
+}
+
+.school-social li {
+	padding: 9px 0px;
+}
+
+.leadership li {
+	margin:10px 0px;
+}
+
+.ig-b- { 
+	display: inline-block; 
+	}
+
+.ig-b- img {
+	visibility: hidden;
+	}
+
+.ig-b-:hover {
+	background-position: 0 -60px;
+	} 
+
+.ig-b-:active {
+	background-position: 0 -120px;
+	}
+
+.ig-b-24 {
+	width: 24px; 
+	height: 24px; 
+	background: url(//badges.instagram.com/static/images/ig-badge-sprite-24.png) no-repeat 0 0;
+	}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+.ig-b-24 {
+	background-image: url(//badges.instagram.com/static/images/ig-badge-sprite-24@2x.png);
+	background-size: 60px 178px; 
+	}
 }
 
 /* Small devices (tablets, 768px and up) */
