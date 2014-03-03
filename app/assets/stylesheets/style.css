@@ -12,6 +12,10 @@ html body {
 	text-transform:uppercase;
 }
 
+.logo {
+	padding:5px;
+}
+
 .questionCtn {
 	text-align: left;
 }

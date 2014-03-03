@@ -9,13 +9,13 @@ class PositionsController < ApplicationController
 	def position
 		@position = Position.find_by_shortname(params[:position])
 		@page = Page.find_by_shortname(params[:page])
+		current_user.update_completion(@position, @page)
 	end
 
 	def next
 		track = params[:track]		
 		page = Page.find_by_shortname(params[:page])
 		position = Position.find(params[:position])
-		current_user.update_completion(position, page)
 		page = position.next_page(page)
 		if page == nil
 			redirect_to agreement_path
