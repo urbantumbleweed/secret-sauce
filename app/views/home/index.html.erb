@@ -120,7 +120,7 @@
 				<% if current_user.position.pages.include?(score.page) %>
 		      <div class="<%= track %>">
 		      	<h4><strong><%= score.page.name %></strong></h4>
-		      	<div class="quiz-score <%= track %>"><%= score.percent_correct %>%</div><br>
+		      	<div class="quiz-score"><%= score.percent_correct %>%</div><br>
 		      	<a class="retake" href="/<%= track %>/<%= current_user.position.shortname %>/<%= score.page.shortname %>">RETAKE</a>
 		      </div>
 	   	  <% end %>
