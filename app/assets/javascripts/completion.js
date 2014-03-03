@@ -1,17 +1,25 @@
 
-donutOfCompleteness = function(user_id, percent_complete, position_name){
-  console.log('position_name = '+ position_name )
+donutOfCompleteness = function(user_id, percent_complete, position_name, personal){
 
-  var id = "#student_" + user_id;
+
+  if (personal === true) {
+    var id = "#personal_" + user_id;
+    var width_base = 500;
+    var radius_delta = 100;
+  }else{
+    var id = "#student_" + user_id;
+    var width_base = 150;
+    var radius_delta = 30;
+  }
+
   var percent_incomplete = 100 - percent_complete;
   var data = [ {name: "complete",   value: percent_complete},
                {name: "incomplete", value: percent_incomplete}
              ];
 
   var margin = {top: 10, right: 10, bottom: 10, left: 10};
-    width = 150 - margin.left - margin.right;
+    width = width_base - margin.left - margin.right;
     height = width - margin.top - margin.bottom;
-
 
   var chart = d3.select(id)
           .append('svg')
@@ -35,7 +43,7 @@ donutOfCompleteness = function(user_id, percent_complete, position_name){
 
   var arc = d3.svg.arc()
       .outerRadius(radius)
-      .innerRadius(radius - 30);
+      .innerRadius(radius - radius_delta);
 
   var pie = d3.layout.pie()
       .sort(null)
