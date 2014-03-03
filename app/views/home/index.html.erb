@@ -1,8 +1,8 @@
 
 <!--  SEE YOUR RESPONSIBILITIES *******************************************************      -->
 <div class="row">
-	<div class="col-md-8 profile">
-		<h1>So, <%= current_user.first_name %>... you're the <%= current_user.position.name %>.</h1>
+	<div class="col-md-8 col-md-offset-2 profile">
+		<h1>So, <%= current_user.first_name %>... you're the <%= current_user.position.name %> at <a class="link" href="schools/<%= current_user.school.shortname %>"><%= current_user.school.name %></a>.</h1>
 
 	<p>You're responsible for: </p>
 

@@ -10,42 +10,65 @@
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
- <div class="container">
-	<a href="/" id="logo"><%= image_tag "logo.png" %></a>
+  <div class="container">
+  <a href="/" id="logo"><%= image_tag "logo.png" %></a>
+
+<% if user_signed_in? %>
   <i id="openMenu" class="fa fa-arrow-circle-left fa-2x pull-right"></i>
-	<span class="navbar-right"><%= link_to "Log out", destroy_session_path(:user), :method => :delete, :class => "btn btn-primary" %></span>
+<% end %>
 </div>
 </nav>
-<div class="container">
+<div class="container body">
   <% if notice %>
   <p class="alert alert-notice"><%= notice %></p>
 <% end %>
 <% if alert %>
   <p class="alert alert-error"><%= alert %></p>
 <% end %>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 col-xs-12">
   <%= yield %>
+  </div>
+
+
+
+
+</div>
+</div>
+  <footer>
+    <div class="container">
+      &copy; 2014 Spoon University
+    </div>
+  </footer>
+  
+    <% if user_signed_in? %>
   <div id="menu" class="quicklinks">
-    <a href="/schools/<%= current_user.school.shortname %>" class="btn btn-primary school" style="background-color: <%= current_user.school.color_1 %>; color: <%= current_user.school.color_2 %>  "><%= current_user.school.name %></a>
+    <a class="list-group-item" href="/schools/<%= current_user.school.shortname %>" style="background-color: <%= current_user.school.color_1 %>; color: <%= current_user.school.color_2 %>  "><%= current_user.school.name %></a>
     <div class="list-group">
+      <%= link_to "Log out", destroy_session_path(:user), :method => :delete, :class => "list-group-item" %>
       <a class="list-group-item" href="<%= edit_user_registration_path %>">Edit Profile</a>
-      <a class="list-group-item" href="/staff">All Staffers</a>
-      <a class="list-group-item" href="<%= schools_path %>">All Schools</a>
+      
       <a class="list-group-item" href="#">Publishing Spreadsheet</a>
       <a class="list-group-item" href="<%= faq_path %>">FAQ</a>
       <a class="list-group-item" href="#">Brand Assets</a>
-      <a class="list-group-item" href="<%= positions_path %>">All Positions</a>
+      <a class="list-group-item border-top" href="<%= positions_path %>">All Positions</a>
+      <a class="list-group-item" href="/staff">All Staffers</a>
+      <a class="list-group-item" href="<%= schools_path %>">All Schools</a>
     </div>
   </div>
+  <% end %>
+
 
   <script>
   $(function(){
       $("#openMenu").click(function() {
       var menu = $("#menu");
+      $(menu).is(":visible")
       if ($(menu).is(":visible")) {
-          $(menu).animate({width: 0}, 500, function() {$(menu).hide();});
+          $(menu).animate({right: "-300px"}, 500, function() {$(menu).hide();});
           $('i.fa').removeClass('fa-arrow-circle-right').addClass('fa-arrow-circle-left');         
       } else {
-          $(menu).show().animate({width: 300}, 500);
+          $(menu).show().animate({right: "0px"}, 500, function() {$(menu).show();});
           $('i.fa').removeClass('fa-arrow-circle-left').addClass('fa-arrow-circle-right');
 
       }
@@ -54,38 +77,7 @@
   })
 
 
-  // var slideYet = false
-  
-  // var slideIn = function(){
-  //   $('#side-nav').click(function(e){
-  //   if (slideYet === false ){
-  //     $('.side-nav').removeClass('inactive');
-  //     $('.side-nav').addClass('active');
-  //     slideYet = true;
-  //   }
-  //   else {
-  //     $('.side-nav').removeClass('active');
-  //     $('.side-nav').addClass('inactive');
-  //     slideYet = false;
-  //   }
-  //   })
-  // }
-
-  // $(function(){
-  //   slideIn();
-  // });
-
   </script>
-
-</div>
-
-  <footer>
-    <div class="container">
-      &copy; 2014 Spoon University
-    </div>
-
-  </footer>
-
 <!--   QUIZ TEMPLATES -->
 
   <script type="text/x-handlebars-template" id="quizTemplate">

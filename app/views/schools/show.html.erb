@@ -1,5 +1,9 @@
 <% school = @school %>
-<h1><%= school.name %></h1><a href="<%= edit_school_path(@school)%>"><i class="fa fa-pencil"></i></a>
+
+<h1><%= school.name %></h1>
+<% if current_user.position.shortname == 'editor-in-chief'%>
+<a href="<%= edit_school_path(@school)%>"><i class="fa fa-pencil"></i></a>
+<% end %>
 
 <ul class="list-inline">
   <% if school.facebook_url %>
@@ -20,28 +24,60 @@
 </ul>
 <div class="row active-users">
   <% if school.users_active != [] %>
-    <% school.users_active.each do |user| %>
+    <% school.users_active.each do |student| %>
       <div class="col-md-3 active-user">
-        <h4><%= user.name %><button class="make-alum" data-userid="<%= user.id %>" class="deactivate-user"><i class="fa fa-minus-square-o"></i></button></h4>
-        <ul>
-          <li><%= user.position.name %></li>
-          <% if user.phone_number.empty? == false %>
-            <li><%= user.phone_number %></li>
-          <% end %>
-          <% if user.email %>
-            <li><%= user.email %></li>
-          <% end %>
-        </ul>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <p><%= student.name %>
+              <button class="make-alum" data-userid="<%= student.id %>" class="deactivate-user">
+                <i class="fa fa-minus-square-o"></i>
+              </button>
+            </p>
+          </div>
+          <div class="panel-body">
+            <ul class="list-unstyled">
+              <li><%= student.position.name %></li>
+              <% if student.phone_number.empty? == false %>
+              <li><%= student.phone_number %></li>
+              <% end %>
+              <% if student.email %>
+              <li><%= student.email %></li>
+              <% end %>              
+            </ul>
+          </div>
+        </div>
       </div>
-    <% end %>
-  <% else %>
-    Go get your team, yo
-  <% end %>
-</div>
-<button id='see-alum'>See Alum</button>
+        <% end %>
+      <% else %>
+      <p>Go get your team, yo.</p>
+      <% end %>
+    </div>
+<button class="btn btn-primary" id='see-alum'>See Alum</button>
 <div class="row alum">
   <% if school.users_inactive != [] %>
-    <% school.users_inactive.each do |user| %>
+    <% school.users_inactive.each do |student| %>
+      <div class="col-md-3 active-user">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <p><%= student.name %>
+              <button data-userid="<%= user.id %>" class="activate-user">
+              <i class="fa fa-plus-square-o"></i>
+            </button>
+            </p>
+          </div>
+          <div class="panel-body">
+            <ul class="list-unstyled">
+              <li><%= student.position.name %></li>
+              <% if student.phone_number.empty? == false %>
+              <li><%= student.phone_number %></li>
+              <% end %>
+              <% if student.email %>
+              <li><%= student.email %></li>
+              <% end %>              
+            </ul>
+          </div>
+        </div
+
       <div class="col-md-3 alum-inactive">
         <h3><%= user.name %><button data-userid="<%= user.id %>" class="activate-user">+</button></h3>
         <ul>
