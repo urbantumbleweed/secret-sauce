@@ -103,9 +103,30 @@
 <div class="col-md-6">
 
 	<!--  SEE YOUR PROGRESS *******************************************************      -->
+
+ 
+
+
+
+
 	<div id="personal_<%= current_user.id %>"></div>
 
 	<h3>You are <%= current_user.percent_complete %>% through your track.</h3>
+
+	<% if current_user.scores %>
+		<% track = current_user.position.track(current_user.position.pages.first) %>
+		<div class="quiz-wrapper">
+	    <% current_user.scores.each do |score| %>
+				<% if current_user.position.pages.include?(score.page) %>
+		      <div class="<%= track %>">
+		      	<h4><strong><%= score.page.name %></strong></h4>
+		      	<div class="quiz-score <%= track %>"><%= score.percent_correct %>%</div><br>
+		      	<a class="retake" href="/<%= track %>/<%= current_user.position.shortname %>/<%= score.page.shortname %>">RETAKE</a>
+		      </div>
+	   	  <% end %>
+   	  <% end %>
+		</div>
+  <% end %> 
 
  
 	<!--  BEGINYOUR TRACK *******************************************************      -->
@@ -117,8 +138,8 @@
 
 <script>
   $(function() {
-	donutOfCompleteness(<%= current_user.id %>, <%= current_user.percent_complete %>, "<%= current_user.position.track(current_user.position.pages.first) %>", true)
-});
+		donutOfCompleteness(<%= current_user.id %>, <%= current_user.percent_complete %>, "<%= current_user.position.track(current_user.position.pages.first) %>", true)
+	});
 </script>
 
 </div>

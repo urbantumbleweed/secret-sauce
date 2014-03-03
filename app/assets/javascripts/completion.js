@@ -1,12 +1,11 @@
 
 donutOfCompleteness = function(user_id, percent_complete, position_name, personal){
 
-
   if (personal === true) {
     var id = "#personal_" + user_id;
-    var width_base = 500;
-    var radius_delta = 100;
-  }else{
+    var width_base = 300;
+    var radius_delta = 80;
+  } else {
     var id = "#student_" + user_id;
     var width_base = 150;
     var radius_delta = 30;
