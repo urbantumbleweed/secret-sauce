@@ -103,10 +103,11 @@
 <div class="col-md-6">
 
 	<!--  SEE YOUR PROGRESS *******************************************************      -->
+	<div id="personal_<%= current_user.id %>"></div>
+
 	<h3>You are <%= current_user.percent_complete %>% through your track.</h3>
 
-<svg id="completion"></svg>
-
+ 
 	<!--  BEGINYOUR TRACK *******************************************************      -->
 	
 
@@ -114,7 +115,11 @@
 	
 	<!--  INSTRUCTIONS *******************************************************      -->
 
-
+<script>
+  $(function() {
+	donutOfCompleteness(<%= current_user.id %>, <%= current_user.percent_complete %>, "<%= current_user.position.track(current_user.position.pages.first) %>", true)
+});
+</script>
 
 </div>
 </div>

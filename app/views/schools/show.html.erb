@@ -135,7 +135,7 @@
 
   <% if school.users_active != [] %>
     <% school.users_active.each do |student| %>
-      donutOfCompleteness(<%= student.id %>, <%= student.percent_complete %>, "<%= student.position.track(student.position.pages.first) %>")
+      donutOfCompleteness(<%= student.id %>, <%= student.percent_complete %>, "<%= student.position.track(student.position.pages.first) %>", false)
     <% end %>  
   <% end %>
   
