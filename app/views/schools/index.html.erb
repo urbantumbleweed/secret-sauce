@@ -5,8 +5,9 @@
       <div class="panel-heading" style="background: <%= school.color_1 %>"><a style="color: <%= school.color_2 %>" href="/schools/<%= school.shortname %>"><%= school.name %></a></div>
       <div class="panel-body">
         <ul class="list-unstyled">
+          <li> <%= school.users_active.count %> member<% if school.users_active.count != 1 %>s<% end %></li>
           <% if school.spoon_url %>
-            <li><a href="<%= school.spoon_url %>">Spoon Logo</a></li>
+            <li><a href="<%= school.spoon_url %>"><img src="/assets/images/spoon-black.png"></a></li>
           <% end %>
           <% if school.facebook_url %>
             <li><div class="fb-like" data-href="<%= school.facebook_url %>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></li>

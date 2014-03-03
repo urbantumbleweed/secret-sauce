@@ -41,19 +41,15 @@ class User < ActiveRecord::Base
 		end
 	end
 
-	def percent_completed
-		completed = self.status.pages.count
-	end
-
-	def is_admin?
-		self.position.name == 'editor-in-chief' || self.position.name == 'business-director' || self.position.name == 'photo-director' 
-	end
-	
 	def percent_complete
 		completed = self.status.pages.count.to_f
 		total = self.position.pages.count.to_f
-		percent_complete = (completed/total)*100
+		percent_completed = (completed/total)*100
+		percent_completed.to_i
 	end
 
+	def is_admin?
+		self.position.shortname == 'editor-in-chief' || self.position.shortname == 'business-director' || self.position.shortname == 'photo-director' 
+	end
 
 end
