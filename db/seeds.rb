@@ -568,3 +568,22 @@ Status.create!([
   {position_id: 2, user_id: 14},
   {position_id: 1, user_id: 15}
 ])
+
+
+Score.create!([
+  {user_id: 1, page_id: 5, correct: 2, total: 8},
+  {user_id: 2, page_id: 5, correct: 1, total: 8},
+  {user_id: 3, page_id: 5, correct: 4, total: 8},
+  {user_id: 4, page_id: 25, correct: 5, total: 8},
+  {user_id: 5, page_id: 25, correct: 3, total: 6},
+  {user_id: 6, page_id: 25, correct: 6, total: 6},
+  {user_id: 7, page_id: 5, correct: 4, total: 8},
+  {user_id: 8, page_id: 5, correct: 1, total: 8},
+  {user_id: 9, page_id: 5, correct: 0, total: 8},
+  {user_id: 10, page_id: 5, correct: 7, total: 8},
+  {user_id: 11, page_id: 5, correct: 0, total: 8},
+  {user_id: 12, page_id: 25, correct: 1, total: 6},
+  {user_id: 13, page_id: 25, correct: 7, total: 6},
+  {user_id: 14, page_id: 5, correct: 8, total: 8},
+  {user_id: 15, page_id: 5, correct: 10, total: 8}
+])

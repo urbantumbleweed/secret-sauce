@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227145430) do
+ActiveRecord::Schema.define(version: 20140303171043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,15 @@ ActiveRecord::Schema.define(version: 20140227145430) do
     t.datetime "updated_at"
   end
 
+  create_table "scores", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "page_id"
+    t.integer  "correct"
+    t.integer  "total"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "statuses", force: true do |t|
     t.integer  "position_id"
     t.integer  "user_id"
@@ -79,8 +88,6 @@ ActiveRecord::Schema.define(version: 20140227145430) do
     t.datetime "updated_at"
     t.boolean  "active",                 default: true
     t.boolean  "agreed",                 default: false
-    t.integer  "quiz_style"
-    t.integer  "quiz_expectations"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

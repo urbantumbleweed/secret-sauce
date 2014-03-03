@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :statuses
 	has_many :positions, through: :statuses
+	has_many :scores
 	belongs_to :school
 
 	accepts_nested_attributes_for :positions

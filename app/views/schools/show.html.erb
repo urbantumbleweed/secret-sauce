@@ -34,18 +34,23 @@
               </button>
             </p>
           </div>
-          <div class="panel-body">
+          <div class="panel-body" id="student_<%= student.id %>">
             <ul class="list-unstyled">
               <li><%= student.position.name %></li>
-              <% if current_user.is_admin? %>
-              <li><%= student.percent_complete %>% completed</li>
-              <% end %>
+             
               <% if student.phone_number.empty? == false %>
               <li><%= student.phone_number %></li>
               <% end %>
               <% if student.email %>
               <li><%= student.email %></li>
-              <% end %>              
+              <% end %>
+              <% if current_user.is_admin? %>
+                <% if student.scores %>
+                  <% student.scores.each do |score| %>
+                    <li><%= score.page.name %> Quiz: <%= score.correct %> / <%= score.total %></li>
+                  <% end %>       
+                <% end %>  
+              <% end %>
             </ul>
           </div>
         </div>
@@ -126,10 +131,15 @@
 
   $(function() {
       setHandlers();
+ 
+
+  <% if school.users_active != [] %>
+    <% school.users_active.each do |student| %>
+      donutOfCompleteness(<%= student.id %>, <%= student.percent_complete %>, "<%= student.position.track(student.position.pages.first) %>")
+    <% end %>  
+  <% end %>
+  
   });
-
-
-
 
 </script>
 
