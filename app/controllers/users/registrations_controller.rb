@@ -16,7 +16,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 		@positions = Position.all 
 		@schools = School.order("lower(name)").all
 		super
-		Status.create(user: @user, position_id: params['position_id'])
+		Status.create(user: current_user, position_id: params['position_id'])
 	end
 
 	def update
@@ -24,7 +24,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 		@schools = School.order("lower(name)").all
 		super
 		current_user.update_attributes(user_params)
-		Status.create(user: @user, position_id: params['position_id'])
+		Status.create(user: current_user, position_id: params['position_id'])
 	end
 
   private

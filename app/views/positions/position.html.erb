@@ -26,7 +26,6 @@
 </style>
 
 <!-- Track Navigation Bar -->
-
 <ul class="track-nav <%= @position.track(@page) %> list-inline clearfix hidden-xs">
 	<div>
 <% @position.pages.each do |page| %>
@@ -34,6 +33,7 @@
 		<li><%= page.name.gsub('-',' ') %></li>
 	</a>
 <% end %>
+</div>
 </div>
 </ul>
 <!-- Body -->

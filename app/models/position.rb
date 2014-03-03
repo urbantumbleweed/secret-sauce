@@ -20,8 +20,7 @@ class Position < ActiveRecord::Base
 ## THIS DOESN'T WORK
 	def track(page)
 		if self.name =~ /contributor/i
-			binding.pry
-			if self.pages.index(page) <= self.pages.index(Page.find_by_shortname('national_sections')) 
+			if self.pages.index(page) <= self.pages.index(Page.find_by_shortname('editorial_sections')) 
 				return 'editorial'
 			else
 				return 'photo'

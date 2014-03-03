@@ -30,6 +30,7 @@ page_names = {
 		'add_video' => 'Add Video',
 		'slideshow' => 'Add Slideshow',
 		'editorial_sections' => 'Sections',
+		'section_intro' => 'Next...',
 		'photo_sections' => 'Sections',
 		'flickr' => 'Flickr',
 		'expectations' => 'Expectations',
@@ -43,6 +44,12 @@ page_names = {
 		'marketing_materials' => 'Marketing Materials',
 		'analytics' => 'Analytics',
 		'calendar' => 'Events Calendar',
+		'recipes' => 'Recipes',
+		'restaurants' => 'Restaurants',
+		'food_for_thought' => 'Food for Thought',
+		'kitchen_101' => 'Kitchen 101',
+		'students_campus' => 'Students & Campus',
+		'events' => 'Events'
 	}
 
 page_names.each do |k, v|
@@ -109,9 +116,16 @@ eic.pages = eic.pages + [
 	Page.find_by_shortname('post'), 
 	Page.find_by_shortname('final_checks'), 
 	Page.find_by_shortname('add_photos'), 
-	Page.find_by_shortname('add_video'), # missing?
-	Page.find_by_shortname('slideshow'), 
-	Page.find_by_shortname('editorial_sections') # need to add
+	Page.find_by_shortname('add_video'),
+	Page.find_by_shortname('slideshow'),
+	Page.find_by_shortname('section_intro'), 
+	Page.find_by_shortname('recipes'),
+	Page.find_by_shortname('restaurants'),
+	Page.find_by_shortname('kitchen_101'),
+	Page.find_by_shortname('food_for_thought'),
+	Page.find_by_shortname('students_campus'),
+	Page.find_by_shortname('events'),
+	Page.find_by_shortname('editorial_sections')
 	]
 
 	# STOP
@@ -128,6 +142,13 @@ me.pages = me.pages + [
 	Page.find_by_shortname('add_photos'),
 	Page.find_by_shortname('add_video'),
 	Page.find_by_shortname('slideshow'),
+	Page.find_by_shortname('section_intro'), 
+	Page.find_by_shortname('recipes'),
+	Page.find_by_shortname('restaurants'),
+	Page.find_by_shortname('kitchen_101'),
+	Page.find_by_shortname('food_for_thought'),
+	Page.find_by_shortname('students_campus'),
+	Page.find_by_shortname('events'),
 	Page.find_by_shortname('editorial_sections')
 	]
 
@@ -143,8 +164,12 @@ nc.pages = [
 	Page.find_by_shortname('post'),
 	Page.find_by_shortname('add_photos'),
 	Page.find_by_shortname('add_video'),
+	Page.find_by_shortname('section_intro'), 
 	Page.find_by_shortname('slideshow'),
-	Page.find_by_shortname('editorial_sections')
+	Page.find_by_shortname('recipes'),
+	Page.find_by_shortname('kitchen_101'),
+	Page.find_by_shortname('food_for_thought'),
+	Page.find_by_shortname('editorial_sections'),
 	Page.find_by_shortname('flickr'),
 	Page.find_by_shortname('expectations'),
 	Page.find_by_shortname('fave_photos'),

@@ -14,6 +14,10 @@ html body {
 	width: 100%;
 }
 
+#error_explanation ul {
+	list-style-type: none;
+}
+
 .small-caps {
 	font-weight: 900;
 	font-size:11px;
@@ -22,6 +26,10 @@ html body {
 
 .btn.btn-primary:hover {
 	background-color: #cc0066;
+}
+.asterisk {
+	color: #ff0000;
+	font-size: 40px;
 }
 
 #logo {
