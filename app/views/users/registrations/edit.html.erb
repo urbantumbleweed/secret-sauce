@@ -1,49 +1,73 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Edit <%= resource_name.to_s.humanize %>
+</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+<%= devise_error_messages! %>
 
+<div class="form-group">
+  <label for="email">Email</label>
+  <%= f.email_field :email, :autofocus => true %>
+</div>
+
+<div class="form-group">
+  <label for="first_name">First Name</label>
+  <%= f.text_field :first_name, :autofocus => true %>
+</div>
+
+<div class="form-group">
+  <label for="last_name">Last Name</label>
+  <%= f.text_field :last_name, :autofocus => true %>
+</div>
+
+<div class="form-group">
+  <label for="phone_number">Phone Number</label>
+  <%= f.text_field :phone_number, :autofocus => true %>
+</div>
+
+<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+<div>Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+</div>
+<% end %>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+       <p>We need your current password to confirm your changes.</p>
+       <label class="small-caps" for="current_password">Current Password</label>
+      <br>
+      <%= f.password_field :current_password %><span class="asterisk">*</span>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <p>If you want to change your password, you can do that right here... but if you don't, then leave it blank.</p>
+    <div class="form-group">
+      <label class="small-caps" for="password">Password</label>
+      <%= f.password_field :password, :autocomplete => "off" %>
+    </div>
   <div class="form-group">
-    <label for="email">Email</label>
-  <%= f.email_field :email, :autofocus => true %></div>
-
-  <div class="form-group">
-    <label for="first_name">First Name</label>
-  <%= f.text_field :first_name, :autofocus => true %></div>
-
-  <div class="form-group">
-    <label for="last_name">Last Name</label>
-  <%= f.text_field :last_name, :autofocus => true %></div>
-
-  <div class="form-group">
-    <label for="phone_number">Phone Number</label>
-  <%= f.text_field :phone_number, :autofocus => true %></div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="form-group">
-    <label for="password">Password</label>
-  <%= f.password_field :password, :autocomplete => "off" %></div>
-
-  <div class="form-group">
-    <label for="password_confirmation">Confirm Password</label>
-  <%= f.password_field :password_confirmation %></div>
-
-  <div class="form-group">
-    <label for="current_password">Current Password</label> <i>(we need your current password to confirm your changes)</i><br>
-  <%= f.password_field :current_password %></div>
-
+    <label class="small-caps"  for="password_confirmation">Confirm Password</label>
+    <%= f.password_field :password_confirmation %>
+  </div>
+</div>
+</div>
+</div>
+</div>
   <% if @schools %>
   <div class="form-group">
-    <label for="school_id">School</label><%= f.collection_select(:school_id, @schools, :id, :name) %></div>
+    <label for="school_id">School</label>
+    <%= f.collection_select(:school_id, @schools, :id, :name) %>
+  </div>
   <div class="form-group">
-    <label for="position_id">Position</label><%= select_tag(:position_id, options_from_collection_for_select(@positions, "id", "name") ) %></div>
-<% end %>
+    <label for="position_id">Position</label>
+    <%= select_tag(:position_id, options_from_collection_for_select(@positions, "id", "name") ) %>
+  </div>
+  <% end %>
 
 
-  <div><%= f.submit "Update", :class => "btn btn-primary btn" %></div>
-<% end %>
+  <div>
+    <%= f.submit "Update", :class => "btn btn-primary btn" %>
+  </div>
+  <% end %>
 
-<%= link_to "Back", :back %>
+  <%= link_to "Back", :back %>

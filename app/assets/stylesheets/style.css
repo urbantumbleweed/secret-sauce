@@ -6,6 +6,18 @@ html body {
 	margin-top:100px;
 }
 
+.sections .row {
+	margin-bottom: 50px;
+}
+
+.img {
+	width: 100%;
+}
+
+#error_explanation ul {
+	list-style-type: none;
+}
+
 .small-caps {
 	font-weight: 900;
 	font-size:11px;
@@ -15,6 +27,10 @@ html body {
 .btn.btn-primary:hover {
 	background-color: #cc0066;
 }
+.asterisk {
+	color: #ff0000;
+	font-size: 40px;
+}
 
 #logo {
 	padding:5px 10px 5px 0px;
@@ -22,14 +38,30 @@ html body {
 
 .box {
 	border: 1px solid #000000;
-	padding:10px;
 	border-radius: 5px;
 }
 
+.box-inner {
+	padding: 15px;
+}
+
+.box-label {
+	width:100%;
+	text-transform:uppercase;
+	color:#ffffff;
+	background-color: #000000;
+	font-weight:700;
+	letter-spacing: 1px;
+	font-size:12px;
+}
 
 .little-spoon {
 	width:14px;
 	margin-top:-4px;
+}
+
+.empty-space {
+	margin-top:100px;
 }
 
 .questionCtn {
@@ -97,7 +129,7 @@ a.school-link:hover {
 }
 
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-	font-size: 10px;
+	font-size: 13px;
 	height: 35px;
 	padding:12px;
 	width: 60%;
