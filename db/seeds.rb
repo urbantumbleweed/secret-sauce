@@ -552,19 +552,19 @@ User.create!([
 ])
 
 Status.create!([
-  {position_id: 1, user_id: 1, quiz_1: nil, quiz_2: nil, quiz_3: nil},
-  {position_id: 2, user_id: 2, quiz_1: nil, quiz_2: nil, quiz_3: nil},
-  {position_id: 1, user_id: 3, quiz_1: nil, quiz_2: nil, quiz_3: nil},
-  {position_id: 1, user_id: 4, quiz_1: nil, quiz_2: nil, quiz_3: nil},
-  {position_id: 1, user_id: 5, quiz_1: nil, quiz_2: nil, quiz_3: nil},
-  {position_id: 1, user_id: 6, quiz_1: nil, quiz_2: nil, quiz_3: nil},
-  {position_id: 1, user_id: 7, quiz_1: nil, quiz_2: nil, quiz_3: nil},
-  {position_id: 1, user_id: 8, quiz_1: nil, quiz_2: nil, quiz_3: nil},
-  {position_id: 1, user_id: 9, quiz_1: nil, quiz_2: nil, quiz_3: nil},
-  {position_id: 1, user_id: 10, quiz_1: nil, quiz_2: nil, quiz_3: nil},
-  {position_id: 1, user_id: 11, quiz_1: nil, quiz_2: nil, quiz_3: nil},
-  {position_id: 2, user_id: 12, quiz_1: nil, quiz_2: nil, quiz_3: nil},
-  {position_id: 2, user_id: 13, quiz_1: nil, quiz_2: nil, quiz_3: nil},
-  {position_id: 2, user_id: 14, quiz_1: nil, quiz_2: nil, quiz_3: nil},
-  {position_id: 1, user_id: 15, quiz_1: nil, quiz_2: nil, quiz_3: nil}
+  {position_id: 1, user_id: 1},
+  {position_id: 2, user_id: 2},
+  {position_id: 1, user_id: 3},
+  {position_id: 1, user_id: 4},
+  {position_id: 1, user_id: 5},
+  {position_id: 1, user_id: 6},
+  {position_id: 1, user_id: 7},
+  {position_id: 1, user_id: 8},
+  {position_id: 1, user_id: 9},
+  {position_id: 1, user_id: 10},
+  {position_id: 1, user_id: 11},
+  {position_id: 2, user_id: 12},
+  {position_id: 2, user_id: 13},
+  {position_id: 2, user_id: 14},
+  {position_id: 1, user_id: 15}
 ])

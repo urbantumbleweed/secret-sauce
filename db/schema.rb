@@ -56,9 +56,6 @@ ActiveRecord::Schema.define(version: 20140227145430) do
   create_table "statuses", force: true do |t|
     t.integer  "position_id"
     t.integer  "user_id"
-    t.integer  "quiz_1"
-    t.integer  "quiz_2"
-    t.integer  "quiz_3"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -82,6 +79,8 @@ ActiveRecord::Schema.define(version: 20140227145430) do
     t.datetime "updated_at"
     t.boolean  "active",                 default: true
     t.boolean  "agreed",                 default: false
+    t.integer  "quiz_style"
+    t.integer  "quiz_expectations"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

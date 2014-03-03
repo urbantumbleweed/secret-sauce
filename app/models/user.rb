@@ -42,7 +42,6 @@ class User < ActiveRecord::Base
 
 	def percent_completed
 		completed = self.status.pages.count
-		total = 
 	end
 
 	def is_admin?
