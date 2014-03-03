@@ -29,8 +29,8 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <p><%= student.name %>
-              <button class="make-alum" data-userid="<%= student.id %>" class="deactivate-user">
-                <i class="fa fa-minus-square-o"></i>
+              <button class="make-alum" class="deactivate-user">
+                <i class="fa fa-minus-square-o" data-userid="<%= student.id %>" ></i>
               </button>
             </p>
           </div>
@@ -60,8 +60,8 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <p><%= student.name %>
-              <button data-userid="<%= student.id %>" class="activate-user">
-              <i class="fa fa-plus-square-o"></i>
+              <button class="activate-user">
+              <i class="fa fa-plus-square-o" data-userid="<%= student.id %>" ></i>
             </button>
             </p>
           </div>
