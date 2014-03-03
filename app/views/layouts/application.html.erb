@@ -3,6 +3,7 @@
 <head>
   <script type="text/javascript" src="//use.typekit.net/pmb1dkw.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <title>Spoon University Secret Sauce</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -11,17 +12,79 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
  <div class="container">
 	<a href="/" id="logo"><%= image_tag "logo.png" %></a>
-	<span class="navbar-right"><%= link_to "Log out", destroy_session_path(:user), :method => :delete %></span>
+  <i id="openMenu" class="fa fa-arrow-circle-left fa-2x pull-right"></i>
+	<span class="navbar-right"><%= link_to "Log out", destroy_session_path(:user), :method => :delete, :class => "btn btn-primary" %></span>
 </div>
 </nav>
-<% if notice %>
+<div class="container">
+  <% if notice %>
   <p class="alert alert-notice"><%= notice %></p>
 <% end %>
 <% if alert %>
   <p class="alert alert-error"><%= alert %></p>
 <% end %>
-<div class="container">
   <%= yield %>
+  <div id="menu" class="quicklinks">
+    <a href="/schools/<%= current_user.school.shortname %>" class="btn btn-primary school" style="background-color: <%= current_user.school.color_1 %>; color: <%= current_user.school.color_2 %>  "><%= current_user.school.name %></a>
+    <div class="list-group">
+      <a class="list-group-item" href="<%= edit_user_registration_path %>">Edit Profile</a>
+      <a class="list-group-item" href="/staff">All Staffers</a>
+      <a class="list-group-item" href="<%= schools_path %>">All Schools</a>
+      <a class="list-group-item" href="#">Publishing Spreadsheet</a>
+      <a class="list-group-item" href="<%= faq_path %>">FAQ</a>
+      <a class="list-group-item" href="#">Brand Assets</a>
+      <a class="list-group-item" href="<%= positions_path %>">All Positions</a>
+    </div>
+  </div>
+
+  <script>
+  $(function(){
+      $("#openMenu").click(function() {
+      var menu = $("#menu");
+      if ($(menu).is(":visible")) {
+          $(menu).animate({width: 0}, 500, function() {$(menu).hide();});
+          $('i.fa').removeClass('fa-arrow-circle-right').addClass('fa-arrow-circle-left');         
+      } else {
+          $(menu).show().animate({width: 300}, 500);
+          $('i.fa').removeClass('fa-arrow-circle-left').addClass('fa-arrow-circle-right');
+
+      }
+  });
+
+  })
+
+
+  // var slideYet = false
+  
+  // var slideIn = function(){
+  //   $('#side-nav').click(function(e){
+  //   if (slideYet === false ){
+  //     $('.side-nav').removeClass('inactive');
+  //     $('.side-nav').addClass('active');
+  //     slideYet = true;
+  //   }
+  //   else {
+  //     $('.side-nav').removeClass('active');
+  //     $('.side-nav').addClass('inactive');
+  //     slideYet = false;
+  //   }
+  //   })
+  // }
+
+  // $(function(){
+  //   slideIn();
+  // });
+
+  </script>
+
+</div>
+
+  <footer>
+    <div class="container">
+      &copy; 2014 Spoon University
+    </div>
+
+  </footer>
 
 <!--   QUIZ TEMPLATES -->
 

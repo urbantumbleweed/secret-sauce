@@ -1,17 +1,17 @@
 <% school = @school %>
-<h1><%= school.name %></h1>
-<a href="<%= edit_school_path(@school)%>"><i class="fa fa-pencil"></i></a>
-<ul>
+<h1><%= school.name %></h1><a href="<%= edit_school_path(@school)%>"><i class="fa fa-pencil"></i></a>
+
+<ul class="list-inline">
   <% if school.facebook_url %>
-    <li><a href="<%= school.facebook_url %>">Facebook</a></li>
+    <li><a href="<%= school.facebook_url %>"><i class="fa fa-facebook"></i></a></li>
   <% end %>
 
   <% if school.twitter_url %>
-    <li><a href="<%= school.twitter_url %>">Twitter</a></li>
+    <li><a href="<%= school.twitter_url %>"><i class="fa fa-twitter"></i></a></li>
   <% end %>
 
   <% if school.instagram_url %>
-    <li><a href="<%= school.instagram_url %>">Instagram</a></li>
+    <li><a href="<%= school.instagram_url %>"><i class="fa fa-instagram"></i></a></li>
   <% end %>
 
   <% if school.spoon_url %>
@@ -22,7 +22,7 @@
   <% if school.users_active != [] %>
     <% school.users_active.each do |user| %>
       <div class="col-md-3 active-user">
-        <h3><%= user.name %><button data-userid="<%= user.id %>" class="deactivate-user">x</button></h3>
+        <h4><%= user.name %><button class="make-alum" data-userid="<%= user.id %>" class="deactivate-user"><i class="fa fa-minus-square-o"></i></button></h4>
         <ul>
           <li><%= user.position.name %></li>
           <% if user.phone_number.empty? == false %>
