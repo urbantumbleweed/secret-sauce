@@ -40,13 +40,13 @@
     </div>
   </div>
   <div class="col-sm-6">
-    <p>If you want to change your password, you can do that right here... but if you don't, then leave it blank.</p>
+    <p class="label">Optional</p>
     <div class="form-group">
-      <label class="small-caps" for="password">Password</label>
+      <label class="small-caps" for="password">New Password</label>
       <%= f.password_field :password, :autocomplete => "off" %>
     </div>
   <div class="form-group">
-    <label class="small-caps"  for="password_confirmation">Confirm Password</label>
+    <label class="small-caps"  for="password_confirmation">Confirm New Password</label>
     <%= f.password_field :password_confirmation %>
   </div>
 </div>

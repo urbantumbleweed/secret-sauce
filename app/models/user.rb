@@ -25,12 +25,12 @@ class User < ActiveRecord::Base
 		active 
 	end
 
-	def position
-		return self.positions.last
-	end
-
 	def status
 		return self.statuses.last
+	end
+
+	def position
+		return self.status.position
 	end
 
 	def update_completion(position, page)
