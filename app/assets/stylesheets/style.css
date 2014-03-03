@@ -389,5 +389,8 @@ div#menu {
 	
  }
 
-
+path {
+    stroke: #ffffff;
+    stroke-width: 4px;
+}
 
