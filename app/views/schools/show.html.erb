@@ -37,22 +37,22 @@
           <div class="panel-body">
             <ul class="list-unstyled">
               <li><%= student.position.name %></li>
-              <% if current_user.is_admin? %>
-              <li><%= student.percent_complete %>% completed</li>
-              <% end %>
+             
               <% if student.phone_number.empty? == false %>
               <li><%= student.phone_number %></li>
               <% end %>
               <% if student.email %>
               <li><%= student.email %></li>
               <% end %>
-
-
+              <% if current_user.is_admin? %>
+              <li><%= student.percent_complete %>% completed</li>
               <% if student.scores %>
                 <% student.scores.each do |score| %>
-                  <li>Score <%= score.correct %></li>
+                  <li>Quiz <%= score.page.name %> Score <%= score.correct %> / <%= score.total %></li>
                 <% end %>       
-              <% end %>       
+              <% end %>  
+              <% end %>
+                   
             
 
             </ul>

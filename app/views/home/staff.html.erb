@@ -3,7 +3,12 @@
   <div class="col-sm-3">
     <div class="panel panel-default">
       <div class="panel-heading"><p><%= student.name %></p>
-      	<p style="background: <%= student.school.color_1 %>; color: <%= student.school.color_2 %>" class="badge"><%= student.school.shortname %></p></div>
+      	<p style="background: <%= student.school.color_1 %>; color: <%= student.school.color_2 %>" class="badge">
+          <a class="school-link" href='/schools/<%= student.school.shortname %>'>
+            <%= student.school.shortname %>
+          </a>
+        </p>
+      </div>
       <div class="panel-body">
         <ul class="list-unstyled">
             <li><%= student.position.name %></li>
