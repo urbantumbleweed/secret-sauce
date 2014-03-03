@@ -23,13 +23,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
 		@positions = Position.all 
 		@schools = School.order("lower(name)").all
 		super
+		current_user.update_attributes(user_params)
 		Status.create(user: @user, position_id: params['position_id'])
 	end
 
   private
 
-  def sign_up_params
-    allow = [:email, :first_name, :last_name, :password, :password_confirmation, :phone_number, :school_id, :user_id, ]
+  def user_params
+    allow = [:email, :first_name, :last_name, :password, :password_confirmation, :phone_number, :school_id, :user_id]
     params.require(:user).permit(allow)
   end
 

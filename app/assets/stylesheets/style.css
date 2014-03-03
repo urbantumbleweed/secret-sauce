@@ -24,6 +24,11 @@ svg#completion {
 	height:50px;
 }
 
+.little-spoon {
+	width:14px;
+	margin-top:-4px;
+}
+
 .questionCtn {
 	text-align: left;
 }

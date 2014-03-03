@@ -19,7 +19,7 @@
   <% end %>
 
   <% if school.spoon_url %>
-    <li><a href="<%= school.spoon_url %>"><img style="width:14px;margin-top:-4px;" src='/assets/logo-black.png'></a></li>
+    <li><a href="<%= school.spoon_url %>"><img class="little-spoon" src='/assets/logo-black.png'></a></li>
   <% end %>
 </ul>
 <div class="row active-users">
@@ -37,6 +37,9 @@
           <div class="panel-body">
             <ul class="list-unstyled">
               <li><%= student.position.name %></li>
+              <% if current_user.is_admin? %>
+              <li><%= student.percent_complete %>% completed</li>
+              <% end %>
               <% if student.phone_number.empty? == false %>
               <li><%= student.phone_number %></li>
               <% end %>
