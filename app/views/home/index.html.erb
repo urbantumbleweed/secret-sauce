@@ -4,7 +4,7 @@
 	<div class="col-md-8 col-md-offset-2 profile">
 		<h1>So, <%= current_user.first_name %>... you're the <%= current_user.position.name %> at <a class="link" href="schools/<%= current_user.school.shortname %>"><%= current_user.school.name %></a>.</h1>
 
-	<p>It's your job to:</p>
+	<p class="small-caps">It's your job to:</p>
 
 
 	<% case current_user.position.shortname %>
@@ -65,21 +65,31 @@
 		<h4>... who do you think you are?</h4>
 
 	<% end %>
-
+<div class="row-fluid <%= current_user.position.track(@page) %>">
+<div class="col-sm-6 ">
+<div class="circle">
+<div class="number">1</div>
+</div>
+<p class="center">Watch the videos on your track (designed specifically for your role!). None of the videos are longer than <strong>one minute!</strong></p>
+</div>
+<div class="col-sm-6">
+<div class="circle">
+<div class="number">2</div>
+</div>
+<p class="center">Open up another browser window on your screen and <strong>do the activities as you go along</strong>, if it says so. Trust us.</p>
+</div>
+</div>
 	<!--  SEE YOUR PROGRESS *******************************************************      -->
 
 
 
 	<!--  BEGINYOUR TRACK *******************************************************      -->
 
-	<% if current_user.position == 'national contributor' %>
-
-	<% else %>
+	
 	<% if current_user.position.next_page(current_user.status.pages.last) %>
-		<a class="btn btn-primary btn-lg" href="<%= current_user.position.track(@page) %>/<%= current_user.position.shortname %>/<%= current_user.position.next_page(current_user.status.pages.last).shortname %>">My Track</a>
+		<a class="btn btn-primary btn-lg begin-track" href="<%= current_user.position.track(@page) %>/<%= current_user.position.shortname %>/<%= current_user.position.next_page(current_user.status.pages.last).shortname %>">My Track</a>
 	<% else %>
 	<a class="btn btn-primary btn-lg" href="<%= current_user.position.track(@page) %>/<%= current_user.position.shortname %>/<%= current_user.position.pages.first.shortname %>">My Track</a>
-	<% end %>
 	<% end %>
 
 	</div>

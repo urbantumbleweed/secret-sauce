@@ -6,6 +6,32 @@ html body {
 	margin-top:100px;
 }
 
+.small-caps {
+	font-weight: 900;
+	font-size:11px;
+	text-transform:uppercase;
+}
+
+.questionCtn {
+	text-align: left;
+}
+
+.circle {
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	background-color:#474747;
+	color:white;
+	font-size:30px;
+	margin: 0 auto;
+}
+
+.circle .number {
+  padding-top:40%;
+  font-family:'museo-slab';
+  font-weight: 100;
+}
+
 ol {
 	text-align:left;
 }
@@ -61,6 +87,7 @@ h1, h2, h3, h4, h5 {
 	border-bottom:0px;
 	box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
 	min-height: 25px;
+	color: #ffffff;
 }
 
 #menu .list-group-item:hover {
@@ -108,39 +135,46 @@ h1, h2, h3, h4, h5 {
 	line-height: 27px;
 }
 
-.editorial a{
-	background: #f1a003;
+.begin-track {
+	width: 50%;
+}
+
+.editorial a, .editorial .circle  {
+	background-color: #f1a003;
 }
 
 .editorial a:hover, .editorial a.completed  {
-	background: #f9d99a;
+	background-color: #f9d99a;
 }
 
-.photo a {
-	background: #00a2ca;
+.photo a, .photo .circle  {
+	background-color: #00a2ca;
 }
 
 .photo a:hover, .photo a.completed {
-	background: #99daea;
+	background-color: #99daea;
 }
 
-.marketing a {
-	background: #829300;
+.marketing a, .marketing .circle  {
+	background-color: #829300;
 }
 
 .marketing a:hover, .marketing a.completed {
-	background: #cdd499;
+	background-color: #cdd499;
 }
 
 
 .track-body h1 {
 	text-transform: capitalize;
+	margin: 25px 0px;
 }
 
 .alum-inactive{
-	/*color:red;*/
+	color:red;
 	visibility: hidden;
+
 }
+
 
 .alum-active{
 	color:grey;
@@ -185,7 +219,7 @@ h1, h2, h3, h4, h5 {
 	background-color: #cc0066;
 }
 
-.make-alum {
+.make-alum, .activate-user {
 	background-color: transparent;
 	border: 0px;
 }
