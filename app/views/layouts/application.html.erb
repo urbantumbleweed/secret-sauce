@@ -14,7 +14,7 @@
   <a href="/" id="logo"><%= image_tag "logo.png" %></a>
 
 <% if user_signed_in? %>
-  <i id="openMenu" class="fa fa-arrow-circle-left fa-2x pull-right"></i>
+  <i id="openMenu" class="fa fa-bars fa-2x pull-right"></i>
 <% end %>
 </div>
 </nav>
@@ -66,10 +66,8 @@
       $(menu).is(":visible")
       if ($(menu).is(":visible")) {
           $(menu).animate({right: "-300px"}, 500, function() {$(menu).hide();});
-          $('i.fa').removeClass('fa-arrow-circle-right').addClass('fa-arrow-circle-left');         
       } else {
           $(menu).show().animate({right: "0px"}, 500, function() {$(menu).show();});
-          $('i.fa').removeClass('fa-arrow-circle-left').addClass('fa-arrow-circle-right');
 
       }
   });

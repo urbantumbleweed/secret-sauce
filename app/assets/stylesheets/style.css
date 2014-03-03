@@ -6,6 +6,10 @@ html body {
 	margin-top:100px;
 }
 
+ol {
+	text-align:left;
+}
+
 a.link {
 	color:#000000;
 }
@@ -96,7 +100,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .super {
-	font-size: 60px;
+	font-size: 80px;
+	line-height: 90px;
 }
 
 .track-nav li {
@@ -210,6 +215,9 @@ footer {
 	padding: 18px 26px;
 }
 
+.panel-heading p {
+	margin:0px;
+}
 
 .list-unstyled {
 	margin:0px;
@@ -218,10 +226,10 @@ footer {
 .list-group-item.border-top {
 	border-top: 1px solid #ffffff;
 	border-width: 0 1px;
+	margin-top:25px;
 }
 
 div#menu {
-		z-index: 1020;
 		position:absolute;
 		top: 35px;
 		right: -300px;
@@ -234,6 +242,7 @@ div#menu {
     letter-spacing: 1px;
     height: 100%;
     background-color: #474747;
+    position:fixed;
 }
 
 #menu .list-group-item {
@@ -246,6 +255,17 @@ div#menu {
 #openMenu {
 	margin: 0 5px;
 	color:#ffffff;
+}
+
+
+.positions a {
+	color:#000000;
+}
+
+.positions a:hover {
+	color:#000000;
+	text-decoration: none;
+	border-bottom: 1px solid #a33873;
 }
 
 /* Small devices (tablets, 768px and up) */

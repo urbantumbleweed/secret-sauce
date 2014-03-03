@@ -4,27 +4,62 @@
 	<div class="col-md-8 col-md-offset-2 profile">
 		<h1>So, <%= current_user.first_name %>... you're the <%= current_user.position.name %> at <a class="link" href="schools/<%= current_user.school.shortname %>"><%= current_user.school.name %></a>.</h1>
 
-	<p>You're responsible for: </p>
+	<p>It's your job to:</p>
 
 
 	<% case current_user.position.shortname %>
 		<% when 'editor-in-chief' %>
-		<h4>being awesome</h4>
+		<h4>Build and oversee editorial content</h4>
+		<h4>Finalize and publish all content to the site
+</h4>
+		<h4>Maintain high quality, college-focused content
+</h4>
+		<h4>Organize and lead weekly meetings</h4>
+</h4>
 
 		<% when 'managing-editor' %>
-		<h4>being cool</h4>
+		<h4>Work closely with editor-in-chief and manage section editors</h4>
+		<h4>Edit content and prepare for publishing</h4>
+
 
 		<% when 'copy-editor' %>
 		<h4>being wonderful</h4>
+		<h4>Have exceptional attention to detail</h4>
+		<h4>Edit writers’ stories for grammatical errors and things that don’t make sense</h4>
+		<h4>Maintain the integrity of the writer’s original voice</h4>
 		
 		<% when 'writer' %>
-		<h4>being rad</h4>
+		<h4>Brainstorm content ideas and write 4 articles per month</h4>
+		<h4>Take photos for articles when necessary</h4>
+		<h4>Promote stories on social media</h4>
+		<h4>Maintain frequent contact with Spoon nationals</h4>
 		
 		<% when 'national-contributor' %>
-		<h4>being around</h4>
+		<h4>Brainstorm content ideas and write 2 articles per month</h4>
+		<h4>Take photos for articles when necessary</h4>
+		<h4>Promote stories on social media</h4>
+		<h4>Maintain frequent contact with Spoon nationals</h4>
 	
 		<% when 'photo-director' %>
-		<h4>makin' shit pretty</h4>
+		<h4>Monitor all the photos produced by photographers at your school to make sure it’s all quality.</h4>
+		<h4>Depending on how you choose to run your photo team, you may be responsible for selecting and uploading each of the photos into the stories from Flickr.</h4>
+		<h4>You’ll need to make your school’s Flickr page, ASAP.</h4>
+
+		<% when 'photographer' %>
+		<h4>You’ll be paired with writers, and you’ll be responsible for taking their photos!</h4>
+		<h4>Be sure to pay attention to Spoon’s expectations and take enough quality photos — visuals are very important to us!</h4>
+
+		<% when 'business-director' %>
+		<h4>Build and oversee marketing/PR team</h4>
+		<h4>Develop relationships with student organizations</h4>
+		<h4>Execute campus events, manage newsletter signups and social media presence</h4>
+		<h4>Monitor Google analytics to make sure you’re promoting enough</h4>
+		<h4>Make Spoon the coolest club on campus</h4>
+
+		<% when 'marketing-team-member' %>
+		<h4>As the go-getters, trendsetters and social-networkers of the team, the marketing/PR team members make everything happen. They get out there, shamelessly talk to people about Spoon, organize events and lead social media campaigns. They’re the powerhouse behind the campus Spoon brand.</h4>
+		<h4>Post to Facebook, Twitter, Pinterest, etc. from your personal accounts and the Spoon account, if necessary.</h4>
+		<h4>Enthusiastically participate in Spoon events. You could be organizing, working booths, shmoozing, sampling or flying a kite — represent Spoon and work hard, regardless.</h4>
 
 		<% else %>
 		<h4>... who do you think you are?</h4>
