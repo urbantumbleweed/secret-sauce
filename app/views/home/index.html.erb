@@ -49,18 +49,7 @@
 
 	</div>
 <!-- QUICKLINKS AND STUFF ON YOUR SCHOOL *******************************************************      -->
-	<div class="col-md-4 quicklinks">
-		<a href="/schools/<%= current_user.school.shortname %>" class="btn btn-primary school" style="background-color: <%= current_user.school.color_1 %>; color: <%= current_user.school.color_2 %>  "><%= current_user.school.name %></a>
-		<div class="list-group">
-			<a class="list-group-item" href="<%= edit_user_registration_path %>">Edit Profile</a>
-		  <a class="list-group-item" href="/staff">All Staffers</a>
-		  <a class="list-group-item" href="<%= schools_path %>">All Schools</a>
-		  <a class="list-group-item" href="#">Publishing Spreadsheet</a>
-		  <a class="list-group-item" href="<%= faq_path %>">FAQ</a>
-		  <a class="list-group-item" href="#">Brand Assets</a>
-		  <a class="list-group-item" href="<%= positions_path %>">All Positions</a>
-		</div>
-	</div>
+
 
 </div>
 

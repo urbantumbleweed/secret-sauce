@@ -41,7 +41,7 @@
 <div class="track-body">
 	<h1><%= @page.name %></h1>
 	<%= render "positions/#{@position.track(@page)}/#{@page.shortname}" %>
-
+<!-- Next Button -->
 	<form action="<%= next_page_path %>" method="post" >
 		<input type="hidden" name="track" value="<%= @position.track(@page) %>">
 		<input type="hidden" name="position" value="<%= @position.id %>">
