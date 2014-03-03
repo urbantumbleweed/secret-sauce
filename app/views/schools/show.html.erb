@@ -1,7 +1,7 @@
 <% school = @school %>
 
 <h1><%= school.name %></h1>
-<% if current_user.position.shortname == 'editor-in-chief' && current_user.school === school.name%>
+<% if current_user.position.shortname == 'editor-in-chief' && current_user.school === school %>
 <a href="<%= edit_school_path(@school)%>"><i class="fa fa-pencil"></i></a>
 <% end %>
 
@@ -30,7 +30,7 @@
           <div class="panel-heading">
             <p><%= student.name %>
               <button class="make-alum" class="deactivate-user">
-                <% if current_user.is_admin? && current_user.school === school.name %>
+                <% if current_user.is_admin? && current_user.school === school %>
                   <i class="fa fa-minus-square-o" data-userid="<%= student.id %>" ></i>
                 <% end %>
               </button>
@@ -46,7 +46,7 @@
               <% if student.email %>
               <li><%= student.email %></li>
               <% end %>
-              <% if current_user.is_admin? && current_user.school === school.name %>
+              <% if current_user.is_admin? && current_user.school === school %>
                 <% if student.scores %>
                   <% student.scores.each do |score| %>
                     <li><%= score.page.name %> Quiz: <%= score.correct %> / <%= score.total %></li>
@@ -71,7 +71,9 @@
           <div class="panel-heading">
             <p><%= student.name %>
               <button class="activate-user">
-              <i class="fa fa-plus-square-o" data-userid="<%= student.id %>" ></i>
+                <% if current_user.is_admin? && current_user.school === school %>
+                  <i class="fa fa-plus-square-o" data-userid="<%= student.id %>" ></i>
+                <% end %>
             </button>
             </p>
           </div>
@@ -133,7 +135,7 @@
 
   $(function() {
     setHandlers();
-    <% if current_user.is_admin? && current_user.school === school.name %>
+    <% if current_user.is_admin? && current_user.school === school %>
       <% if school.users_active != [] %>
         <% school.users_active.each do |student| %>
           donutOfCompleteness(<%= student.id %>, <%= student.percent_complete %>, "<%= student.position.track(student.position.pages.first) %>", false)
