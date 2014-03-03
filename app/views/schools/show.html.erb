@@ -1,7 +1,7 @@
 <% school = @school %>
 
 <h1><%= school.name %></h1>
-<% if current_user.position.shortname == 'editor-in-chief'%>
+<% if current_user.status.position.shortname == 'editor-in-chief'%>
 <a href="<%= edit_school_path(@school)%>"><i class="fa fa-pencil"></i></a>
 <% end %>
 
