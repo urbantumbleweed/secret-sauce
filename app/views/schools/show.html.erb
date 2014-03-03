@@ -1,7 +1,7 @@
 <% school = @school %>
 
 <h1><%= school.name %></h1>
-<% if current_user.position.shortname == 'editor-in-chief'%>
+<% if current_user.position.shortname == 'editor-in-chief' && current_user.school === school.name%>
 <a href="<%= edit_school_path(@school)%>"><i class="fa fa-pencil"></i></a>
 <% end %>
 
@@ -30,7 +30,9 @@
           <div class="panel-heading">
             <p><%= student.name %>
               <button class="make-alum" class="deactivate-user">
-                <i class="fa fa-minus-square-o" data-userid="<%= student.id %>" ></i>
+                <% if current_user.is_admin? && current_user.school === school.name %>
+                  <i class="fa fa-minus-square-o" data-userid="<%= student.id %>" ></i>
+                <% end %>
               </button>
             </p>
           </div>
