@@ -22,7 +22,7 @@
   <% if school.users_active != [] %>
     <% school.users_active.each do |user| %>
       <div class="col-md-3 active-user">
-        <h4><%= user.name %><button class="make-alum" data-userid="<%= user.id %>" class="deactivate-user"><i class="fa fa-minus-square-o"></i></button></h4>
+        <h4><%= user.name %><button class="make-alum" data-userid="<%= user.id %>"><i class="fa fa-minus-square-o" data-userid="<%= user.id %>"></i></button></h4>
         <ul>
           <li><%= user.position.name %></li>
           <% if user.phone_number.empty? == false %>
@@ -43,7 +43,7 @@
   <% if school.users_inactive != [] %>
     <% school.users_inactive.each do |user| %>
       <div class="col-md-3 alum-inactive">
-        <h3><%= user.name %><button data-userid="<%= user.id %>" class="activate-user">+</button></h3>
+        <h3><%= user.name %><button class="activate-user" data-userid="<%= user.id %>" >+</button></h3>
         <ul>
           <li><%= user.position.name %></li>
         </ul>
@@ -67,26 +67,16 @@
     });
   }
 
-// $("button").click(function(){
-//   $("p").toggleClass("main");
-// });
-
-
-
-
-
-
 
   function displayAlum() {
     $('.alum-inactive').toggleClass("alum-inactive alum-active");
   }
 
   function setHandlers() {
-    $('button.deactivate-user').click(function(e){
+    $('button.make-alum').click(function(e){
       var user_id  = $(e.target).data("userid");
-      console.log(e.target.parentNode.parentNode);
-
       changeStatus(user_id, false);
+
       $(e.target.parentNode.parentNode).toggleClass("alum-active");
 
     });
