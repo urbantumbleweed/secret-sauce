@@ -5,6 +5,11 @@ class HomeController < ApplicationController
 		if current_user.status.pages.count == 0 && user_session.empty?
 			redirect_to welcome_path
 		end
+		if current_user.status.pages.empty? || current_user.status.pages.count == current_user.position.pages.count
+			@page = current_user.position.pages.first
+		else
+			@page = current_user.status.pages.last
+		end
 	end
 
 	def welcome

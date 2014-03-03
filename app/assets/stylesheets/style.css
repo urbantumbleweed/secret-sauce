@@ -12,29 +12,40 @@ html body {
 	text-transform:uppercase;
 }
 
-.logo {
-	padding:5px;
+.btn.btn-primary:hover {
+	background-color: #cc0066;
+}
+
+#logo {
+	padding:5px 10px 5px 0px;
+}
+
+svg#completion {
+	height:50px;
 }
 
 .questionCtn {
 	text-align: left;
 }
 
-.alum-active .panel {
+.alum-active .panel, .inactive-user .panel {
 	border-color: #d5d5d5;
+}
+
+.alum-active .panel-body, .inactive-user .panel-body {
 	color: #dddddd;
 }
 
-.alum-active .panel-heading {
+.alum-active .panel-heading, .inactive-user .panel-heading {
 	background-color: #fdfdfd;
 	border-color: #f5f5f5;
 }
 
-.alum-active p {
+.alum-active p, .inactive-user p {
 	color: #dddddd;
 }
 
-.alum-active .make-alum {
+.alum-active .fa  {
 	display:none;
 }
 
@@ -112,6 +123,10 @@ h1, h2, h3, h4, h5 {
 	color: #ffffff;
 }
 
+.navbar span {
+	margin-top:10px;
+}
+
 #menu .list-group-item:hover {
 	background-color:#3a3a3a;
 }
@@ -159,6 +174,19 @@ h1, h2, h3, h4, h5 {
 
 .begin-track {
 	width: 50%;
+	margin:30px;
+}
+
+.begin-track.editorial:hover {
+	background-color: #f1a003;
+}
+
+.begin-track.photo:hover {
+	background-color: #00a2ca;
+}
+
+.begin-track.marketing:hover {
+	background-color: #829300;
 }
 
 .editorial a, .editorial .circle  {
@@ -197,11 +225,6 @@ h1, h2, h3, h4, h5 {
 
 }
 
-
-.alum-active{
-	color:grey;
-}
-
 .styles-images div img, .expectations-images div img{
 	width: 90%;
 	padding-bottom: 15%;
@@ -237,9 +260,7 @@ h1, h2, h3, h4, h5 {
 	font-weight: 700;
 }
 
-.btn.btn-primary:hover {
-	background-color: #cc0066;
-}
+
 
 .make-alum, .activate-user {
 	background-color: transparent;

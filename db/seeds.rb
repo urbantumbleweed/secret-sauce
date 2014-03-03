@@ -189,6 +189,19 @@ bd.pages = [Page.find_by_shortname('marketing_leadership')] + mtm.pages
 # STOP
 
 School.create({
+	name:          'Spoon National',
+	shortname:     'national',  
+	twitter_url:   'https://twitter.com/spoonuniversity',
+	instagram_url: 'http://instagram.com/spoonuniversity',
+	spoon_url:     'http://spoonuniversity.com',
+	facebook_url:  'https://www.facebook.com/SpoonUniversity',
+	color_1:        '#000000',
+	color_2:        '#FFFFFF'
+})
+
+
+
+School.create({
 	name:          'Northwestern',
 	shortname:     'nu',  
 	twitter_url:   'https://twitter.com/spoonuniversity',

@@ -65,7 +65,19 @@
 		<h4>... who do you think you are?</h4>
 
 	<% end %>
-<div class="row-fluid <%= current_user.position.track(@page) %>">
+
+	<!--  SEE YOUR PROGRESS *******************************************************      -->
+
+<svg id="completion"></svg>
+
+	<!--  BEGINYOUR TRACK *******************************************************      -->
+	
+
+		<a class="btn btn-primary btn-lg begin-track <%= current_user.position.track(@page) %>" href="<%= current_user.position.track(@page) %>/<%= current_user.position.shortname %>/<% if current_user.position.next_page(current_user.status.pages.last) %><%= current_user.position.next_page(current_user.status.pages.last).shortname %><% else %><%= current_user.position.pages.first.shortname %><% end %>">My Track</a>
+	
+	<!--  INSTRUCTIONS *******************************************************      -->
+
+<div class="row <%= current_user.position.track(@page) %>">
 <div class="col-sm-6 ">
 <div class="circle">
 <div class="number">1</div>
@@ -79,23 +91,8 @@
 <p class="center">Open up another browser window on your screen and <strong>do the activities as you go along</strong>, if it says so. Trust us.</p>
 </div>
 </div>
-	<!--  SEE YOUR PROGRESS *******************************************************      -->
 
-
-
-	<!--  BEGINYOUR TRACK *******************************************************      -->
-
-	
-	<% if current_user.position.next_page(current_user.status.pages.last) %>
-		<a class="btn btn-primary btn-lg begin-track" href="<%= current_user.position.track(@page) %>/<%= current_user.position.shortname %>/<%= current_user.position.next_page(current_user.status.pages.last).shortname %>">My Track</a>
-	<% else %>
-	<a class="btn btn-primary btn-lg" href="<%= current_user.position.track(@page) %>/<%= current_user.position.shortname %>/<%= current_user.position.pages.first.shortname %>">My Track</a>
-	<% end %>
-
-	</div>
-<!-- QUICKLINKS AND STUFF ON YOUR SCHOOL *******************************************************      -->
-
-
+</div>
 </div>
 
 
