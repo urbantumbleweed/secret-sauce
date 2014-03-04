@@ -8,7 +8,7 @@ donutOfCompleteness = function(user_id, percent_complete, position_name, persona
   } else {
     var id = "#student_" + user_id;
     var width_base = 150;
-    var radius_delta = 30;
+    var radius_delta = 40;
   }
 
   var percent_incomplete = 100 - percent_complete;
