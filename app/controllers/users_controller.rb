@@ -13,7 +13,12 @@ class UsersController < ApplicationController
       format.html {}
       format.json do
         user = User.find( params[:id] )
-        user.active = params[:active]
+        if params[:active]
+          user.active = params[:active]
+        end
+        if params[:see_alum]
+          user.see_alum = params[:see_alum]
+        end
         user.save
 
         render :json => user.to_json

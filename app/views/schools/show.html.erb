@@ -60,7 +60,7 @@
           </div>
         </div>
       </div>
-  <% end %>
+    <% end %>
   <% else %>
     <p>Go get your team, yo.</p>
   <% end %>
@@ -68,8 +68,9 @@
 <button class="btn btn-primary" id='see-alum'>See Alum</button>
 <div class="row alum">
   <% if school.users_inactive != [] %>
+    <% alum_state = (current_user.see_alum == true) ? "alum-active" : "alum-inactive" %>
     <% school.users_inactive.each do |student| %>
-      <div class="col-lg-3 col-sm-4 all_alum alum-inactive">
+      <div class="col-lg-3 col-sm-4 all_alum <%= alum_state %>">
         <div class="panel panel-default">
           <div class="panel-heading">
             <p><%= student.name %>
@@ -106,20 +107,27 @@
       data: {active: is_active},
       success: function(data){
         console.log('user status has been changed');
-        $('.all_alum').toggleClass('alum-inactive');
+        location.reload();
       }
     })
   }
 
-  function displayAlum() {
-    $('.all_alum').toggleClass("alum-inactive alum-active");
+  function updateAlumDisplay(see_alum_bool){
+    $.ajax({
+      url: '/users/' + current_user.id,
+      dataType: 'json',
+      method: 'put',
+      data: {see_alum: see_alum_bool},
+      success: function(data){
+        $('.all_alum').toggleClass('alum-inactive alum-active');
+      }
+    })
   }
 
   function setHandlers() {
     $('button.make-alum').click(function(e){
       var user_id  = $(e.target).data("userid");
       changeStatus(user_id, false);
-      console.log()
       $(e.target.parentNode.parentNode.parentNode.parentNode).toggleClass("alum-active");
     });
 
@@ -130,8 +138,7 @@
     });
 
     $('#see-alum').click(function() {
-      console.log('See Alumni')
-      displayAlum();
+      updateAlumDisplay( !current_user.see_alum );
     });
   }
 
@@ -147,5 +154,8 @@
   });
 
 </script>
+
+
+
 
 

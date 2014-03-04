@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20140303171043) do
     t.datetime "updated_at"
     t.boolean  "active",                 default: true
     t.boolean  "agreed",                 default: false
+    t.boolean  "see_alum",               default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
