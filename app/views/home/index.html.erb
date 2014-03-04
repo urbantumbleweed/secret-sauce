@@ -16,8 +16,10 @@
 </style>
 <!--  SEE YOUR RESPONSIBILITIES *******************************************************      -->
 <div class="row">
+	<div class="col-sm-10 col-sm-offset-1">
+<div class="row">
 	<div class="col-md-12">
-		<h1 class="super">So, <%= current_user.first_name %>... you're the <%= current_user.status.position.name %> at <a class="link" href="schools/<%= current_user.school.shortname %>"><%= current_user.school.name %></a>.</h1>
+		<h1 class="semi-super">So, <%= current_user.first_name %>... you're the <%= current_user.status.position.name %> at <a class="link" href="schools/<%= current_user.school.shortname %>"><%= current_user.school.name %></a>.</h1>
 	</div>
 </div>
 <div class="row">
@@ -85,6 +87,11 @@
 		<h4>... who do you think you are?</h4>
 
 	<% end %>
+
+		<!--  INSTRUCTIONS *******************************************************      -->
+
+
+<div class="little-space"></div>
 	<div class="row">
 <div class="col-sm-6 ">
 <div class="circle">
@@ -129,7 +136,6 @@
 
 		<a class="btn btn-primary btn-lg begin-track" href="<%= current_user.position.track(@page) %>/<%= current_user.position.shortname %>/<% if current_user.position.next_page(current_user.status.pages.last) %><%= current_user.position.next_page(current_user.status.pages.last).shortname %><% else %><%= current_user.position.pages.first.shortname %><% end %>">My Track</a>
 	
-	<!--  INSTRUCTIONS *******************************************************      -->
 
 <script>
   $(function() {
@@ -137,6 +143,8 @@
 	});
 </script>
 
+</div>
+</div>
 </div>
 </div>
 
