@@ -120,6 +120,8 @@
       data: {see_alum: see_alum_bool},
       success: function(data){
         $('.all_alum').toggleClass('alum-inactive alum-active');
+        curr_text = $('#see-alum').text()
+        $('#see-alum').text( curr_text == 'See Alum' ? 'Hide Alum' : 'See Alum');
       }
     })
   }
