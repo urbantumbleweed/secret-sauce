@@ -30,7 +30,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <p><%= student.name %>
-              <button class="make-alum" class="deactivate-user">
+              <button class="make-alum">
                 <% if current_user.is_admin? && current_user.school === school %>
                   <i class="fa fa-minus-square-o" data-userid="<%= student.id %>" ></i>
                 <% end %>
@@ -42,11 +42,13 @@
               <li><%= student.position.name %></li>
              
               <% if student.phone_number.empty? == false %>
-              <li><%= student.phone_number %></li>
+                <li><%= student.phone_number %></li>
               <% end %>
+
               <% if student.email %>
-              <li><%= student.email %></li>
+                <li><%= student.email %></li>
               <% end %>
+              
               <% if current_user.is_admin? && current_user.school === school %>
                 <% if student.scores %>
                   <% student.scores.each do |score| %>
@@ -58,16 +60,16 @@
           </div>
         </div>
       </div>
-        <% end %>
-      <% else %>
-      <p>Go get your team, yo.</p>
-      <% end %>
-    </div>
+  <% end %>
+  <% else %>
+    <p>Go get your team, yo.</p>
+  <% end %>
+</div>
 <button class="btn btn-primary" id='see-alum'>See Alum</button>
 <div class="row alum">
   <% if school.users_inactive != [] %>
     <% school.users_inactive.each do |student| %>
-      <div class="col-lg-3 col-sm-4 inactive-user">
+      <div class="col-lg-3 col-sm-4 all_alum alum-inactive">
         <div class="panel panel-default">
           <div class="panel-heading">
             <p><%= student.name %>
@@ -75,42 +77,42 @@
                 <% if current_user.is_admin? && current_user.school === school %>
                   <i class="fa fa-plus-square-o" data-userid="<%= student.id %>" ></i>
                 <% end %>
-            </button>
+              </button>
             </p>
           </div>
           <div class="panel-body">
             <ul class="list-unstyled">
               <li><%= student.position.name %></li>
               <% if student.phone_number.empty? == false %>
-              <li><%= student.phone_number %></li>
-               <% end %>
+                <li><%= student.phone_number %></li>
+              <% end %>
               <% if student.email %>
-              <li><%= student.email %></li>
-               <% end %>          
+                <li><%= student.email %></li>
+              <% end %>          
             </ul>
           </div>
         </div>
       </div>
-       <% end %>
+    <% end %>
   <% end %>
+</div>
 
 <script>
   function changeStatus(user_id, is_active){
     $.ajax({
-        url: '/users/' + user_id,
-        dataType: 'json',
-        method: 'put',
-        data: {active: is_active}
-    })
-    .success(function(data){
+      url: '/users/' + user_id,
+      dataType: 'json',
+      method: 'put',
+      data: {active: is_active},
+      success: function(data){
         console.log('user status has been changed');
-        $('.alum-inactive').removeClass().addClass('alum-active');
-    });
+        $('.all_alum').toggleClass('alum-inactive');
+      }
+    })
   }
 
-
   function displayAlum() {
-    $('.alum-inactive').toggleClass("alum-inactive alum-active");
+    $('.all_alum').toggleClass("alum-inactive alum-active");
   }
 
   function setHandlers() {
@@ -119,13 +121,12 @@
       changeStatus(user_id, false);
       console.log()
       $(e.target.parentNode.parentNode.parentNode.parentNode).toggleClass("alum-active");
-
     });
 
     $('button.activate-user').click(function(e){
-      var user_id  = $(e.target).data("userid");
-      console.log(user_id);
+      var user_id = $(e.target).data("userid");
       changeStatus(user_id, true);
+      $(e.target.parentNode.parentNode.parentNode.parentNode).toggleClass("alum-inactive");
     });
 
     $('#see-alum').click(function() {
@@ -143,8 +144,6 @@
         <% end %>  
       <% end %>
     <% end %>
-
-  
   });
 
 </script>
