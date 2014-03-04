@@ -1,33 +1,62 @@
-<p>We use Flickr to organize our photos.</p>
- 
-<p>It is usually the responsibility of the photo director to handle your chapter’s Flickr account. Talk to them about the login information.If you’re a national contributor, you use the national spoon account. The yahoo ID is spoonuniversity, and the password is N0rthwestern.</p>
- 
-<p>IMPORTANT: Do not upload stock photos or any photos not taken by you on the Flickr. It is for Spoon photographer’s work only.</p>
- 
-<p>When you are uploading, each photo must have:</p>
-<ul>
-  <li>
-    A <strong>title</strong> that explains what the photo is of (for example, egg, milk, mixing ingredients, etc)
-  </li>
-  <li>
-    <strong>Tags</strong> so we can search for them
-  </li>
-  <li>
-    A caption with the photographer’s name
-  </li>
-  <li>
-    Once it is uploaded, make sure it is in a new “<strong>set</strong>” with it’s article title, and that the “set” is in it’s proper “<strong>collection</strong>”
-  </li> 
-</ul>
-
-<p>This is the screen after you are done uploading– click “Add to set” and create a set for your article. Then add that set to a collection.</p>
-<img src="/assets/photo/50.png">
-
-<p>“Sets” are the folders for specific articles (They will be named after the exact article title)</p>
-<img src="/assets/photo/51.png">
- 
-<p>“Sets” are within a collection, which is the folder for the section (There are 6 collections titled as the different website sections)</p>
-<img src="/assets/photo/52.png">
+ <div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+   <% if @position.shortname == 'photo-director' %>
+   <p>It is usually your responsibility to handle your chapter’s Flickr account.</p>
+   <% elsif @position.shortname == 'national-contributor' %>
+   <p>Use the national spoon account. The yahoo ID is spoonuniversity, and the password is N0rthwestern.</p>
+   <% else %>
+   <p>It is usually the responsibility of the photo director to handle your chapter’s Flickr account. Talk to them <% if current_user.school.photo_directors.count != 0 %>(probably <%= current_user.school.photo_directors.join(' or ') %>) <% end %>about the login information.</p>
+   <% end %>
+ </div>
+</div>
+</div class="row">
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="row">
+      <div class="col-sm-4">
+       <div class="box">
+        <p class="box-label">IMPORTANT</p>
+        <div class="box-inner"><p>Do not upload stock photos or any photos not taken by you on the Flickr. It is for Spoon photographer’s work only.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="box">
+        <p class="box-label">When you are uploading, each photo must have:</p>
+        <div class="box-inner">
+          <ul class="list-unstyled">
+            <li>
+              A <strong>title</strong> that explains what the photo is of (for example, egg, milk, mixing ingredients, etc)
+            </li>
+            <li>
+              <strong>Tags</strong> so we can search for them
+            </li>
+            <li>
+              A caption with the photographer’s name
+            </li>
+            <li>
+              Once it is uploaded, make sure it is in a new “<strong>set</strong>” with it’s article title, and that the “set” is in it’s proper “<strong>collection</strong>”
+            </li> 
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 flickr">
+      <div class="little-space"></div>
+      <h4>This is the screen after you are done uploading– click “Add to set” and create a set for your article. Then add that set to a collection.</h4>
+      <img src="/assets/photo/50.png">
+      <div class="little-space"></div>
+      <h4>“Sets” are the folders for specific articles (They will be named after the exact article title)</h4>
+      <img src="/assets/photo/51.png">
+      <div class="little-space"></div>
+      <h4>“Sets” are within a collection, which is the folder for the section (There are 6 collections titled as the different website sections)</h4>
+      <img src="/assets/photo/52.png">
+    </div>
+  </div>
+</div>
+</div>
 
 
 

@@ -21,4 +21,24 @@ class School < ActiveRecord::Base
     inactive_users
   end
 
+  def photo_directors
+    photo_directors = []
+    self.users_active.each do |user|
+      if user.position.shortname == 'photo-director'
+        photo_directors << user.name
+      end
+    end
+    photo_directors
+  end
+
+   def editors_in_chief
+    editors_in_chief = []
+    self.users_active.each do |user|
+      if user.position.shortname == 'editor-in-chief'
+        editors_in_chief << user.name
+      end
+    end
+    editors_in_chief
+  end
+
 end
