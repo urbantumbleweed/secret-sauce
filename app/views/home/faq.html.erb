@@ -9,9 +9,9 @@
 		<p>
 			<strong>which leads to a page that says, ‘Page Not Found’, but the preview is actually here:</strong>
 		</p>
-		<p>http://<% if current_user.school.shortname != 'national' %><%= current_user.school.shortname %>.<% end %>.spoonuniversity.com/?post_type=recipe&amp;p=74&amp;preview=true&amp;preview_id=74&amp;preview_nonce=e9be8a35ed</p>
+		<p>http://<% if current_user.school.shortname != 'national' %><%= current_user.school.shortname %>.<% end %>spoonuniversity.com/?post_type=recipe&amp;p=74&amp;preview=true&amp;preview_id=74&amp;preview_nonce=e9be8a35ed</p>
 		<p><strong>(Which is the original link without the ‘&amp;post_format=standard’ on the end). So if you go to the original link and delete that last section on the end:</strong></p>
-		<p>http://<% if current_user.school.shortname != 'national' %><%= current_user.school.shortname %>.<% end %>.spoonuniversity.com/?post_type=recipe&amp;p=74&amp;preview=true&amp;preview_id=74&amp;preview_nonce=e9be8a35ed<strong>&amp;post_format=standard</strong>
+		<p>http://<% if current_user.school.shortname != 'national' %><%= current_user.school.shortname %>.<% end %>spoonuniversity.com/?post_type=recipe&amp;p=74&amp;preview=true&amp;preview_id=74&amp;preview_nonce=e9be8a35ed<strong>&amp;post_format=standard</strong>
 		</p>
 		<p><strong>Then you’ll be able to preview your post!<br>
 			We’re looking into a more permanent fix, but this should help for now!</strong></p>
