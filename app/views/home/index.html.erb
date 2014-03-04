@@ -110,7 +110,7 @@
 	<!--  BEGINYOUR TRACK *******************************************************      -->
 	
 
-		<a class="btn btn-primary btn-lg <%= current_user.track %>" href="<%= current_user.track %>/<%= current_user.position.shortname %>/<% if current_user.position.next_page(current_user.last_page) %><%= current_user.position.next_page(current_user.last_page).shortname %><% else %><%= current_user.position.pages.first.shortname %><% end %>">My Track</a>
+		<a class="btn btn-primary btn-lg <%= current_user.track %>" href="<%= track_path_helper(current_user)%>">My Track</a>
 
 		<!--  SEE YOUR QUIZ SCORES *******************************************************      -->
 	

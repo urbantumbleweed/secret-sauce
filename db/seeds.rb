@@ -552,7 +552,7 @@ School.create({
 	color_2:       '#9f1d35'
 })
 
-
+User.destroy_all
 
 User.create!([
   {email: "mackenzie@spoonuniversity.com", encrypted_password: "$2a$10$1WyU/p14l8lMDC9PNZfmmOaRJyVaKKa/OyQbLJRyhpig49YB49GGy", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2014-02-27 21:04:08", last_sign_in_at: "2014-02-27 21:04:08", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", first_name: "Mackenzie", last_name: "Barth", school_id: 1, phone_number: "123-456-7890", active: true, agreed: false, see_alum: false, password:'password'},
