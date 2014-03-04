@@ -110,15 +110,17 @@ html body {
 	color: #888888;
 }
 
-.editorial .circle {
+
+.editorial .circle, .editorial.label {
 	background-color:#f1a003;
+	color:white;
 }
 
-.photo .circle {
+.photo .circle, .photo.label {
 	background-color:#00a2ca;
 }
 
-.marketing .circle {
+.marketing .circle, .marketing.label {
 	background-color:#829300;
 }
 
@@ -330,6 +332,10 @@ h1, h2, h3, h4, h5 {
 	border-left: 1px solid black;
 }
 
+.border-right {
+	border-right: 1px solid black;
+}
+
 .btn.btn-primary {
 	background-image: none;
 	background-color: #000000;
@@ -521,17 +527,17 @@ div.quiz-score{
 	padding: .7em .2em;
 }
 
-.editorial {
+.quiz-wrapper .editorial {
 	border-color: #f1a003;
 	color: #f1a003;
 }
 
-.photo {
+.quiz-wrapper .photo {
 	border-color: #00a2ca;
 	color: #00a2ca;
 }
 
-.marketing{
+.quiz-wrapper .marketing{
 	border-color: #829300;
 	color: #829300;
 }
@@ -549,7 +555,7 @@ a.retake{
 	color:#000;
 }
 
-.question {
+.faq {
 	font-size:28px;
 	line-height:35px;
 	font-weight:900;
