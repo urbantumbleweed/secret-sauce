@@ -1,19 +1,11 @@
-<% color_1 = current_user.school.color_1 %>
-<% color_2 = current_user.school.color_2 %>
-
-
 <style>
-	a.btn.btn-primary.begin-track {
-		color: <%= color_2 %>;
-	}
-	a.btn.btn-primary.begin-track:hover, div.circle {
-		background-color: <%= color_1 %>;
-	}
 	a.link:hover {
-		border-color: <%= color_1 %>;
+		border-color: <%= current_user.school.color_1 %>;
 	}
 
 </style>
+
+
 <!--  SEE YOUR RESPONSIBILITIES *******************************************************      -->
 <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
@@ -26,7 +18,7 @@
 	<div class="col-md-8">
 		
 
-	<p class="small-caps">It's your job to:</p>
+	<p class="label <%= current_user.track %>">It's your job to</p>
 
 
 	<% case current_user.position.shortname %>
@@ -91,15 +83,14 @@
 		<!--  INSTRUCTIONS *******************************************************      -->
 
 
-<div class="little-space"></div>
-	<div class="row">
-<div class="col-sm-6 ">
+	<div class="row <%= current_user.track %>">
+<div class="col-sm-5 col-sm-offset-1">
 <div class="circle">
 <div class="number">1</div>
 </div>
 <p class="center">Watch the videos on your track (designed specifically for your role!). All of the videos are only about <strong>one minute!</strong></p>
 </div>
-<div class="col-sm-6">
+<div class="col-sm-5">
 <div class="circle">
 <div class="number">2</div>
 </div>
@@ -119,13 +110,13 @@
 	<!--  BEGINYOUR TRACK *******************************************************      -->
 	
 
-		<a class="btn btn-primary btn-lg begin-track" href="<%= current_user.position.track(@page) %>/<%= current_user.position.shortname %>/<% if current_user.position.next_page(current_user.status.pages.last) %><%= current_user.position.next_page(current_user.status.pages.last).shortname %><% else %><%= current_user.position.pages.first.shortname %><% end %>">My Track</a>
+		<a class="btn btn-primary btn-lg <%= current_user.track %>" href="<%= current_user.track %>/<%= current_user.position.shortname %>/<% if current_user.position.next_page(current_user.last_page) %><%= current_user.position.next_page(current_user.last_page).shortname %><% else %><%= current_user.position.pages.first.shortname %><% end %>">My Track</a>
 
 		<!--  SEE YOUR QUIZ SCORES *******************************************************      -->
 	
 
 	<% if current_user.scores %>
-		<% track = current_user.position.track(current_user.position.pages.first) %>
+		<% track = current_user.track %>
 		<div class="quiz-wrapper">
 	    <% current_user.scores.each do |score| %>
 				<% if current_user.position.pages.include?(score.page) %>
