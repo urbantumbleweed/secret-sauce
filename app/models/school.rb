@@ -31,7 +31,7 @@ class School < ActiveRecord::Base
     photo_directors
   end
 
-   def editors_in_chief
+  def editors_in_chief
     editors_in_chief = []
     self.users_active.each do |user|
       if user.position.shortname == 'editor-in-chief'

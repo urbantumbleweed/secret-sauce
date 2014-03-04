@@ -84,7 +84,7 @@ html body {
 }
 
 .alum-active .panel-body, .inactive-user .panel-body {
-	color: #dddddd;
+	color: #888888;
 }
 
 .alum-active .panel-heading, .inactive-user .panel-heading {
@@ -93,11 +93,11 @@ html body {
 }
 
 .alum-active p, .inactive-user p {
-	color: #dddddd;
+	color: #888888;
 }
 
 .alum-active .fa  {
-	display:none;
+	
 }
 
 .circle {
