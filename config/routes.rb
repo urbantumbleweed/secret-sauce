@@ -19,6 +19,7 @@ SecretSauce::Application.routes.draw do
   post '/positions/next' => 'positions#next', as: :next_page
   get '/agreement' => 'positions#agreement', as: :agreement
   get '/faq' => 'home#faq', as: :faq
+  get '/fonts' => 'home#fonts'
   post '/agree' => 'positions#agree', as: :agree
 
   get '/welcome' => 'home#welcome', as: :welcome

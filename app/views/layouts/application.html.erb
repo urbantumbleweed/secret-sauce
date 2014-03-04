@@ -53,7 +53,7 @@
       <a class="list-group-item" href="<%= current_user.position.track(current_user.last_page) %>/<%= current_user.position.shortname %>/<% if current_user.position.next_page(current_user.last_page) %><%= current_user.position.next_page(current_user.last_page).shortname %><% else %><%= current_user.position.pages.first.shortname %><% end %>">My Track</a>      
       <a class="list-group-item" href="#">Publishing Spreadsheet</a>
       <a class="list-group-item" href="<%= faq_path %>">FAQ</a>
-      <a class="list-group-item" href="#">Brand Assets</a>
+      <a class="list-group-item" href="/marketing/business-director/marketing_materials">Brand Assets</a>
       <a class="list-group-item border-top" href="<%= positions_path %>">Position Directory</a>
       <a class="list-group-item" href="/staff">Staff Directory</a>
       <a class="list-group-item" href="<%= schools_path %>">Social Media by School</a>

@@ -9,144 +9,136 @@
 <!--  SEE YOUR RESPONSIBILITIES *******************************************************      -->
 <div class="row">
 	<div <% if current_user.scores.empty? %> class="col-sm-10 col-sm-offset-1"<% end %> >
-<div class="row">
-	<div class="col-md-12">
-		<h1 class="semi-super">So, <%= current_user.first_name %>... you're the <%= current_user.status.position.name %> at <a class="link" href="schools/<%= current_user.school.shortname %>"><%= current_user.school.name %></a>.</h1>
-	</div>
-</div>
-<div class="row profile">
-	<div <% if current_user.scores.empty? %> class="col-md-8" <% else %> class="col-md-6" <% end %> >
-		
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="semi-super">So, <%= current_user.first_name %>... you're the <%= current_user.status.position.name %> at <a class="link" href="schools/<%= current_user.school.shortname %>"><%= current_user.school.name %></a>.</h1>
+			</div>
+		</div>
+		<div class="row profile">
+			<div <% if current_user.scores.empty? %> class="col-md-8" <% else %> class="col-md-6" <% end %> >
+				<p class="label <%= current_user.track %>">It's your job to</p>
 
-	<p class="label <%= current_user.track %>">It's your job to</p>
+				  <% case current_user.position.shortname %>
+					<% when 'editor-in-chief' %>
+					<h4>Build and oversee editorial content</h4>
+					<h4>Finalize and publish all content to the site</h4>
+					<h4>Maintain high quality, college-focused content</h4>
+					<h4>Organize and lead weekly meetings</h4></h4>
 
-
-	<% case current_user.position.shortname %>
-		<% when 'editor-in-chief' %>
-		<h4>Build and oversee editorial content</h4>
-		<h4>Finalize and publish all content to the site
-</h4>
-		<h4>Maintain high quality, college-focused content
-</h4>
-		<h4>Organize and lead weekly meetings</h4>
-</h4>
-
-		<% when 'managing-editor' %>
-		<h4>Work closely with editor-in-chief and manage section editors</h4>
-		<h4>Edit content and prepare for publishing</h4>
+					<% when 'managing-editor' %>
+					<h4>Work closely with editor-in-chief and manage section editors</h4>
+					<h4>Edit content and prepare for publishing</h4>
 
 
-		<% when 'copy-editor' %>
-		<h4>being wonderful</h4>
-		<h4>Have exceptional attention to detail</h4>
-		<h4>Edit writers’ stories for grammatical errors and things that don’t make sense</h4>
-		<h4>Maintain the integrity of the writer’s original voice</h4>
-		
-		<% when 'writer' %>
-		<h4>Brainstorm content ideas and write 4 articles per month</h4>
-		<h4>Take photos for articles when necessary</h4>
-		<h4>Promote stories on social media</h4>
-		<h4>Maintain frequent contact with Spoon nationals</h4>
-		
-		<% when 'national-contributor' %>
-		<h4>Brainstorm content ideas and write 2 articles per month</h4>
-		<h4>Take photos for articles when necessary</h4>
-		<h4>Promote stories on social media</h4>
-		<h4>Maintain frequent contact with Spoon nationals</h4>
-	
-		<% when 'photo-director' %>
-		<h4>Monitor all the photos produced by photographers at your school to make sure it’s all quality.</h4>
-		<h4>Depending on how you choose to run your photo team, you may be responsible for selecting and uploading each of the photos into the stories from Flickr.</h4>
-		<h4>You’ll need to make your school’s Flickr page, ASAP.</h4>
+					<% when 'copy-editor' %>
+					<h4>being wonderful</h4>
+					<h4>Have exceptional attention to detail</h4>
+					<h4>Edit writers’ stories for grammatical errors and things that don’t make sense</h4>
+					<h4>Maintain the integrity of the writer’s original voice</h4>
+					
+					<% when 'writer' %>
+					<h4>Brainstorm content ideas and write 4 articles per month</h4>
+					<h4>Take photos for articles when necessary</h4>
+					<h4>Promote stories on social media</h4>
+					<h4>Maintain frequent contact with Spoon nationals</h4>
+					
+					<% when 'national-contributor' %>
+					<h4>Brainstorm content ideas and write 2 articles per month</h4>
+					<h4>Take photos for articles when necessary</h4>
+					<h4>Promote stories on social media</h4>
+					<h4>Maintain frequent contact with Spoon nationals</h4>
+				
+					<% when 'photo-director' %>
+					<h4>Monitor all the photos produced by photographers at your school to make sure it’s all quality.</h4>
+					<h4>Depending on how you choose to run your photo team, you may be responsible for selecting and uploading each of the photos into the stories from Flickr.</h4>
+					<h4>You’ll need to make your school’s Flickr page, ASAP.</h4>
 
-		<% when 'photographer' %>
-		<h4>You’ll be paired with writers, and you’ll be responsible for taking their photos!</h4>
-		<h4>Be sure to pay attention to Spoon’s expectations and take enough quality photos — visuals are very important to us!</h4>
+					<% when 'photographer' %>
+					<h4>You’ll be paired with writers, and you’ll be responsible for taking their photos!</h4>
+					<h4>Be sure to pay attention to Spoon’s expectations and take enough quality photos — visuals are very important to us!</h4>
 
-		<% when 'business-director' %>
-		<h4>Build and oversee marketing/PR team</h4>
-		<h4>Develop relationships with student organizations</h4>
-		<h4>Execute campus events, manage newsletter signups and social media presence</h4>
-		<h4>Monitor Google analytics to make sure you’re promoting enough</h4>
-		<h4>Make Spoon the coolest club on campus</h4>
+					<% when 'business-director' %>
+					<h4>Build and oversee marketing/PR team</h4>
+					<h4>Develop relationships with student organizations</h4>
+					<h4>Execute campus events, manage newsletter signups and social media presence</h4>
+					<h4>Monitor Google analytics to make sure you’re promoting enough</h4>
+					<h4>Make Spoon the coolest club on campus</h4>
 
-		<% when 'marketing-team-member' %>
-		<h4>As the go-getters, trendsetters and social-networkers of the team, the marketing/PR team members make everything happen. They get out there, shamelessly talk to people about Spoon, organize events and lead social media campaigns. They’re the powerhouse behind the campus Spoon brand.</h4>
-		<h4>Post to Facebook, Twitter, Pinterest, etc. from your personal accounts and the Spoon account, if necessary.</h4>
-		<h4>Enthusiastically participate in Spoon events. You could be organizing, working booths, shmoozing, sampling or flying a kite — represent Spoon and work hard, regardless.</h4>
+					<% when 'marketing-team-member' %>
+					<h4>As the go-getters, trendsetters and social-networkers of the team, the marketing/PR team members make everything happen. They get out there, shamelessly talk to people about Spoon, organize events and lead social media campaigns. They’re the powerhouse behind the campus Spoon brand.</h4>
+					<h4>Post to Facebook, Twitter, Pinterest, etc. from your personal accounts and the Spoon account, if necessary.</h4>
+					<h4>Enthusiastically participate in Spoon events. You could be organizing, working booths, shmoozing, sampling or flying a kite — represent Spoon and work hard, regardless.</h4>
 
-		<% else %>
-		<h4>... who do you think you are?</h4>
+					<% else %>
+					<h4>... who do you think you are?</h4>
 
-	<% end %>
+				<% end %>
 
 		<!--  INSTRUCTIONS *******************************************************      -->
 
 
-	<div class="row <%= current_user.track %>">
-<div class="col-sm-5 col-sm-offset-1">
-<div class="circle">
-<div class="number">1</div>
-</div>
-<p class="center">Watch the videos on your track (designed specifically for your role!). All of the videos are only about <strong>one minute!</strong></p>
-</div>
-<div class="col-sm-5">
-<div class="circle">
-<div class="number">2</div>
-</div>
-<p class="center">Open up another browser window on your screen and <strong>do the activities as you go along</strong>, if it says so. Trust us.</p>
-</div>
-</div>
-</div>
-<div class="col-md-4 border-left <% unless current_user.scores.empty? %> border-right <% end %> ">
+			<div class="row <%= current_user.track %>">
+				<div class="col-sm-5 col-sm-offset-1">
+					<div class="circle">
+						<div class="number">1</div>
+					</div>
+					<p class="center">Watch the videos on your track (designed specifically for your role!). All of the videos are only about <strong>one minute!</strong></p>
+				</div>
+				<div class="col-sm-5">
+					<div class="circle">
+						<div class="number">2</div>
+					</div>
+					<p class="center">Open up another browser window on your screen and <strong>do the activities as you go along</strong>, if it says so. Trust us.</p>
+				</div>
+			</div>
+		</div>
 
-	<!--  SEE YOUR PROGRESS *******************************************************      -->
+		<div class="col-md-4 border-left <% unless current_user.scores.empty? %> border-right <% end %> ">
 
+	<!-- GET STARTED *******************************************************      -->
+			<% if current_user.status.pages.count == 0 %>
+				<a class="btn btn-primary btn-lg <%= current_user.track %>" href="<%= track_path_helper(current_user)%>">Get Started!</a>
+			<% end %>
 
-	<h4>You are <%= current_user.percent_complete %>% through your track.</h4>
-  <div id="personal_<%= current_user.id %>"></div>
-  
- 
-	<!--  BEGINYOUR TRACK *******************************************************      -->
-	
-
-		<a class="btn btn-primary btn-lg <%= current_user.track %>" href="<%= track_path_helper(current_user)%>">My Track</a>
+			<!--  SEE YOUR PROGRESS *******************************************************      -->
+			<h4>You are <%= current_user.percent_complete %>% through your track.</h4>
+			<div id="personal_<%= current_user.id %>"></div>
+		  
+		 
+			<!--  GO BACK TO YOUR TRACK *******************************************************      -->
+			<% if current_user.status.pages.count > 0 %>
+				<a class="btn btn-primary btn-lg <%= current_user.track %>" href="<%= track_path_helper(current_user)%>">My Track</a>
+			<% end %>
 
 		<!--  SEE YOUR QUIZ SCORES *******************************************************      -->
 	
 
-	<% unless current_user.scores.empty? %>
-	</div>
-	<div class="col-md-2">
-		<% track = current_user.track %>
-		<div class="quiz-wrapper">
-	    <% current_user.scores.each do |score| %>
-				<% if current_user.position.pages.include?(score.page) %>
-		      <div class="<%= track %>">
-		      	<h4 class="quiz-title"><strong><%= score.page.name %></strong></h4>
-		      	<div class="quiz-score"><%= score.percent_correct %>%</div><br>
-		      	<a class="retake" href="/<%= track %>/<%= current_user.position.shortname %>/<%= score.page.shortname %>">RETAKE</a>
-		      </div>
-	   	  <% end %>
-   	  <% end %>
+			<% unless current_user.scores.empty? %>
 		</div>
-  <% end %> 
+			<div class="col-md-2">
+				<% track = current_user.track %>
+				<div class="quiz-wrapper">
+			    <% current_user.scores.each do |score| %>
+				      <div class="<%= track %>">
+				      	<h4 class="quiz-title"><strong><%= score.page.name %></strong></h4>
+				      	<div class="quiz-score"><%= score.percent_correct %>%</div><br>
+				      	<% if current_user.position.pages.include?(score.page) %>
+				      	<a class="retake" href="/<%= track %>/<%= current_user.position.shortname %>/<%= score.page.shortname %>">RETAKE</a>
+				    	<% end %>
+				    </div>
+			 	  <% end %>
+				</div>
+			<% end %>
 
+			<script>
+			  $(function() {
+					donutOfCompleteness(<%= current_user.id %>, <%= current_user.percent_complete %>, "<%= current_user.position.track(current_user.position.pages.first) %>", true)
+				});
+			</script>
 
-
-
-
-	
-
-<script>
-  $(function() {
-		donutOfCompleteness(<%= current_user.id %>, <%= current_user.percent_complete %>, "<%= current_user.position.track(current_user.position.pages.first) %>", true)
-	});
-</script>
-
-</div>
-</div>
-</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 

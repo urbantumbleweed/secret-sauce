@@ -28,4 +28,7 @@ class HomeController < ApplicationController
 
 	end
 
+	def fonts
+	end
+
 end
