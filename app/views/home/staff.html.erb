@@ -1,3 +1,15 @@
+
+<table id="sort-buttons">
+  <thead>
+    <tr>
+      <th>Sort:</th>
+      <th><%= link_to "A-Z", sort_by_path('last_name')%></th>
+      <th><%= link_to "School", sort_by_path('school_id')%></th>
+      <th><%= link_to "Position", sort_by_path('position')%></th>
+    </tr>
+  </thead>
+</table>
+
 <div class="row staff-directory">
 <% @students.each do |student| %>
   <div class="col-sm-3">
@@ -11,9 +23,9 @@
       </div>
       <div class="panel-body">
         <ul class="list-unstyled">
-            <li><%= student.position.name %></li>
-            <li><%= student.phone_number %></li>
-            <li><%= student.email %></li>
+          <li><%= student.position.name %></li>
+          <li><%= student.phone_number %></li>
+          <li><%= student.email %></li>
         </ul>
       </div>
     </div>

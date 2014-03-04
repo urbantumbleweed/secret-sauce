@@ -610,6 +610,7 @@ a.retake{
 	text-align:left;
 }
 
+<<<<<<< HEAD
 .next-page {
 	margin:20px;
 }
@@ -671,9 +672,13 @@ a.retake{
 	background-color: #ff9999;
 }
 
+#sort-buttons thead tr th{
+	padding:5px;
+}
 
-
-
+#see-alum{
+	margin-bottom: 20px;
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
 .ig-b-24 {

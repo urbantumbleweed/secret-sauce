@@ -13,6 +13,8 @@ SecretSauce::Application.routes.draw do
 
 
   get '/schools/:shortname' => 'schools#show'
+  get '/staff' => 'home#staff_all', as: :staff
+  get "/staff/sort_by/:sort_by" => "home#staff", as: 'sort_by'
   get '/*track/:position/:page' => 'positions#position', as: :track
   post '/positions/next' => 'positions#next', as: :next_page
   get '/agreement' => 'positions#agreement', as: :agreement
@@ -22,7 +24,8 @@ SecretSauce::Application.routes.draw do
 
   get '/welcome' => 'home#welcome', as: :welcome
   get '/admin/schools' => 'schools#admin', as: :school_admin
-  get '/staff' => 'home#staff', as: :staff
+  
+
   get '/thanks' => 'home#thanks', as: :thanks
 
 

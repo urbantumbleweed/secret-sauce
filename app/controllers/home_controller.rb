@@ -19,8 +19,19 @@ class HomeController < ApplicationController
 	def thanks
 	end
 
+	def staff_all
+		redirect_to '/staff/sort_by/last_name'
+	end
+
 	def staff
-		@students = User.active
+    sort_by = params[:sort_by] || 'school_id'
+
+    if sort_by == 'position'
+    	@students = User.active
+			@students.sort!{ |a,b| b.position <=> a.position }
+    else
+    	@students = User.order(sort_by).active
+  	end
 	end
 
 	def fonts
