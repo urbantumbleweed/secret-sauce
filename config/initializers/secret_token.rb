@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-SecretSauce::Application.config.secret_key = '7b87469f46e18260b8916f1f80f8d4653be37d5fc59a4b3610cf6aa7dcfc7976719601efd657d079e6785162a9314f2855428cabf6d24afb41db2e79b9e82441'
+SecretSauce::Application.config.secret_key_base = '36026e7dddeb6c7fb6d82857afd84fc26dab192abfc5821729dc6d64173175d25e37c27f5c8811d3747b5e7e769993918bf7a92a0559abb47ee8801f00e03cb8'
