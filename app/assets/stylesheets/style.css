@@ -107,7 +107,7 @@ html body {
 	background-color:#474747;
 	color:white;
 	font-size:30px;
-	margin: 0 auto;
+	margin: 20px auto;
 }
 
 .circle .number {
@@ -493,7 +493,7 @@ div.quiz-score{
 	border-width: 3px;
 	border-radius: 10px;
 	display: inline-block;
-	font-size: 5em;
+	font-size: 3em;
 }
 
 .quiz-score {
