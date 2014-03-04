@@ -23,4 +23,7 @@ class HomeController < ApplicationController
 		@students = User.active
 	end
 
+	def fonts
+	end
+
 end

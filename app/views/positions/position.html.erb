@@ -45,7 +45,7 @@
 		<input type="hidden" name="track" value="<%= @position.track(@page) %>">
 		<input type="hidden" name="position" value="<%= @position.id %>">
 		<input type="hidden" name="page" value="<%= @page.shortname %>">
-		<button class="btn btn-primary pull-right btn-lg">Next</button>
+		<button class="next-page btn btn-primary pull-right btn-lg <%= current_user.track %>">Next</button>
 	</form>
 
 </div>

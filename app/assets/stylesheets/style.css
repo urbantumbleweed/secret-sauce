@@ -62,6 +62,33 @@ html body {
 	margin:25px 0;
 }
 
+.materials .box {
+	margin:5px 0;
+	color: #000000;
+}
+
+.materials .link .box:hover {
+	background: #829300;
+}
+
+.materials .link {
+	color:#ffffff;
+}
+
+.materials .link:hover {
+	color:#ffffff;
+	border-color: #829300;
+}
+
+.box.black-out {
+	background-color:#000000;
+	color:white;
+}
+
+.logo-preview {
+	background: #cccccc;
+}
+
 .box-inner {
 	padding: 15px;
 }
@@ -473,8 +500,16 @@ div#menu {
 	border: 1px solid #dddddd;
 }
 
+.timeline-window.plan-a-party {
+	height: 470px;
+}
+
 .timeline-wrapper {
 	width: 1475px;
+}
+
+.plan-a-party .timeline-step {
+	height:450px;
 }
 
 .timeline-step {
@@ -556,16 +591,89 @@ a.retake{
 }
 
 .faq {
-	font-size:28px;
+	font-size:16px;
 	line-height:35px;
 	font-weight:900;
 	margin-top:40px;
 	text-transform:uppercase;
+	color: #f96d14;
+	background-color: #fdc5a1;
+	border-radius: 4px;
 }
 
-.faq {
+.fa-question-circle {
+	color: #f96d14;
+	margin: 5px;
+}
+
+.frequently-asked-questions {
 	text-align:left;
 }
+
+.next-page {
+	margin:20px;
+}
+
+.box-label .fa {
+	color: #ffffff;
+	margin: 5px;
+}
+
+.social-media .box-label {
+	font-size:12px;
+}
+
+.colors {
+	color: #ffffff;
+}
+
+.orange {
+	background-color: #f96d14;
+}
+.yellow {
+	background-color: #f1a003;
+}
+.blue {
+	background-color: #00a2ca;
+}
+.green {
+	background-color: #829300;
+}
+.pink {
+	background-color: #a33873;
+}
+.red {
+	background-color: #ff0000;
+}
+
+.hover .orange {
+	color: #f96d14;
+	background-color: #fdc5a1;
+}
+.hover .yellow {
+	color: #f1a003;
+	background-color: #f9d99a;
+}
+.hover .blue {
+	color: #00a2ca;
+	background-color: #99daea;
+}
+.hover .green {
+	color: #829300;
+	background-color: #cdd499;
+}
+.hover .pink {
+	color: #a33873;
+	background-color: #daafc7;
+}
+.hover .red {
+	color: #ff0000;
+	background-color: #ff9999;
+}
+
+
+
+
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
 .ig-b-24 {
