@@ -100,6 +100,16 @@
 </div>
 <div class="col-md-4 border-left <% unless current_user.scores.empty? %> border-right <% end %> ">
 
+
+	<!-- GET STARTED *******************************************************      -->
+	
+
+
+	<% if current_user.status.pages.count == 0 %>
+		<a class="btn btn-primary btn-lg <%= current_user.track %>" href="<%= current_user.track %>/<%= current_user.position.shortname %>/<% if current_user.position.next_page(current_user.last_page) %><%= current_user.position.next_page(current_user.last_page).shortname %><% else %><%= current_user.position.pages.first.shortname %><% end %>">Get Started!</a>
+	<% end %>
+
+
 	<!--  SEE YOUR PROGRESS *******************************************************      -->
 
 
@@ -107,10 +117,11 @@
   <div id="personal_<%= current_user.id %>"></div>
   
  
-	<!--  BEGINYOUR TRACK *******************************************************      -->
+	<!--  GO BACK TO YOUR TRACK *******************************************************      -->
 	
-
+	<% if current_user.status.pages.count > 0 %>
 		<a class="btn btn-primary btn-lg <%= current_user.track %>" href="<%= current_user.track %>/<%= current_user.position.shortname %>/<% if current_user.position.next_page(current_user.last_page) %><%= current_user.position.next_page(current_user.last_page).shortname %><% else %><%= current_user.position.pages.first.shortname %><% end %>">My Track</a>
+	<% end %>
 
 		<!--  SEE YOUR QUIZ SCORES *******************************************************      -->
 	
