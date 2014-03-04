@@ -33,6 +33,20 @@ html body {
 .btn.btn-primary:hover {
 	background-color: #cc0066;
 }
+
+.btn.btn-primary.editorial:hover {
+	background-color: #f1a003;
+}
+
+.btn.btn-primary.photo:hover {
+	background-color: #00a2ca;
+}
+
+.btn.btn-primary.marketing:hover {
+	background-color: #829300;
+}
+
+
 .asterisk {
 	color: #ff0000;
 	font-size: 40px;
@@ -96,15 +110,22 @@ html body {
 	color: #888888;
 }
 
-.alum-active .fa  {
-	
+.editorial .circle {
+	background-color:#f1a003;
+}
+
+.photo .circle {
+	background-color:#00a2ca;
+}
+
+.marketing .circle {
+	background-color:#829300;
 }
 
 .circle {
 	border-radius: 50%;
 	width: 100px;
 	height: 100px;
-	background-color:#474747;
 	color:white;
 	font-size:30px;
 	margin: 20px auto;

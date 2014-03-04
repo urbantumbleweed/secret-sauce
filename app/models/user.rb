@@ -45,6 +45,10 @@ class User < ActiveRecord::Base
 		self.status.pages.last
 	end
 
+	def track
+		self.position.track(self.last_page)
+	end
+
 	def percent_complete
 		completed = self.status.pages.count.to_f
 		total = self.position.pages.count.to_f
