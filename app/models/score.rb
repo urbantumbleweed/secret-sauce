@@ -11,4 +11,9 @@ class Score < ActiveRecord::Base
   def quiz_name
     self.page_shortname.gsub("-"," ").capitalize
   end
+
+  def quiz_page
+    Page.find_by_shortname(self.page_shortname)
+  end
+
 end
