@@ -25,7 +25,9 @@ class PositionsController < ApplicationController
 	end
 
 	def agreement
-
+		if current_user.agreed == true
+			redirect_to root_path
+		end
 	end
 
 	def agree
