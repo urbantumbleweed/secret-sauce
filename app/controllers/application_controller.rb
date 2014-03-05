@@ -1,7 +1,15 @@
 class ApplicationController < ActionController::Base
 
 	before_filter :configure_permitted_parameters, if: :devise_controller?
+	before_action :setup_gibbon
 
+  def setup_mcapi
+    @mc = Mailchimp::API.new(ENV['MAILCHIMP_API_KEY'])
+  end
+
+  def setup_gibbon
+    @gb = Gibbon::API.new(ENV['MAILCHIMP_API_KEY'])
+  end
 
   protected
 

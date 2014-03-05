@@ -609,7 +609,6 @@ a.retake{
 .frequently-asked-questions {
 	text-align:left;
 }
-
 .next-page {
 	margin:20px;
 }
@@ -677,6 +676,13 @@ a.retake{
 
 #see-alum{
 	margin-bottom: 20px;
+}
+
+.hearts {
+  font-size: 5em;
+  position:absolute;
+  left: 50%;
+  top: 25%;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {

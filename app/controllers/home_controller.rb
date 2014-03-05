@@ -12,6 +12,20 @@ class HomeController < ApplicationController
 	end
 
 	def thanks
+
+		@lists = @gb.lists.list
+
+		 # begin
+   #    lists_res = @mc.lists.list
+   #    @lists = lists_res['data']
+   #  rescue Mailchimp::Error => ex
+   #    if ex.message
+   #      flash[:error] = ex.message
+   #    else
+   #      flash[:error] = "An unknown error occurred"
+   #    end
+   #    redirect_to thanks_path
+   #  end
 	end
 
 	def staff
@@ -27,6 +41,41 @@ class HomeController < ApplicationController
   	end
   	
 	end
+
+	def subscribe
+		list_id = params[:list_id]
+		email = params['email']
+end
+
+	# def subscribe
+	# 	list_id = params[:list_id]
+	# 	email = params['email']
+ #    begin
+ #    	@mc.lists.subscribe(params[:list_id],
+ #                     {'email' => email,
+ #                     'merge_vars' => {:groupings => [{:id => '6749',
+ #                                                     :groups => ["interest-1"]
+ #                                                   		}]
+ #                                    },
+ #                     'update_existing' => true})
+ #      # @mc.lists.subscribe(params[:list_id], {'email' => email})
+ #      flash[:success] = "#{email} subscribed successfully"
+ #    rescue Mailchimp::ListAlreadySubscribedError
+ #      flash[:error] = "#{email} is already subscribed to the list"
+ #    rescue Mailchimp::ListDoesNotExistError
+ #      flash[:error] = "The list could not be found"
+ #      redirect_to thanks_path
+ #      return
+ #    rescue Mailchimp::Error => ex
+ #      if ex.message
+ #        flash[:error] = ex.message
+ #      else
+ #        flash[:error] = "An unknown error occurred"
+ #      end
+ #    end
+ #    redirect_to thanks_path
+	# end
+
 
 	def fonts
 	end

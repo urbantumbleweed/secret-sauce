@@ -14,9 +14,6 @@ describe User do
         @position = Position.find_by_name('Photographer')
         Status.create(user: @user, position: @position)
       end
-      it "should be a photographer" do
-        @user.position.name.should == 'Photographer'
-      end
       it "last page should be nil" do
         @user.last_page.should === nil
       end
