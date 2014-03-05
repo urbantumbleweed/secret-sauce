@@ -14,9 +14,6 @@ describe User do
         @position = Position.find_by_name('Photographer')
         Status.create(user: @user, position: @position)
       end
-      it "should be a photographer" do
-        @user.position.name.should == 'Photographer'
-      end
       it "last page should be nil" do
         @user.last_page.should === nil
       end
@@ -48,10 +45,7 @@ describe User do
           @user.last_page.should === @position.pages.last
         end
         
-        it "should have finished the tracl" do
-          puts @user.status.pages
-          puts @user.position.pages
-          puts @user.status.pages =~ @user.position.pages
+        it "should have finished the track" do
           @user.should be_finished_track
         end
 
@@ -73,11 +67,28 @@ describe User do
           @user.current_page.should == @position.pages.first
         end
       end
-
     end
 
- 
+    describe "#is_admin? works" do
+      describe "when users is not an admin" do
+        before do
+          @position = Position.find_by_name('Photographer')
+          Status.create(user: @user, position: @position)
+        end
+        it "should return false" do
+          @user.is_admin? == false
+        end
+      end
+      describe "when users is an admin" do
+        before do
+          @position = Position.find_by_name('Photo Director')
+          Status.create(user: @user, position: @position)
+        end
+        it "should return true" do
+          @user.is_admin? == true 
+        end
+      end
+    end
   end
-
 
 end

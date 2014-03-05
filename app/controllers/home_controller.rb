@@ -26,7 +26,7 @@ class HomeController < ApplicationController
     else
     	@students = User.order('school_id').active
   	end
-
+  	
 	end
 
 

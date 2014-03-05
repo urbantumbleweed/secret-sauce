@@ -20,8 +20,6 @@ class ScoresController < ApplicationController
         render :json => score.to_json
       end
     end
-
   end
-
 
 end
