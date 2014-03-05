@@ -21,6 +21,7 @@ SecretSauce::Application.routes.draw do
   get '/faq' => 'home#faq', as: :faq
   get '/fonts' => 'home#fonts'
   post '/agree' => 'positions#agree', as: :agree
+  post '/subscribe' => 'home#subscribe'
 
   get '/welcome' => 'home#welcome', as: :welcome
   get '/admin/schools' => 'schools#admin', as: :school_admin

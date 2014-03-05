@@ -1,51 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<!--   get user variable for javascript  -->
   <% if user_signed_in? %>
   <script> 
-    var current_user = <%= current_user.to_json(only: [:first_name, :id, :see_alum]).html_safe %>;
+  var current_user = <%= current_user.to_json(only: [:first_name, :id, :see_alum]).html_safe %>;
   </script>
-  <% end %> 
+  <% end %>
+
+ <!--   fonts/styles/jquery  -->
   <script type="text/javascript" src="//use.typekit.net/pmb1dkw.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <title>Spoon University Secret Sauce</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-  <a href="/" id="logo"><%= image_tag "logo.png" %></a>
-  <% if user_signed_in? %>
-    <span>Hi <%= current_user.first_name %>, this is our secret sauce.</span>
-    <i id="openMenu" class="fa fa-bars fa-2x pull-right"></i>
-  <% else %>
-  <span>This is our secret sauce.</span>
-  <% end %>
-</div>
-</nav>
-<div class="container">
-  <div class="body">
-  <% if notice %>
-  <p class="alert alert-notice"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-error"><%= alert %></p>
-<% end %>
-<div class="row">
-  <%= yield %>
 
-</div>
-</div>
-</div>
+  <!--   top fixed nav  -->
+
+
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <a href="/" id="logo"><%= image_tag "logo.png" %></a>
+      <% if user_signed_in? %>
+      <span>Hi <%= current_user.first_name %>, this is our secret sauce.</span>
+      <i id="openMenu" class="fa fa-bars fa-2x pull-right"></i>
+      <% else %>
+      <span>This is our secret sauce.</span>
+      <% end %>
+    </div>
+  </nav>
+
+  <!--   body  -->
+
+  <div class="container">
+    <div class="body">
+       <% if flash[:success] %>
+        <p class="text-success"><%= flash[:success] %></p>
+    <% end %>
+
+    <% if flash[:error] %>
+        <p class="text-error"><%= flash[:error] %></p>
+    <% end %>
+      <% if notice %>
+      <p class="alert alert-notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+      <p class="alert alert-error"><%= alert %></p>
+      <% end %>
+
+     <%= yield %>
+
+    </div>
+  </div>
   <footer>
     <div class="container">
       &copy; 2014 Spoon University
     </div>
   </footer>
   
-    <% if user_signed_in? %>
+  <% if user_signed_in? %>
   <div id="menu" class="quicklinks">
     <a class="list-group-item" href="/schools/<%= current_user.school.shortname %>" style="background-color: <%= current_user.school.color_1 %>; color: <%= current_user.school.color_2 %>  "><%= current_user.school.name %></a>
     <div class="list-group">
@@ -67,87 +84,87 @@
 
   <script>
   $(function(){
-      $("#openMenu").click(function() {
+    $("#openMenu").click(function() {
       var menu = $("#menu");
       $(menu).is(":visible")
       if ($(menu).is(":visible")) {
-          $(menu).animate({right: "-300px"}, 500, function() {$(menu).hide();});
+        $(menu).animate({right: "-300px"}, 500, function() {$(menu).hide();});
       } else {
-          $(menu).show().animate({right: "0px"}, 500, function() {$(menu).show();});
+        $(menu).show().animate({right: "0px"}, 500, function() {$(menu).show();});
 
       }
-  });
+    });
 
   })
 
 
   </script>
-<!--   QUIZ TEMPLATES -->
+  <!--   QUIZ TEMPLATES -->
 
   <script type="text/x-handlebars-template" id="quizTemplate">
-    <h1 class="title">
-      {{ title }}
-    </h1>
-    <h2 class="subtitle">
-      {{ subtitle }}
-    </h2>
-    
-    <div class="well" id="questionBox">
-      <div class="pull-right scores">
-        <h4>Score: <span id="score">{{ score }}</span> / <span id="possibleScore">{{ possibleScore }}</span></h4>
-      </div>
-      <div class="intro">
-        <p>{{ introText }}</p>
-        <button class="startQuiz btn btn-primary">Start the quiz!</button>
-      </div>
-      <div class="question"></div>
-    </div>      
+  <h1 class="title">
+  {{ title }}
+  </h1>
+  <h2 class="subtitle">
+  {{ subtitle }}
+  </h2>
+
+  <div class="well" id="questionBox">
+  <div class="pull-right scores">
+  <h4>Score: <span id="score">{{ score }}</span> / <span id="possibleScore">{{ possibleScore }}</span></h4>
+  </div>
+  <div class="intro">
+  <p>{{ introText }}</p>
+  <button class="startQuiz btn btn-primary">Start the quiz!</button>
+  </div>
+  <div class="question"></div>
+  </div>      
   </script>
 
   
   <script type="text/x-handlebars-template" id="multiQuestionTemplate">
-    <div class="row-fluid">
-      <div class="span4">
-        {{ question }}
-      </div>
-      <div class="span4">
-        <div class="questionCtn">
-          {{#each options }}
-            {{#if this }}
-            <label class="radio">
-               <input type="radio" name="options" value="{{ this }}">
-                {{ this }}
-            </label>
-            {{/if}}
-          {{/each}}
-        </div>
-        <div class="answerCtn" style="display:none;">
-          <h3 class="status"></h3>
-          <p>The answer is: <br />{{ answer }}</p>
-        </div>
-        <div class="buttons">
-          <button class="checkResults btn btn-primary">Check Answer</button>
-          <button class="nextQuestion btn btn-primary" style="display:none;">Next Question</button>
-        </div>
-      </div>
-    </div>
+  <div class="row-fluid">
+  <div class="span4">
+  {{ question }}
+  </div>
+  <div class="span4">
+  <div class="questionCtn">
+  {{#each options }}
+  {{#if this }}
+  <label class="radio">
+  <input type="radio" name="options" value="{{ this }}">
+  {{ this }}
+  </label>
+  {{/if}}
+  {{/each}}
+  </div>
+  <div class="answerCtn" style="display:none;">
+  <h3 class="status"></h3>
+  <p>The answer is: <br />{{ answer }}</p>
+  </div>
+  <div class="buttons">
+  <button class="checkResults btn btn-primary">Check Answer</button>
+  <button class="nextQuestion btn btn-primary" style="display:none;">Next Question</button>
+  </div>
+  </div>
+  </div>
   </script>
   
   <script type="text/x-handlebars-template" id="answerTemplate">
-    _.each( shuffledItems, function( item ){ 
-      <li>{{ shuffledItems }}</li>
-    });
+  _.each( shuffledItems, function( item ){ 
+    <li>{{ shuffledItems }}</li>
+  });
   </script>
 
   
   <script type="text/x-handlebars-template" id="finalScoreTemplate">
-    <h3>Your final score is:</h3>
-    <h1><span id="score">{{ score }}</span> / <span id="possibleScore">{{ possibleScore }}</span></h1> 
-    <h2>{{message}}</h2>
-      
+  <h3>Your final score is:</h3>
+  <h1><span id="score">{{ score }}</span> / <span id="possibleScore">{{ possibleScore }}</span></h1> 
+  <h2>{{message}}</h2>
+
   </script>
   
-<!--   END OF QUIZ TEMPLATES -->
+  <!--   END OF QUIZ TEMPLATES -->
 
   <%= javascript_include_tag "application" %>
 
