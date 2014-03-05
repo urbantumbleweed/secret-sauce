@@ -31,7 +31,7 @@ html body {
 }
 
 .btn.btn-primary:hover {
-	background-color: #f1a003;
+	background-color: #cc0066;
 }
 
 .btn.btn-primary.editorial:hover {
@@ -382,7 +382,7 @@ h1, h2, h3, h4, h5 {
 	background-color: transparent;
 	border: 0px;
 }
-.make-alum i:hover {
+.make-alum i:hover, .activate-user i:hover {
 	color: #cc0066;
 }
 
