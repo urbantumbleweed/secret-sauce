@@ -12,7 +12,7 @@
 
 <div class="row staff-directory">
 <% @students.each do |student| %>
-  <div class="col-sm-3">
+  <div class="col-sm-4 col-md-3">
     <div class="panel panel-default">
       <div class="panel-heading"><p><%= student.name %></p>
       	<p style="background: <%= student.school.color_1 %>; color: <%= student.school.color_2 %>" class="badge">
