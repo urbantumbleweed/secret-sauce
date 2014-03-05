@@ -8,7 +8,7 @@ class School < ActiveRecord::Base
         active_users << user
       end      
     end
-    active_users
+    active_users.sort!{ |a,b| a.position <=> b.position }
   end
 
   def users_inactive
@@ -18,7 +18,7 @@ class School < ActiveRecord::Base
         inactive_users << user
       end      
     end
-    inactive_users
+    inactive_users.sort!{ |a,b| a.position <=> b.position }
   end
 
   def photo_directors
