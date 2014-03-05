@@ -29,7 +29,6 @@ page_names = {
 		'add_photos' => 'Add Photos',
 		'add_video' => 'Add Video',
 		'slideshow' => 'Add Slideshow',
-		'editorial_sections' => 'Sections',
 		'section_intro' => 'Next...',
 		'photo_sections' => 'Sections',
 		'flickr' => 'Flickr',
@@ -49,7 +48,8 @@ page_names = {
 		'food_for_thought' => 'Food for Thought',
 		'kitchen_101' => 'Kitchen 101',
 		'students_campus' => 'Students & Campus',
-		'events' => 'Events'
+		'events' => 'Events',
+		'editorial_sections' => 'Sections'
 	}
 
 page_names.each do |k, v|
