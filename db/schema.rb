@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20140303171043) do
 
   create_table "scores", force: true do |t|
     t.integer  "user_id"
-    t.integer  "page_id"
+    t.string   "page_shortname"
     t.integer  "correct"
     t.integer  "total"
     t.datetime "created_at"

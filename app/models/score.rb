@@ -8,4 +8,7 @@ class Score < ActiveRecord::Base
     percent_correct.to_i
   end
 
+  def quiz_name
+    self.page_shortname.gsub("-"," ").capitalize
+  end
 end
