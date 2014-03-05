@@ -52,7 +52,7 @@
               <% if current_user.is_admin? && current_user.school === school %>
                 <% if student.scores %>
                   <% student.scores.each do |score| %>
-                    <li><%= score.page.name %> Quiz: <%= score.correct %> / <%= score.total %></li>
+                    <li><%= score.quiz_name %> Quiz: <%= score.correct %> / <%= score.total %></li>
                   <% end %>       
                 <% end %>  
               <% end %>
