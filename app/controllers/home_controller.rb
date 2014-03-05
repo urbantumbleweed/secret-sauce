@@ -30,7 +30,7 @@ class HomeController < ApplicationController
 
     if sort_by == 'position'
     	@students = User.active
-			@students.sort!{ |a,b| b.position <=> a.position }
+			@students.sort!{ |a,b| a.position <=> b.position }
 	 	elsif sort_by == 'name'
     	@students = User.order('last_name').active
     else
