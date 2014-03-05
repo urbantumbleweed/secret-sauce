@@ -4,6 +4,10 @@ html body {
 	line-height: 22px;
 }
 
+.body {
+	margin-left:-30px;
+}
+
 .addendum {
 	margin-top:100px;
 }
@@ -695,7 +699,9 @@ a.retake{
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
-
+	.body {
+		margin-left: 0px;
+	}
 	body {
 		padding-top: 0px;
 	}
