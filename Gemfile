@@ -10,6 +10,7 @@ gem "mailchimp-api", "~> 2.0.4", require: 'mailchimp'
 
 gem "gibbon", "~> 1.1.1"
 
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

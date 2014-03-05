@@ -19,7 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 		Status.create(user: current_user, position_id: params['position_id'])
 
 		# subscribe user to mailchimp list
-		@gb.lists.subscribe({:id => '71726be0ba', :email => {:email => params['user']['email'] }, :merge_vars => {:STAFF => 'yes'}, :update_existing => true})
+		# @gb.lists.subscribe({:id => '71726be0ba', :email => {:email => params['user']['email'] }, :merge_vars => {:STAFF => 'yes'}, :update_existing => true})
 	
 	end
 
