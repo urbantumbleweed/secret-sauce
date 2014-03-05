@@ -2,6 +2,7 @@ html body {
 	height: 100%;
 	font-size: 16px;
 	line-height: 22px;
+	margin-left: -50px;
 }
 
 .addendum {
@@ -356,11 +357,11 @@ h1, h2, h3, h4, h5 {
 }
 
 .border-left {
-	border-left: 1px solid black;
+	border-left: 0px;
 }
 
 .border-right {
-	border-right: 1px solid black;
+	border-right: 0px;
 }
 
 .btn.btn-primary {
@@ -694,9 +695,14 @@ a.retake{
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
+	html body {
+		margin-left: 0px;
+	}
+
 	body {
 		padding-top: 0px;
 	}
+
 
  }
 
@@ -714,6 +720,15 @@ a.retake{
 	.col-sm-4:nth-child(4n+1) {
 	clear:left;
 	}
+
+	.border-left {
+		border-left: 1px solid black;
+	}
+
+	.border-right {
+		border-right: 1px solid black;
+	}
+
 
  }
 
