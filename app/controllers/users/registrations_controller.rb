@@ -28,7 +28,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 		@schools = School.order("lower(name)").all
 		super
 		current_user.update_attributes(user_params)
-		Status.create(user: current_user, position_id: params['position_id'])
+		position = Position.find(params['position_id'])
+		unless current_user.position == position
+			Status.create(user: current_user, position_id: params['position_id'])
+		end
 	end
 
   private

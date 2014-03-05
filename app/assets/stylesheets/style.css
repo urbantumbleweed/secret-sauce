@@ -275,13 +275,13 @@ h1, h2, h3, h4, h5 {
 }
 
 .super {
-	font-size: 80px;
-	line-height: 90px;
+	font-size: 40px;
+	line-height: 45px;
 }
 
 .semi-super {
-	font-size: 60px;
-	line-height: 65px;
+	font-size: 30px;
+	line-height: 35px;
 }
 
 .track-nav li {
@@ -356,11 +356,11 @@ h1, h2, h3, h4, h5 {
 }
 
 .border-left {
-	border-left: 1px solid black;
+	border-left: 0px;
 }
 
 .border-right {
-	border-right: 1px solid black;
+	border-right: 0px;
 }
 
 .btn.btn-primary {
@@ -695,9 +695,21 @@ a.retake{
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
+
 	body {
 		padding-top: 0px;
 	}
+
+	.super {
+		font-size: 80px;
+		line-height: 90px;
+	}
+
+	.semi-super {
+		font-size: 60px;
+		line-height: 65px;
+	}
+
 
  }
 
@@ -715,6 +727,15 @@ a.retake{
 	.col-sm-4:nth-child(4n+1) {
 	clear:left;
 	}
+
+	.border-left {
+		border-left: 1px solid black;
+	}
+
+	.border-right {
+		border-right: 1px solid black;
+	}
+
 
  }
 
