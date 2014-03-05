@@ -45,8 +45,16 @@ class User < ActiveRecord::Base
 		self.status.pages.last
 	end
 
+	def finished_track?
+    (self.position.pages - self.status.pages).length == 0
+	end
+
 	def track
 		self.position.track(self.last_page)
+	end
+
+	def current_page
+		finished_track? ? self.position.pages.first : last_page || self.position.pages.first
 	end
 
 	def percent_complete

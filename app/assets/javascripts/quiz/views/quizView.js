@@ -44,8 +44,6 @@ quizApp.QuizView = Backbone.View.extend({
 			model: question,
 			el: this.$el.find('.question'),
 		});	
-		// this.currentQuestion.model.set('parentView', this);
-		// this.currentQuestion.model.set('parentModel', this.model);
 		this.currentQuestion.render();
 		this.listenTo(this.currentQuestion.model, 'change', this.updateScore);
 		this.listenTo(this.currentQuestion, 'nextQuestion', this.nextQuestion);

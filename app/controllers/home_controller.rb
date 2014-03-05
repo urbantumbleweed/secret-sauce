@@ -5,11 +5,6 @@ class HomeController < ApplicationController
 		if current_user.status.pages.count == 0 && user_session.empty?
 			redirect_to welcome_path
 		end
-		if current_user.status.pages.empty? || current_user.status.pages.count == current_user.position.pages.count
-			@page = current_user.position.pages.first
-		else
-			@page = current_user.status.pages.last
-		end
 	end
 
 	def welcome
@@ -33,19 +28,18 @@ class HomeController < ApplicationController
    #  end
 	end
 
-	def staff_all
-		redirect_to '/staff/sort_by/last_name'
-	end
-
 	def staff
-    sort_by = params[:sort_by] || 'school_id'
+    sort_by = params[:sort_by]
 
     if sort_by == 'position'
     	@students = User.active
 			@students.sort!{ |a,b| b.position <=> a.position }
+	 	elsif sort_by == 'name'
+    	@students = User.order('last_name').active
     else
-    	@students = User.order(sort_by).active
+    	@students = User.order('school_id').active
   	end
+
 	end
 
 	def subscribe
