@@ -50,7 +50,7 @@
     <a class="list-group-item" href="/schools/<%= current_user.school.shortname %>" style="background-color: <%= current_user.school.color_1 %>; color: <%= current_user.school.color_2 %>  "><%= current_user.school.name %></a>
     <div class="list-group">
       <a class="list-group-item" href="<%= edit_user_registration_path %>">Edit Profile</a>
-      <a class="list-group-item" href="<%= current_user.position.track(current_user.last_page) %>/<%= current_user.position.shortname %>/<% if current_user.position.next_page(current_user.last_page) %><%= current_user.position.next_page(current_user.last_page).shortname %><% else %><%= current_user.position.pages.first.shortname %><% end %>">My Track</a>      
+      <a class="list-group-item" href="<%= track_path_helper(current_user)%>">My Track</a>
       <a class="list-group-item" href="#">Publishing Spreadsheet</a>
       <a class="list-group-item" href="<%= faq_path %>">FAQ</a>
       <a class="list-group-item" href="/marketing/business-director/marketing_materials">Brand Assets</a>
@@ -67,17 +67,15 @@
 
   <script>
   $(function(){
-      $("#openMenu").click(function() {
+    $("#openMenu").click(function() {
       var menu = $("#menu");
       $(menu).is(":visible")
       if ($(menu).is(":visible")) {
           $(menu).animate({right: "-300px"}, 500, function() {$(menu).hide();});
       } else {
           $(menu).show().animate({right: "0px"}, 500, function() {$(menu).show();});
-
       }
-  });
-
+    });
   })
 
 
