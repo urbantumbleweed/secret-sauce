@@ -104,6 +104,7 @@
       url: '/users/' + user_id,
       dataType: 'json',
       method: 'put',
+      async: false, 
       data: {active: is_active},
       success: function(data){
         console.log('user status has been changed');
@@ -130,19 +131,18 @@
     $('button.make-alum').click(function(e){
       var user_id  = $(e.target).data("userid");
       changeStatus(user_id, false);
-      $(e.target.parentNode.parentNode.parentNode.parentNode).toggleClass("alum-active");
     });
 
     $('button.activate-user').click(function(e){
       var user_id = $(e.target).data("userid");
       changeStatus(user_id, true);
-      $(e.target.parentNode.parentNode.parentNode.parentNode).toggleClass("alum-inactive");
     });
 
     $('#see-alum').click(function() {
       updateAlumDisplay( !current_user.see_alum );
     });
   }
+
 
   $(function() {
     setHandlers();

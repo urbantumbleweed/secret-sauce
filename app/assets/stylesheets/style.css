@@ -386,7 +386,7 @@ h1, h2, h3, h4, h5 {
 	background-color: transparent;
 	border: 0px;
 }
-.make-alum i:hover {
+.make-alum i:hover, .activate-user i:hover {
 	color: #cc0066;
 }
 
@@ -593,6 +593,7 @@ a.retake{
 
 .quiz-title{
 	color:#000;
+	margin-top: 2em;
 }
 
 .faq {

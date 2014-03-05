@@ -2,7 +2,7 @@ $(function(){
   
   var timeVar = setTimeout(function(){
     letThereBeHearts(50) 
-  }, 1000);
+  }, 500);
 });
 
 function randomColorHex(){
@@ -20,7 +20,7 @@ function letThereBeHearts(num_hearts){
         top: (Math.random()*100)+'%',
         left: (Math.random()*100)+'%',
         opacity: 0
-      }, 500, 'linear', 
+      }, 1000, 'linear', 
         function(){
           $(this).remove();  
         })

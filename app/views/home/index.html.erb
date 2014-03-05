@@ -129,7 +129,10 @@
 				      <div class="<%= track %>">
 				      	<h4 class="quiz-title"><strong><%= score.quiz_name %></strong></h4>
 				      	<div class="quiz-score"><%= score.percent_correct %>%</div><br>
-				      	<a class="retake" href="/<%= track %>/<%= current_user.position.shortname %>/<%= score.page_shortname %>">RETAKE</a>
+								<% if current_user.position.pages.include?(score.quiz_page) %>
+					      	<a class="retake" href="/<%= track %>/<%= current_user.position.shortname %>/<%= score.page_shortname %>">RETAKE</a>
+				      	<% end %>
+
 				    </div>
 			 	  <% end %>
 				</div>
