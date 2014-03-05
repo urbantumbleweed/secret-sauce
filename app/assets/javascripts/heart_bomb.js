@@ -1,7 +1,8 @@
 $(function(){
-  var timeVar = setInterval(function(){
-    letThereBeHearts(10)
-  }, 500);
+  
+  var timeVar = setTimeout(function(){
+    letThereBeHearts(50) 
+  }, 1000);
 });
 
 function randomColorHex(){
@@ -19,10 +20,10 @@ function letThereBeHearts(num_hearts){
         top: (Math.random()*100)+'%',
         left: (Math.random()*100)+'%',
         opacity: 0
-      }, 2000, 'linear', function(){
-                            $(this).remove();  
-                         })
+      }, 500, 'linear', 
+        function(){
+          $(this).remove();  
+        })
     });
-
   });
 }
