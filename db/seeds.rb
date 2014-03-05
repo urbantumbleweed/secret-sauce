@@ -30,9 +30,16 @@ page_names = {
 		'add_video' => 'Add Video',
 		'slideshow' => 'Add Slideshow',
 		'section_intro' => 'Next...',
-		'photo_sections' => 'Sections',
+		'recipes' => 'Recipes',
+		'restaurants' => 'Restaurants',
+		'food_for_thought' => 'Food for Thought',
+		'kitchen_101' => 'Kitchen 101',
+		'students_campus' => 'Students & Campus',
+		'events' => 'Events',
+		'editorial_sections' => 'Sections',
 		'flickr' => 'Flickr',
 		'expectations' => 'Expectations',
+		'photo_sections' => 'Sections',
 		'fave_photos' => 'Photos We Love',
 		'photo_editing' => 'Photo Editing',
 		'marketing_structure' => 'Structure',
@@ -42,14 +49,7 @@ page_names = {
 		'free_ideas' => 'Free Ideas',
 		'marketing_materials' => 'Marketing Materials',
 		'analytics' => 'Analytics',
-		'calendar' => 'Events Calendar',
-		'recipes' => 'Recipes',
-		'restaurants' => 'Restaurants',
-		'food_for_thought' => 'Food for Thought',
-		'kitchen_101' => 'Kitchen 101',
-		'students_campus' => 'Students & Campus',
-		'events' => 'Events',
-		'editorial_sections' => 'Sections'
+		'calendar' => 'Events Calendar'
 	}
 
 page_names.each do |k, v|
