@@ -2,6 +2,16 @@ class SchoolsController < ApplicationController
 
 	before_filter :authenticate_user!
 
+  def new
+    @school = School.new
+  end
+
+  def create
+    school = School.create(school_params)
+    redirect_to "/schools/#{school.shortname}"
+  end
+
+
 	def index
     @schools = School.order("lower(name)").all
 	end
@@ -18,10 +28,6 @@ class SchoolsController < ApplicationController
     school = School.find(params[:id])
     school.update_attributes(school_params)
     redirect_to "/schools/#{school.shortname}"
-  end
-
-  def create
-    @school = School.find_by_shortname(params[:shortname])
   end
 
   def admin

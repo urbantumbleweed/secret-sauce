@@ -12,17 +12,6 @@ class HomeController < ApplicationController
 	end
 
 	def thanks
-		# array = [600]
-
-		# array.each do |start|
-		# members = @gb.lists.members({:id => '71726be0ba', :opts => {:start => start, :limit => 100}})
-		# 	members['data'].each do |member|
-		# 		puts member['merges']['EMAIL'] == 'info@spoonuniversity.com'
-		# 		end
-		# end
-		# binding.pry
-		
-
 	end
 
 	def staff

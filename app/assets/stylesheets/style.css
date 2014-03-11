@@ -4,7 +4,7 @@ html body {
 	line-height: 22px;
 }
 
-.body {
+div.body>div.row {
 	margin-left:-30px;
 }
 
@@ -690,6 +690,17 @@ a.retake{
   left: 50%;
   top: 25%;
 }
+
+.response#mce-success-response{
+	color:#008900;
+}
+
+.response#mce-error-response{
+	color:#ff0000;
+}
+
+
+
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
 .ig-b-24 {

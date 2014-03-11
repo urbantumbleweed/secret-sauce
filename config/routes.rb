@@ -6,7 +6,7 @@ SecretSauce::Application.routes.draw do
   
   root :to => "home#index"
 
-  resources :schools, :only => [:index, :edit, :update]
+  resources :schools, :except => [:show]
   resources :positions, :only => [:index, :show]
   resources :users, :only => [:update]
   resources :scores, :only => [:create]

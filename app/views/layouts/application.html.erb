@@ -61,7 +61,8 @@
   </div>
   <footer>
     <div class="container">
-      &copy; 2014 Spoon University
+      <p>&copy; 2014 Spoon University</p>
+      <p>If you have any questions at all, email mackenzie@spoonuniversity.com or sarah@spoonuniversity.com.</p>
     </div>
   </footer>
   
@@ -70,7 +71,7 @@
     <a class="list-group-item" href="/schools/<%= current_user.school.shortname %>" style="background-color: <%= current_user.school.color_1 %>; color: <%= current_user.school.color_2 %>  "><%= current_user.school.name %></a>
     <div class="list-group">
       <a class="list-group-item" href="<%= edit_user_registration_path %>">Edit Profile</a>
-      <a class="list-group-item" href="<%= track_path_helper(current_user)%>">My Track</a>
+      <a class="list-group-item" href="/">Home</a>
       <a class="list-group-item" href="/editorial/writer/chapter_spreadsheet">Publishing Spreadsheet</a>
       <a class="list-group-item" href="<%= faq_path %>">FAQ</a>
       <a class="list-group-item" href="/marketing/business-director/marketing_materials">Brand Assets</a>
