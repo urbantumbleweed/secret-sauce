@@ -10,6 +10,7 @@ SecretSauce::Application.routes.draw do
   resources :positions, :only => [:index, :show]
   resources :users, :only => [:update]
   resources :scores, :only => [:create]
+  resources :events
 
 
   get '/schools/:shortname' => 'schools#show'

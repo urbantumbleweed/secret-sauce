@@ -16,8 +16,84 @@ div.body>div.row {
 	margin-bottom: 50px;
 }
 
+.form-group label {
+	font-weight:900;
+}
+
 .img {
 	width: 100%;
+}
+
+.align-right {
+	text-align:right;
+}
+
+.align-left {
+	text-align:left;
+}
+
+.event-description {
+	 text-overflow:ellipsis;
+	 overflow: hidden;
+	 height:150px;
+}
+
+textarea.input-large {
+	height: 150px;
+	width: 60%;
+	text-align:left;
+}
+
+a.icon-circle{
+	height:30px;
+	width: 30px;
+	padding:6px 2px 0px 2px;
+	border-radius: 50%;
+	background-color: #ff0000;
+}
+
+a.icon-circle:hover {
+	background-color: #ff9999;
+}
+
+.icon-circle .fa {
+	color:white;
+}
+
+#pre-meeting, #post-meeting, #meeting {
+	border-left: 4px solid #f96d14;
+	margin: 10px 0;
+	padding: 0 30px;
+}
+
+.note {
+	color:#cccccc;
+}
+
+#legend {
+	color: #f96d14;
+	position:relative;
+	top: 500px;
+	left:500px;
+	width: 500px;
+	/* Safari */
+	-webkit-transform: rotate(-90deg);
+
+	/* Firefox */
+	-moz-transform: rotate(-90deg);
+
+	/* IE */
+	-ms-transform: rotate(-90deg);
+
+	/* Opera */
+	-o-transform: rotate(-90deg);
+
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.icon-circle:hover .fa {
+	color:#ff0000;
 }
 
 #error_explanation ul {
@@ -212,6 +288,10 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 
 .fa {
 	color:black;
+}
+
+a> .fa:hover {
+	color: #daa4c7;
 }
 
 .body {
@@ -709,13 +789,20 @@ a.retake{
 	}
 }
 
+@media (min-width:768px) and (max-width: 979px) {
+	.navbar.navbar-default.navbar-fixed-top {
+		position:fixed;
+	}
+}
+
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
+	body {
+		padding-top: 70px;
+	}
 	.body {
 		margin-left: 0px;
-	}
-	body {
-		padding-top: 0px;
 	}
 
 	.super {
@@ -735,7 +822,7 @@ a.retake{
 @media (min-width: 992px) {
 
 	body {
-		padding-top: 70px;
+		padding-top: 70px ;
 	}
 
 	.col-sm-4:nth-child(3n+1) {

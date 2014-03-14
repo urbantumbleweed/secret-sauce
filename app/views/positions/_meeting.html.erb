@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<% if current_user.is_admin? %>
+		<p>Your first meeting is your one opportunity to kick off your chapter with excitement and creativity, and set the expectations for the rest of your time as <%= current_user.position.name %>.</p>
+		<% end %>
+		<h4>Here's how it should go.</h4>
+		<ol>
+		<div id="pre-meeting">
+			<span class="small-caps ">PLAN</span>
+			<li>Set a location and time that works for the whole staff (or as many as you can get). Send out a <a target=”_blank” href=”http://doodle.com”>Doodle</a> to find the best time. Make sure everyone goes through Secret Sauce before the meeting!</li>
+			<span class="small-caps ">PREPARE</span>
+			<li>Team leaders should meet to prepare an agenda. Consider printing out tricky pages from Secret Sauce to make handouts for your staff members. Editors-in-chief need to make Wordpress accounts for everybody, the Photo Director needs to make the school Flickr account, and the Business Director should set up all social media accounts.</li>
+		</div>
+		<div id="meeting">
+			<span class="small-caps ">Introduce</span>
+			<li>In the meeting, introduce the team leaders and their responsibilities.</li>
+			<span class="small-caps ">Make Friends</span>
+			<li>Community building is huge! Organize an activity to help people meet each other. IDEA: Have everyone partner up and chat for five minutes and then present to the team the other person’s name, major, position and guilty pleasure.</li>
+			<span class="small-caps ">Set Expectations</span>
+			<li>Talk about your chapter’s goals and clearly define expectations (deadlines, meeting attendance,email responsiveness, etc.) Be specific, set consequences, and follow through. Consider showing events and articles from other schools to get people excited.</li>
+			<span class="small-caps ">Brainstorm</span>
+			<li>Don’t make this meeting a lecture. Make it fun and interactive. Get everyone to participate by contributing story ideas and event ideas. Write all of these ideas down.</li>
+			<span class="small-caps ">Break Up Into Teams</span>
+			<li>Finish the meeting by letting each team have time to go over specifics — recapping what you’ve done, setting a timeline for what you have to do. Photographer and Writer pairings should meet and exchange contact info. Editors-in-chief should answer questions about Wordpress, style, formatting, etc. The Business Director should take their team’s preferences for dividing into committees.</li>
+			</div>
+		<div id="post-meeting">
+			<span class="small-caps ">Stay Connected</span>
+			<li>Communicate with your team even when you’re not all in the same room by making a private Facebook group or using GroupMe.</li>
+		</div>
+
+		</ol>
+
+	</div>
+</div>
+
+<!-- <div id="legend"><span class="pull-left">POST-MEETING</span>DURING MEETING<span class="pull-right">PRE-MEETING</span></div> -->

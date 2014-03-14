@@ -9,9 +9,7 @@
 
 
 page_names = {
-		'editorial_leadership' => 'Leadership',
-		'photo_leadership' => 'Leadership',
-		'marketing_leadership' => 'Leadership',
+		'structure' => 'Structure',
 		'tone' => 'Tone',
 		'style' => 'Style',
 		'editorial_process' => 'Process',
@@ -24,7 +22,8 @@ page_names = {
 		'update_staff' => 'Update Staff',
 		'login' => 'Login to Wordpress',
 		'profile' => 'Profile',
-		'post' => 'Post',
+		'create_post' => 'Create a Post',
+		'best_practices' => 'Best Practices',
 		'final_checks' => 'Final Checks',
 		'add_photos' => 'Add Photos',
 		'add_video' => 'Add Video',
@@ -32,10 +31,6 @@ page_names = {
 		'section_intro' => 'Next...',
 		'recipes' => 'Recipes',
 		'restaurants' => 'Restaurants',
-		'food_for_thought' => 'Food for Thought',
-		'kitchen_101' => 'Kitchen 101',
-		'students_campus' => 'Students & Campus',
-		'events' => 'Events',
 		'editorial_sections' => 'Sections',
 		'flickr' => 'Flickr',
 		'expectations' => 'Expectations',
@@ -49,7 +44,13 @@ page_names = {
 		'free_ideas' => 'Free Ideas',
 		'marketing_materials' => 'Marketing Materials',
 		'analytics' => 'Analytics',
-		'calendar' => 'Events Calendar'
+		'calendar' => 'Events Calendar',
+		'editorial_leadership' => 'Leadership',
+		'editing' => 'Editing Best Practices',
+		'photo_leadership' => 'Leadership',
+		'marketing_leadership' => 'Leadership',
+		'meeting' => 'Your First Meeting',
+		'extra_skills' => 'Extra Skills'
 	}
 
 page_names.each do |k, v|
@@ -101,59 +102,101 @@ mtm = Position.create({
 	shortname: 'marketing-team-member'
 })
 
+t = Position.create({
+	name: 'Treasurer',
+	shortname: 'treasurer'
+})
+
 # THESE SHORTNAMES ARE IN THE EDITORIAL FOLDER::
 
 eic.pages = eic.pages + [
-	Page.find_by_shortname('editorial_leadership'), 
+	Page.find_by_shortname('structure'),
 	Page.find_by_shortname('tone'), 
-	Page.find_by_shortname('style'), # need to add and link quiz
+	Page.find_by_shortname('style'),
 	Page.find_by_shortname('editorial_process'), 
 	Page.find_by_shortname('chapter_spreadsheet'), 
 	Page.find_by_shortname('login'), 
 	Page.find_by_shortname('add_user'), 
 	Page.find_by_shortname('update_staff'), 
 	Page.find_by_shortname('profile'), 
-	Page.find_by_shortname('post'), 
+	Page.find_by_shortname('create_post'), 
+	Page.find_by_shortname('best_practices'), 
 	Page.find_by_shortname('final_checks'), 
 	Page.find_by_shortname('add_photos'), 
-	Page.find_by_shortname('add_video'),
-	Page.find_by_shortname('slideshow'),
 	Page.find_by_shortname('section_intro'), 
 	Page.find_by_shortname('recipes'),
 	Page.find_by_shortname('restaurants'),
-	Page.find_by_shortname('kitchen_101'),
-	Page.find_by_shortname('food_for_thought'),
-	Page.find_by_shortname('students_campus'),
-	Page.find_by_shortname('events'),
-	Page.find_by_shortname('editorial_sections')
+	Page.find_by_shortname('editorial_sections'),
+	Page.find_by_shortname('editorial_leadership'),
+	Page.find_by_shortname('editing'), 
+	Page.find_by_shortname('extra_skills'),
+	Page.find_by_shortname('meeting')
 	]
 
 	# STOP
 
 
-me.pages = me.pages + [
+ce.pages = ce.pages + [
+	Page.find_by_shortname('structure'),
 	Page.find_by_shortname('tone'),
 	Page.find_by_shortname('style'),
 	Page.find_by_shortname('editorial_process'),
 	Page.find_by_shortname('chapter_spreadsheet'),
 	Page.find_by_shortname('login'),
 	Page.find_by_shortname('profile'),
-	Page.find_by_shortname('post'),
+	Page.find_by_shortname('create_post'),
+	Page.find_by_shortname('best_practices'), 
 	Page.find_by_shortname('add_photos'),
-	Page.find_by_shortname('add_video'),
-	Page.find_by_shortname('slideshow'),
 	Page.find_by_shortname('section_intro'), 
 	Page.find_by_shortname('recipes'),
 	Page.find_by_shortname('restaurants'),
-	Page.find_by_shortname('kitchen_101'),
-	Page.find_by_shortname('food_for_thought'),
-	Page.find_by_shortname('students_campus'),
-	Page.find_by_shortname('events'),
-	Page.find_by_shortname('editorial_sections')
+	Page.find_by_shortname('editorial_sections'),
+	Page.find_by_shortname('editing'),
+	Page.find_by_shortname('extra_skills')
 	]
 
-ce.pages = me.pages
-w.pages = me.pages
+me.pages = me.pages + [
+	Page.find_by_shortname('structure'),
+	Page.find_by_shortname('tone'),
+	Page.find_by_shortname('style'),
+	Page.find_by_shortname('editorial_process'),
+	Page.find_by_shortname('chapter_spreadsheet'),
+	Page.find_by_shortname('login'),
+	Page.find_by_shortname('profile'),
+	Page.find_by_shortname('create_post'),
+	Page.find_by_shortname('best_practices'), 
+	Page.find_by_shortname('add_photos'),
+	Page.find_by_shortname('section_intro'), 
+	Page.find_by_shortname('recipes'),
+	Page.find_by_shortname('restaurants'),
+	Page.find_by_shortname('editorial_sections'),
+	Page.find_by_shortname('editorial_leadership'),
+	Page.find_by_shortname('editing'),
+	Page.find_by_shortname('extra_skills'),
+	Page.find_by_shortname('meeting')
+	]
+
+
+w.pages = w.pages + [
+	Page.find_by_shortname('structure'),
+	Page.find_by_shortname('tone'),
+	Page.find_by_shortname('style'),
+	Page.find_by_shortname('editorial_process'),
+	Page.find_by_shortname('chapter_spreadsheet'),
+	Page.find_by_shortname('login'),
+	Page.find_by_shortname('profile'),
+	Page.find_by_shortname('create_post'),
+	Page.find_by_shortname('best_practices'), 
+	Page.find_by_shortname('add_photos'),
+	Page.find_by_shortname('section_intro'), 
+	Page.find_by_shortname('recipes'),
+	Page.find_by_shortname('restaurants'),
+	Page.find_by_shortname('editorial_sections'),
+	Page.find_by_shortname('extra_skills')
+	]
+
+
+
 nc.pages = [
 	Page.find_by_shortname('tone'),
 	Page.find_by_shortname('style'),
@@ -161,9 +204,9 @@ nc.pages = [
 	Page.find_by_shortname('contributor_spreadsheet'),
 	Page.find_by_shortname('login'),
 	Page.find_by_shortname('profile'),
-	Page.find_by_shortname('post'),
+	Page.find_by_shortname('create_post'),
+	Page.find_by_shortname('best_practices'), 
 	Page.find_by_shortname('add_photos'),
-	Page.find_by_shortname('add_video'),
 	Page.find_by_shortname('section_intro'), 
 	Page.find_by_shortname('slideshow'),
 	Page.find_by_shortname('recipes'),
@@ -180,6 +223,7 @@ nc.pages = [
 # THESE SHORTNAMES ARE IN THE PHOTO FOLDER::
 
 p.pages = p.pages + [
+	Page.find_by_shortname('structure'),
 	Page.find_by_shortname('photo_process'),
 	Page.find_by_shortname('flickr'),
 	Page.find_by_shortname('expectations'),
@@ -188,7 +232,10 @@ p.pages = p.pages + [
 	Page.find_by_shortname('photo_sections'),
 	]
 
-pd.pages = [Page.find_by_shortname('photo_leadership')] + p.pages
+pd.pages = p.pages + [
+	Page.find_by_shortname('photo_leadership'),
+	Page.find_by_shortname('meeting')
+	]
 
 
 # STOP
@@ -196,6 +243,7 @@ pd.pages = [Page.find_by_shortname('photo_leadership')] + p.pages
 # THESE SHORTNAMES ARE IN THE MARKETING FOLDER::
 
 mtm.pages = mtm.pages + [
+	Page.find_by_shortname('structure'),
 	Page.find_by_shortname('marketing_structure'),
 	Page.find_by_shortname('plan_an_event'),
 	Page.find_by_shortname('social_media'),
@@ -205,7 +253,12 @@ mtm.pages = mtm.pages + [
 	Page.find_by_shortname('calendar')
 	]
 
-bd.pages = [Page.find_by_shortname('marketing_leadership')] + mtm.pages
+bd.pages = mtm.pages + [
+	Page.find_by_shortname('marketing_leadership'),
+	Page.find_by_shortname('meeting')
+	]
+
+t.pages = mtm.pages + []
 
 # STOP
 
@@ -519,16 +572,6 @@ School.create({
 	color_2:       '#0021A5'
 })
 
-School.create({
-	name:          'American',
-	shortname:     'american',
-	twitter_url:   'https://twitter.com/spoonuniversity',
-	instagram_url: 'http://instagram.com/spoonuniversity',
-	spoon_url:     'http://spoonuniversity.com',
-	facebook_url:  'https://www.facebook.com/SpoonUniversity',
-	color_1:       '#0d1675',
-	color_2:       '#c80016'
-})
 
 School.create({
 	name:          'Swarthmore',
@@ -543,3 +586,9 @@ School.create({
 
 User.destroy_all
 
+User.create!([
+  {email: "sarah@example.com", encrypted_password: "$2a$10$NrBXqWOGH6NQv4GnPDQE8eptIxXCi5yacTqk2Ux.DnpIZvBjMh5PO", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2014-03-13 04:40:58", last_sign_in_at: "2014-03-13 04:40:58", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", first_name: "Sarah", last_name: "Adler", school_id: 1, phone_number: "5126587019", active: true, agreed: false, see_alum: false, password: 'password'}
+])
+Status.create!([
+  {position_id: 1, user_id: 1}
+])

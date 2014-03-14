@@ -1,0 +1,23 @@
+
+
+
+<div class="row event-index">
+<% @events.each do |event| %>
+  <div class="col-sm-4 col-md-3">
+    <div class="panel panel-default">
+      <div class="panel-heading"><p><%= event.name %></p>
+      	<p style="background: <%= event.school.color_1 %>; color: <%= event.school.color_2 %>" class="badge">
+          <a class="school-link" href='/schools/<%= event.school.shortname %>'>
+            <%= event.school.shortname %>
+          </a>
+        </p>
+      </div>
+      <div class="panel-body">
+          <p class="event-description"><%= event.description %></p>
+          <p>...</p>
+          <p><a href="/events/<%= event.id %>">See More</a></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

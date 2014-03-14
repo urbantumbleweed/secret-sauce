@@ -16,7 +16,7 @@
   <% @schools.each do |school|%>
   <div class="col-sm-4 col-md-3">
     <div class="panel panel-default">
-      <div class="panel-heading" style="background: <%= school.color_1 %>"><a style="color: <%= school.color_2 %>" href="/schools/<%= school.shortname %>"><%= school.name %></a></div>
+      <div class="panel-heading" style="background: <%= school.color_1 %>"><a style="color: <%= school.color_2 %>" href="/schools/<%= school.shortname %>"><h4><%= school.name %></h4></a></div>
       <div class="panel-body">
         <ul class="list-inline">
           <li> <%= school.users_active.count %> member<% if school.users_active.count != 1 %>s<% end %></li><br>

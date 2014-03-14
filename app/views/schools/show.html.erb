@@ -1,10 +1,6 @@
 <% school = @school %>
-
+<% if current_user.is_admin? && ( current_user.school === school || current_user.school.shortname == 'national' ) %><a class="icon-circle pull-right" href="<%= edit_school_path(@school)%>"><i class="fa fa-pencil"></i></a><% end %>
 <h1><%= school.name %></h1>
-<% if current_user.status.position.shortname == 'editor-in-chief' && current_user.school === school%>
-
-<a href="<%= edit_school_path(@school)%>"><i class="fa fa-pencil"></i></a>
-<% end %>
 
 <ul class="list-inline">
   <% if school.facebook_url %>
@@ -20,7 +16,7 @@
   <% end %>
 
   <% if school.spoon_url %>
-    <li><a href="<%= school.spoon_url %>"><img class="little-spoon" src='/assets/logo-black.png'></a></li>
+    <li><a href="<%= school.spoon_url %>"><img class="fa little-spoon" src='/assets/logo-black.png'></a></li>
   <% end %>
 </ul>
 <div class="row active-users">

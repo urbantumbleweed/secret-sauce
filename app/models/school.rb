@@ -1,5 +1,6 @@
 class School < ActiveRecord::Base
 	has_many :users
+  has_many :events
 
   def users_active
     active_users = []
