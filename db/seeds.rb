@@ -196,8 +196,7 @@ w.pages = w.pages + [
 	]
 
 
-
-nc.pages = [
+nc.pages = nc.pages + [
 	Page.find_by_shortname('tone'),
 	Page.find_by_shortname('style'),
 	Page.find_by_shortname('contributor_process'),
@@ -208,16 +207,15 @@ nc.pages = [
 	Page.find_by_shortname('best_practices'), 
 	Page.find_by_shortname('add_photos'),
 	Page.find_by_shortname('section_intro'), 
-	Page.find_by_shortname('slideshow'),
 	Page.find_by_shortname('recipes'),
-	Page.find_by_shortname('kitchen_101'),
-	Page.find_by_shortname('food_for_thought'),
 	Page.find_by_shortname('editorial_sections'),
 	Page.find_by_shortname('flickr'),
 	Page.find_by_shortname('expectations'),
 	Page.find_by_shortname('fave_photos'),
-	Page.find_by_shortname('photo_editing')
-	]
+	Page.find_by_shortname('photo_editing'),
+	Page.find_by_shortname('extra_skills')
+]
+
 
 
 # THESE SHORTNAMES ARE IN THE PHOTO FOLDER::
@@ -230,11 +228,12 @@ p.pages = p.pages + [
 	Page.find_by_shortname('fave_photos'),
 	Page.find_by_shortname('photo_editing'),
 	Page.find_by_shortname('photo_sections'),
+	Page.find_by_shortname('extra_skills')
 	]
 
 pd.pages = p.pages + [
 	Page.find_by_shortname('photo_leadership'),
-	Page.find_by_shortname('meeting')
+	Page.find_by_shortname('meeting'),
 	]
 
 
@@ -250,12 +249,13 @@ mtm.pages = mtm.pages + [
 	Page.find_by_shortname('free_ideas'),
 	Page.find_by_shortname('marketing_materials'),
 	Page.find_by_shortname('analytics'),
-	Page.find_by_shortname('calendar')
+	Page.find_by_shortname('calendar'),
+	Page.find_by_shortname('extra_skills')
 	]
 
 bd.pages = mtm.pages + [
 	Page.find_by_shortname('marketing_leadership'),
-	Page.find_by_shortname('meeting')
+	Page.find_by_shortname('meeting'),
 	]
 
 t.pages = mtm.pages + []
