@@ -24,6 +24,20 @@ div.body>div.row {
 	width: 100%;
 }
 
+.skills a {
+	text-decoration:none;
+	color:#000000;
+}
+
+.skills .panel {
+	padding: 3px;
+}
+
+.skills .panel:hover {
+	border: #f96214 solid 3px;
+	padding: 1px;
+}
+
 .align-right {
 	text-align:right;
 }
@@ -70,12 +84,8 @@ a.icon-circle:hover {
 	color:#cccccc;
 }
 
-#legend {
+.rotate {
 	color: #f96d14;
-	position:relative;
-	top: 500px;
-	left:500px;
-	width: 500px;
 	/* Safari */
 	-webkit-transform: rotate(-90deg);
 

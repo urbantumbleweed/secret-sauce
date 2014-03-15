@@ -36,4 +36,14 @@ class PositionsController < ApplicationController
 		redirect_to thanks_path
 	end
 
+	def skill
+		skill = params['shortname']
+		render 'positions/skills/add_video' #{ }"positions/skills/#{skill}" this doesn't work -- how do you explicitly render in controller?
+	end
+
+	def skills
+		redirect_to "/#{current_user.track}/#{current_user.position.shortname}/extra_skills" 
+	end
+
+
 end

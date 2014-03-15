@@ -3,26 +3,26 @@
 en:
   devise:
     confirmations:
-      confirmed: "Your account was successfully confirmed."
-      send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes."
+      confirmed: "Cool, you're confirmed."
+      send_instructions: "In the next few minutes, you'll get an email from us with instructions."
+      send_paranoid_instructions: "If we have your email address, we'll send you an email in a few."
     failure:
-      already_authenticated: "You are already signed in."
-      inactive: "Your account is not activated yet."
-      invalid: "Invalid email or password."
-      locked: "Your account is locked."
-      last_attempt: "You have one more attempt before your account will be locked."
-      not_found_in_database: "Invalid email or password."
-      timeout: "Your session expired. Please sign in again to continue."
-      unauthenticated: "You need to sign in or sign up before continuing."
-      unconfirmed: "You have to confirm your account before continuing."
+      already_authenticated: "Uh, you're already signed in."
+      inactive: "Looks like your account isn't activated yet."
+      invalid: "Oops, that isn't the right email or password."
+      locked: "Oops, your account is locked."
+      last_attempt: "If you mess up one more time we'll lock your account."
+      not_found_in_database: "Oops, that isn't the right email or password."
+      timeout: "Oops, you took too long and we logged you out. Log in again and continue on."
+      unauthenticated: "You gotta sign in or sign up before you can see more."
+      unconfirmed: "We gotta confirm your account first."
     mailer:
       confirmation_instructions:
-        subject: "Confirmation instructions"
+        subject: "Here's how ya confirm."
       reset_password_instructions:
-        subject: "Reset password instructions"
+        subject: "Here's how ya reset your password."
       unlock_instructions:
-        subject: "Unlock Instructions"
+        subject: "Here's how ya unlock your account."
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."

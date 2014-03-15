@@ -26,6 +26,8 @@ SecretSauce::Application.routes.draw do
 
   get '/welcome' => 'home#welcome', as: :welcome
   get '/admin/schools' => 'schools#admin', as: :school_admin
+  get '/skills/:shortname' => 'positions#skill', as: :skill
+  get '/skills/' => 'positions#skills', as: :skills
   
 
   get '/thanks' => 'home#thanks', as: :thanks
