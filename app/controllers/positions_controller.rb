@@ -38,7 +38,7 @@ class PositionsController < ApplicationController
 
 	def skill
 		skill = params['shortname']
-		render 'positions/skills/add_video' #{ }"positions/skills/#{skill}" this doesn't work -- how do you explicitly render in controller?
+		render "positions/skills/#{skill}"
 	end
 
 	def skills
