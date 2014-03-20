@@ -27,7 +27,7 @@
           <div class="panel-heading">
             <p><%= student.name %>
               <button class="make-alum">
-                <% if current_user.is_admin? && current_user.school === school %>
+                <% if current_user.is_admin? && ( current_user.school === school || current_user.school.shortname === 'national' )   %>
                   <i class="fa fa-minus-square-o" data-userid="<%= student.id %>" ></i>
                 <% end %>
               </button>
