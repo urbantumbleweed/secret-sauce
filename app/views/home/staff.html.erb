@@ -23,7 +23,11 @@
       </div>
       <div class="panel-body">
         <ul class="list-unstyled">
+          <% if student.name == 'Sarah Adler' || student.name == 'Mackenzie Barth' %>
+          <li>Co-Founder</li>
+          <% else %>
           <li><%= student.position.name %></li>
+          <% end %>
           <li><%= student.phone_number %></li>
           <li><%= student.email %></li>
         </ul>
