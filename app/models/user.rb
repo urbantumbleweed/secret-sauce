@@ -68,8 +68,12 @@ class User < ActiveRecord::Base
 		percent_completed.to_i
 	end
 
-	def is_admin?
-		self.position.shortname == 'editor-in-chief' || self.position.shortname == 'business-director' || self.position.shortname == 'photo-director' 
+	def is_admin?(school)
+		if self.position.shortname == 'editor-in-chief' || self.position.shortname == 'business-director' || self.position.shortname == 'photo-director' 
+			if self.school == school || self.school.shortname == 'national'
+				return true
+			end	
+		end
 	end
 
 end

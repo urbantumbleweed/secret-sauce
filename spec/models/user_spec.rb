@@ -76,7 +76,7 @@ describe User do
           Status.create(user: @user, position: @position)
         end
         it "should return false" do
-          @user.is_admin? == false
+          @user.is_admin?(@user.school) == false
         end
       end
       describe "when users is an admin" do
@@ -85,7 +85,7 @@ describe User do
           Status.create(user: @user, position: @position)
         end
         it "should return true" do
-          @user.is_admin? == true 
+          @user.is_admin?(@user.school) == true 
         end
       end
     end
