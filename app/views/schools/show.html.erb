@@ -45,7 +45,7 @@
                 <li><%= student.email %></li>
               <% end %>
               
-              <% if current_user.is_admin? && current_user.school === school %>
+              <% if current_user.is_admin? && ( current_user.school === school || current_user.school.shortname === 'national' ) %>
                 <% if student.scores %>
                   <% student.scores.each do |score| %>
                     <li><%= score.quiz_name %> Quiz: <%= score.correct %> / <%= score.total %></li>
@@ -71,7 +71,7 @@
           <div class="panel-heading">
             <p><%= student.name %>
               <button class="activate-user">
-                <% if current_user.is_admin? && current_user.school === school %>
+                <% if current_user.is_admin? && ( current_user.school === school || current_user.school.shortname === 'national' )  %>
                   <i class="fa fa-plus-square-o" data-userid="<%= student.id %>" ></i>
                 <% end %>
               </button>
@@ -142,7 +142,7 @@
 
   $(function() {
     setHandlers();
-    <% if current_user.is_admin? && current_user.school === school %>
+    <% if current_user.is_admin? && ( current_user.school === school || current_user.school.shortname === 'national' )  %>
       <% if school.users_active != [] %>
         <% school.users_active.each do |student| %>
           donutOfCompleteness(<%= student.id %>, <%= student.percent_complete %>, "<%= student.position.track(student.position.pages.first) %>", false)
