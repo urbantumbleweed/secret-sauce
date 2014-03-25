@@ -1,37 +1,8 @@
-<div class="row school-social">
-  <% @schools.each do |school|%>
-    <div class="col-md-4">
-      <h1><a href="/schools/<%= school.shortname %>"><%= school.name %></a></h1>
+<div class="row">
+  <ul>
+      <% @schools.each do |school|%>
+    <li><%= school.name %></li>
+      <% end %>
+  </ul>
 
-      <ul>
-        <% if school.facebook_url %>
-          <li><a href="<%= school.facebook_url %>">Facebook</a></li>
-        <% end %>
-
-        <% if school.twitter_url %>
-          <li><a href="<%= school.twitter_url %>">Twitter</a></li>
-        <% end %>
-
-        <% if school.instagram_url %>
-          <li><a href="<%= school.instagram_url %>">Instagram</a></li>
-        <% end %>
-
-        <% if school.spoon_url %>
-          <li><a href="<%= school.spoon_url %>">Spoon</a></li>
-        <% end %>
-        <li>Active Users:
-        <% if school.users_active != [] %>
-          <%= school.users_active.count %></li>
-        <% else %>
-          0</li>
-        <% end %>
-        <li>Total Users:
-        <% if school.users != [] %>
-          <%= school.users.count %></li>
-        <% else %>
-          0</li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 </div>
