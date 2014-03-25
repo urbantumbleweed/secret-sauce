@@ -4,6 +4,10 @@ html body {
 	line-height: 22px;
 }
 
+.school-list {
+	text-align:left;
+}
+
 div.body>div.row {
 	margin-left:-30px;
 }

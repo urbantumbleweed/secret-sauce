@@ -1,8 +1,8 @@
-<div class="row">
-  <ul>
+<div class="row school-list">
+  <ul class="list-unstyled">
       <% @schools.each do |school|%>
-    <li><%= school.name %></li>
+    <li><a class="span4" href="http://<%= school.shortname %>.spoonuniversity.com/about"><%= school.name %></a></li>
       <% end %>
   </ul>
-
+<%= @schools.count %>
 </div>
