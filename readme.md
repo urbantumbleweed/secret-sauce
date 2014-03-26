@@ -16,15 +16,14 @@ Each staff member gets a personalized experience based on their role at Spoon Un
        ![Photo](public/images/editing.png)
   *  Track for marketing members
        ![Marketing](public/images/plan-event.png)
-* Members can view the pages of all of the other schools
-       ![AllTracks](public/images/schools.png)
-* Members have contact information for the entire Spoon U community
   * There are videos on how to complete certain tasks
       ![Chapters](public/images/add-photos.png)
-  * Chapter leaders can check on the progress of their team
-      ![StaffDir](public/images/staff-progress.png)
+* Members can access information about each of the chapters
+       ![AllTracks](public/images/schools.png)
 * Members of the administrative team have extra access
   * view the progress of their team
+        ![StaffDir](public/images/staff-progress.png)
+
  
 ##URL
 Secret Sauce is hosted on Heroku: http://spoonuniversityx.com
