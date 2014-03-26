@@ -9,25 +9,25 @@ An internal e-training tool that functions as the orientation for all student me
 Each staff member gets a personalized experience based on their role at Spoon University.
 
 * Members have access to their personal track (like codecademy).
-       ![Editorial](public/images/login.png)
+       ![Editorial](public/images/main.png)
   *  Track for editorial members
-       ![Editorial](public/images/editorial.png)
+       ![Editorial](public/images/add-photos.png)
   *  Track for photography members
-       ![Photo](public/images/photo.png)
+       ![Photo](public/images/editing.png)
   *  Track for marketing members
-       ![Marketing](public/images/marketing.png)
-* Members can view the pages of all of the other tracks
-       ![AllTracks](public/images/tracks.png)
+       ![Marketing](public/images/plan-event.png)
+* Members can view the pages of all of the other schools
+       ![AllTracks](public/images/schools.png)
 * Members have contact information for the entire Spoon U community
-  * chapter information
-      ![Chapters](public/images/chapter.png)
-  * staff directory
-      ![StaffDir](public/images/staff.png)
+  * Chapter information
+      ![Chapters](public/images/staff.png)
+  * Chapter leaders can check on the progress of their team
+      ![StaffDir](public/images/staff-progress.png)
 * Members of the administrative team have extra access
   * view the progress of their team
  
 ##URL
-Secret Sauce is hosted on Heroku: http://secret-sauce.herokuapp.com
+Secret Sauce is hosted on Heroku: http://spoonuniversityx.com
 
 ##Implementation
 Secret Sauce is built with on Rails with a PostgreSQL database. See sample code below. It uses RESTful and custom routes to deliver the educational track experience and allow users to quickly reference important pages. Backbone.js and D3 were implemented to enliven the user experience through animations and in-page quizzes. 
