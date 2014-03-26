@@ -14,7 +14,7 @@
 <% @students.each do |student| %>
   <div class="col-sm-4 col-md-3">
     <div class="panel panel-default">
-      <div class="panel-heading"><p><%= student.name %></p>
+      <div class="panel-heading"><p><%= student.name.capitalize %></p>
       	<p style="background: <%= student.school.color_1 %>; color: <%= student.school.color_2 %>" class="badge">
           <a class="school-link" href='/schools/<%= student.school.shortname %>'>
             <%= student.school.shortname %>
