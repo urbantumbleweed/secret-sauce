@@ -222,7 +222,7 @@ a.icon-circle:hover {
 	color: #888888;
 }
 
-..panel-body {
+.panel-body {
 	overflow:hidden;
 }
 
