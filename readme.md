@@ -30,7 +30,7 @@ Secret Sauce is hosted on Heroku: http://spoonuniversityx.com
 
 ##Implementation
 Secret Sauce is built with on Rails with a PostgreSQL database. See sample code below. It uses RESTful and custom routes to deliver the educational track experience and allow users to quickly reference important pages. Backbone.js and D3 were implemented to enliven the user experience through animations and in-page quizzes. 
-  ![Quiz](public/images/quiz.png)
+  ![Quiz](public/images/quizzes.png)
 
 Custom routes for the positions controller:
 ```ruby
