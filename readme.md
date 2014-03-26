@@ -11,7 +11,7 @@ Each staff member gets a personalized experience based on their role at Spoon Un
 * Members have access to their personal track (like codecademy).
        ![Editorial](public/images/main.png)
   *  Track for editorial members
-       ![Editorial](public/images/add-photos.png)
+       ![Editorial](public/images/style.png)
   *  Track for photography members
        ![Photo](public/images/editing.png)
   *  Track for marketing members
@@ -19,8 +19,8 @@ Each staff member gets a personalized experience based on their role at Spoon Un
 * Members can view the pages of all of the other schools
        ![AllTracks](public/images/schools.png)
 * Members have contact information for the entire Spoon U community
-  * Chapter information
-      ![Chapters](public/images/staff.png)
+  * There are videos on how to complete certain tasks
+      ![Chapters](public/images/add-photos.png)
   * Chapter leaders can check on the progress of their team
       ![StaffDir](public/images/staff-progress.png)
 * Members of the administrative team have extra access
@@ -129,7 +129,7 @@ RSpec tests for the User model:
 * Rails_12factor 
 
 ## Contact
-Please contact Sarah Adler (sarah.e.adler@gmail.com) or Yelena Niznik (yniznik@gmail.com) with questions. 
+Please contact Sarah Adler (sarah@spoonuniversity.com) or Yelena Niznik (yniznik@gmail.com) with questions. 
 
 
 ####Thanks for visiting!!
