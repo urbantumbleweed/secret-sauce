@@ -12,6 +12,7 @@
 
 <div class="row staff-directory">
 <% @students.each do |student| %>
+<% if student.email != 'lena.niznik@gmail.com' %>
   <div class="col-sm-4 col-md-3">
     <div class="panel panel-default">
       <div class="panel-heading"><p><%= student.name %></p>
@@ -34,6 +35,7 @@
       </div>
     </div>
   </div>
+   <% end %>
   <% end %>
 </div>
 <div class="row">
