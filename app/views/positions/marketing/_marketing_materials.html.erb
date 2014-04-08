@@ -42,7 +42,7 @@
 									<% School.all.each do |school| %>
 									<% unless school.shortname == 'national' %>
 									<div class="col-sm-3">
-										<a class="link" href="/assets/logos/<%= school.shortname %>.png"> <%= school.shortname %></a>
+										<a class="link" href="/assets/logos/<%= school.shortname %>.png"> <%= school.shortname.upcase %></a>
 									</div>
 									<% end %>
 									<% end %>
