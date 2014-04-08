@@ -40,9 +40,11 @@
 							<div class="col-md-11 col-md-offset-1">
 								<div class="row">
 									<% School.all.each do |school| %>
+									<% unless school.shortname == 'national' %>
 									<div class="col-sm-3">
 										<a class="link" href="/assets/logos/<%= school.shortname %>.png"> <%= school.shortname %></a>
 									</div>
+									<% end %>
 									<% end %>
 								</div>
 							</div>
