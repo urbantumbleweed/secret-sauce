@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+		before_filter :authenticate_user!
+
 #     events GET    /events(.:format)                 events#index
 	def index
 		@events = Event.all
@@ -33,7 +35,7 @@ class EventsController < ApplicationController
 		redirect_to events_path
 	end
 
-	private 
+	private
 
   def event_params
     params.require(:event).permit(:name, :school_id, :description, :success, :failure, :advice, :date)
