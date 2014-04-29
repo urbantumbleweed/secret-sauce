@@ -18,12 +18,12 @@ class HomeController < ApplicationController
     sort_by = params[:sort_by]
 
     if sort_by == 'position'
-    	@students = User.active
+    	@students = User.all
 			@students.sort!{ |a,b| a.position <=> b.position }
 	 	elsif sort_by == 'name'
-    	@students = User.order('last_name').active
+    	@students = User.order('last_name')
     else
-    	@students = User.order('school_id').active
+    	@students = User.order('school_id')
   	end
 
 	end
