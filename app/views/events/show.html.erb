@@ -21,6 +21,7 @@
         <p>
     	<%= @event.advice %>
     </p>
+    <% if @event.link %><a target="_blank" class="btn btn-primary btn-lg" href="<%= @event.link %>">See Photos</a><% end %>
     <div class="little-space"></div>
   <a class="btn btn-primary" href="/events">Back to All</a>
   </div>
