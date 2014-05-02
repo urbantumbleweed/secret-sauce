@@ -7,7 +7,7 @@
 			<div class="box-inner">
 				<div class="row">
 					<div class="col-md-8">
-						<p>From our experience, <strong>Facebook is the #1 way to reach college students</strong>. Each chapter must set up a Facebook page (format: <strong>Spoon University – My School</strong>) Everyone on staff should be an admin and invite all their friends to like the page. Staff members should also like the pages of other Spoon chapters so you can cross-promote content. Cover photos should be photos of delicious food; profile pictures should be the Spoon logo.</p>
+						<p>From our experience, <strong>Facebook is the #1 way to reach college students</strong>. Each chapter must set up a Facebook page (format: <strong>Spoon University – <%= current_user.school.shortname %></strong>) Everyone on staff should be an admin and invite all their friends to like the page. Staff members should also like the pages of other Spoon chapters so you can cross-promote content. Cover photos should be photos of delicious food; profile pictures should be the Spoon logo.</p>
 					</div>
 					<div class="col-md-4"><img src="/assets/facebook-likes.png"></div>
 				</div>
@@ -84,7 +84,7 @@
 
 
 
-<!-- 
+<!--
 <p>Each school should set up and manage the following social media accounts.</p>
 <div class="row">
 	<div class="col-md-4">
