@@ -289,7 +289,7 @@ a.school-link:hover {
 
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
 	font-size: 13px;
-	height: 35px;
+	height: 45px;
 	padding:12px;
 	width: 60%;
 	margin: 0 auto;
@@ -298,7 +298,7 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 
 }
 
-textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus, button:focus {   
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus, button:focus {
 	border-color: transparent;
 	box-shadow: transparent;
 	outline: 0 none;
@@ -571,8 +571,8 @@ div#menu {
 	margin:10px 0px;
 }
 
-.ig-b- { 
-	display: inline-block; 
+.ig-b- {
+	display: inline-block;
 	}
 
 .ig-b- img {
@@ -581,15 +581,15 @@ div#menu {
 
 .ig-b-:hover {
 	background-position: 0 -60px;
-	} 
+	}
 
 .ig-b-:active {
 	background-position: 0 -120px;
 	}
 
 .ig-b-24 {
-	width: 24px; 
-	height: 24px; 
+	width: 24px;
+	height: 24px;
 	background: url(//badges.instagram.com/static/images/ig-badge-sprite-24.png) no-repeat 0 0;
 	}
 
@@ -803,7 +803,7 @@ a.retake{
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
 .ig-b-24 {
 	background-image: url(//badges.instagram.com/static/images/ig-badge-sprite-24@2x.png);
-	background-size: 60px 178px; 
+	background-size: 60px 178px;
 	}
 }
 
@@ -815,7 +815,7 @@ a.retake{
 
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
 	body {
 		padding-top: 70px;
 	}
@@ -863,8 +863,8 @@ a.retake{
  }
 
 /* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { 
-	
+@media (min-width: 1200px) {
+
  }
 
 
